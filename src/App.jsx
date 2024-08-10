@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import Categorias from "../components/Categorias"
 import Usuarios from "../components/Usuarios"
 
