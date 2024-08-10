@@ -25,7 +25,7 @@ const Layout = ({ children, setSelectedSection, selectedSection }) => {
 
                </button>
 
-               <button 
+               <button
                   className={selectedSection === "usuarios" ? "navbar-item navbar-item--active" : "navbar-item"}
                   onClick={() => setSelectedSection("usuarios")}
                >

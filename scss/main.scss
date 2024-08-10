@@ -75,3 +75,8 @@ html, body {
    @include flex(center, center);
    gap: 1rem;
 }
+
+.section-wrapper {
+   flex-grow: 1;
+   height: 100%;
+}
