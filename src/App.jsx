@@ -14,7 +14,7 @@ const App = () => {
          selectedSection={selectedSection}
          setSelectedSection={setSelectedSection}
       >
-         {selectedSection === "produtos" && (<Produtos />)}
+         {selectedSection === "produtos" && (<Categorias />)}
          {selectedSection === "usuarios" && (<Usuarios />)}
       </Layout>
    )

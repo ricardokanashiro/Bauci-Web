@@ -1,0 +1,31 @@
+.categoriasCard {
+  background-color: #F0F2F5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3.5rem 2.5rem;
+  border: 2px solid #333840;
+  border-radius: 0.6rem;
+  width: 35rem;
+}
+
+.categoriasCard h1 {
+  font-family: "Inter", sans-serif;
+  color: #333840;
+  font-size: 2.5rem;
+}
+
+.categoriasCard__btn-gotoprodutos {
+  background-color: #333840;
+  border-radius: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.7rem;
+  cursor: pointer;
+}
+.categoriasCard__btn-gotoprodutos img {
+  width: 2rem;
+}
+
+/*# sourceMappingURL=categorias.css.map */

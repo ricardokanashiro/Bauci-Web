@@ -1,0 +1,29 @@
+@use "../utils/" as *;
+
+.categoriasCard {
+    background-color: $brancoAzulado;
+    @include flex(space-between, center);
+    padding: 3.5rem 2.5rem;
+    border: 2px solid $preto;
+    border-radius: .6rem;
+    width: 35rem;
+
+}
+
+.categoriasCard h1 {
+    font-family: $fontePrincipal;
+    color: $preto;
+    font-size: 2.5rem;
+}
+
+.categoriasCard__btn-gotoprodutos {
+    background-color: $preto;
+    border-radius: .4rem;
+    @include flex(center, center);
+    padding: .7rem;
+    cursor: pointer;
+
+    img {
+        width: 2rem;
+    }
+}
