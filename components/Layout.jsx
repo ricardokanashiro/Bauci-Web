@@ -39,7 +39,7 @@ const Layout = ({ children, setSelectedSection, selectedSection }) => {
 
             <button className="navbar__logout-btn">
                <span>Logout</span>
-               <img src="../assets/IconLogOut.svg" alt="#" />
+               <img src="../assets/IconLogOut.svg" alt="logout icon" />
             </button>
 
          </section>
