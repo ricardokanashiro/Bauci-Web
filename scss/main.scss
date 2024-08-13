@@ -71,6 +71,7 @@ html, body {
    border-radius: .6rem;
    font-weight: bold;
    cursor: pointer;
+   background-color: transparent;
 
    @include flex(center, center);
    gap: 1rem;
@@ -79,4 +80,5 @@ html, body {
 .section-wrapper {
    flex-grow: 1;
    height: 100%;
+   overflow-x: hidden;
 }

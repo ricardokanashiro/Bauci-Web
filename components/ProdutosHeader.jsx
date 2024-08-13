@@ -5,7 +5,7 @@ import "../css/components/produtos-header.css"
 
 const ProdutosHeader = () => {
    return (
-      <header>
+      <header className="produtos-header">
 
             <h1>Cozinheiro</h1>
 
