@@ -1,21 +1,12 @@
 import CategoriaCard from "./CategoriaCard"
+import CategoriasHeader from "./CategoriasHeader"
 
 const Categorias = () => {
    return (
-      <div>
+      <div className="sectionwrapper__categorias-page-wrapper">
 
          <section className="categorias__actions-area">
-            
-            <div className="categorias__input-wrapper">
-               <input type="text" />
-               <button></button>
-            </div>
-
-            <button className="adicionar-categoria-btn">
-               <span>Adicionar Categoria</span>
-               <img src="#" alt="#" />
-            </button>
-
+            <CategoriasHeader/>
          </section>
 
          <section className="categorias__categorias-lista">

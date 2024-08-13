@@ -1,0 +1,64 @@
+@use "../utils/" as *;
+
+.categorias__actions-area {
+    @include flex(space-between, center);
+    width: 100%;
+    padding: 2rem;
+    border-radius: .6rem;
+}
+
+.categorias__input-wrapper {
+    height: 100%;
+    @include flex(flex-start, center)
+}
+
+.categorias__input-wrapper input {
+    width: max(40rem, 40%);
+    border: 1px solid $cinzaEscuro;
+    border-radius: .4rem;
+    padding: .6rem .8rem;
+    outline: none;
+
+    &::placeholder {
+        font-size: 1.2rem;
+    }
+}
+
+.categorias__input-wrapper button {
+    background-color: $preto;
+    width: 3rem;
+    border-radius: .4rem;
+    cursor: pointer;
+    height: 3rem;
+    margin-left: 1.5rem;
+    @include flex(center, center);
+
+    img {
+        height: 1.8rem;
+    }
+}
+
+.adicionar-categoria-btn {
+    background-color: $preto;
+    cursor: pointer;
+    color: white;
+    font-weight: 700;
+    padding: .6rem 1rem;
+    border-radius: .4rem;
+    border: 2px solid transparent;
+    transition-duration: 200ms;
+    transition-property: border, background-color, color;
+    height: 3rem;
+    font-size: 1.1rem;
+
+    @include flex(center, center);
+    gap: 1rem;
+
+    .add-produto-btnícone-preto {
+        display: none;
+    }
+
+    .add-produto-btnícone-branco {
+        width: 1.6rem;
+    }
+}
