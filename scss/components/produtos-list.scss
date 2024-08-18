@@ -11,30 +11,45 @@ width: 100%;
 
 .produtos-list__search-area {
 
+   width: 100%;
+
    @include flex(flex-start, stretch);
    gap: 2rem;
 
-   input {
+   .produtos-list__input-wrapper {
+      width: 40rem;
       width: max(40rem, 40%);
       border: 1px solid $cinzaEscuro;
       border-radius: .4rem;
       padding: 1rem .8rem;
-      outline: none;
-   }
 
-   button {
-      background-color: $preto;
-      width: 4rem;
-      border-radius: .4rem;
-      cursor: pointer;
+      @include flex(flex-start, center);
+      gap: 1.5rem;
 
       img {
          height: 2rem;
       }
-   }
 
-   button:hover {
-      filter: brightness(1.2);
+      input {
+         flex: 1;
+         outline: none;
+      }
+
+      button {
+         background-color: transparent;
+         width: min-content;
+         cursor: pointer;
+
+         @include flex(center, center);
+      }
+   }
+}
+
+.produtos-list__add-produto-btn {
+   @include flex(center, center);
+
+   span {
+      white-space: nowrap;
    }
 }
 

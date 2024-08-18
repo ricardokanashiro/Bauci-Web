@@ -1,10 +1,14 @@
 import ProdutoCard from "./ProdutoCard"
 
-import TomateImg from "../assets/tomateImg.svg"
+import { produtos } from "../data"
 
 import "../css/components/produtos-list.css"
+import { useState } from "react"
 
 const ProdutosList = () => {
+
+   const [searchValue, setSearchValue] = useState("")
+
    return (
       <section className="produtos-list">
 
@@ -12,11 +16,27 @@ const ProdutosList = () => {
 
             <div className="produtos-list__search-area">
 
-               <input type="text" placeholder="Pesquisar produtos" />
+               <div className="produtos-list__input-wrapper">
 
-               <button>
-                  <img src="../assets/IconSearch.svg" alt="ícone de lupa" />
-               </button>
+                  <img src="../assets/IconSearch.svg" alt="ícone de busca" />
+
+                  <input
+                     type="text"
+                     placeholder="Pesquisar produtos"
+                     value={searchValue}
+                     onChange={(e) => setSearchValue(e.target.value)}
+                  />
+
+                  {
+                     searchValue !== "" && (
+                        <button onClick={() => setSearchValue("")}>
+                           <img src="../assets/iconX.svg" alt="ícone de X" />
+                        </button>
+                     )
+                  }
+
+               </div>
+
 
             </div>
 
@@ -34,40 +54,33 @@ const ProdutosList = () => {
          </header>
 
          <section className="produtos-list__produtos-wrapper">
-            <ProdutoCard
-               produtoImg={TomateImg}
-               produtoNome="Caixa de Tomate 300 gramas"
-               produtoPrazo="0-1"
-               produtoDescricao="Lorem ipsum dolor sit amet, consectetur adipiscing elit. At purus tellus arcu sit nibh consectetur."
-            />
 
-            <ProdutoCard
-               produtoImg={TomateImg}
-               produtoNome="Caixa de Tomate 300 gramas"
-               produtoPrazo="0-1"
-               produtoDescricao="Lorem ipsum dolor sit amet, consectetur adipiscing elit. At purus tellus arcu sit nibh consectetur."
-            />
+            {
 
-            <ProdutoCard
-               produtoImg={TomateImg}
-               produtoNome="Caixa de Tomate 300 gramas"
-               produtoPrazo="0-1"
-               produtoDescricao="Lorem ipsum dolor sit amet, consectetur adipiscing elit. At purus tellus arcu sit nibh consectetur."
-            />
+               searchValue !== "" ?
 
-            <ProdutoCard
-               produtoImg={TomateImg}
-               produtoNome="Caixa de Tomate 300 gramas"
-               produtoPrazo="0-1"
-               produtoDescricao="Lorem ipsum dolor sit amet, consectetur adipiscing elit. At purus tellus arcu sit nibh consectetur."
-            />
+                  produtos.map(produto => produto.nome.toLowerCase().includes(searchValue.toLowerCase()) && (
+                     <ProdutoCard
+                        produtoImg={produto.img}
+                        produtoNome={produto.nome}
+                        produtoPrazo={produto.prazo}
+                        produtoDescricao={produto.descricao}
+                     />
+                  ))
 
-            <ProdutoCard
-               produtoImg={TomateImg}
-               produtoNome="Caixa de Tomate 300 gramas"
-               produtoPrazo="0-1"
-               produtoDescricao="Lorem ipsum dolor sit amet, consectetur adipiscing elit. At purus tellus arcu sit nibh consectetur."
-            />
+                  :
+
+                  produtos.map(produto => (
+                     <ProdutoCard
+                        produtoImg={produto.img}
+                        produtoNome={produto.nome}
+                        produtoPrazo={produto.prazo}
+                        produtoDescricao={produto.descricao}
+                     />
+                  ))
+
+            }
+
          </section>
 
       </section>
