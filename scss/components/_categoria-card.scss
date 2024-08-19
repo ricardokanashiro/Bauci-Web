@@ -3,11 +3,10 @@
 .categoriasCard {
     background-color: $brancoAzulado;
     @include flex(space-between, center);
-    padding: 3.5rem 2.5rem;
+    padding: 4.5rem 3rem;
     border: 2px solid $preto;
     border-radius: .6rem;
-    width: 35rem;
-
+    width: 100%;
 }
 
 .categoriasCard h1 {

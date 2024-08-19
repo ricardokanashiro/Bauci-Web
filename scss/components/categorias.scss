@@ -8,7 +8,7 @@
     height: 100%
 }
 
-.sectionwrapper__categorias-page-wrapper{
+.sectionwrapper__categorias-page-wrapper {
     @include flex(flex-start, flex-start);
     flex-direction: column;
     height: 100%;
@@ -23,6 +23,13 @@
     margin-top: 4rem;
     padding: 2rem;
     border-radius: .6rem;
-    flex: 1;
     width: 100%;
+    flex: 1;
+}
+
+.categoriasLista__Wrapper {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.5rem;
 }
