@@ -6,14 +6,14 @@ import "../css/components/delete-product-modal.css"
 
 const DeleteProductModal = () => {
 
-   const { toggleDeleteProductModal } = useContext(ModalsContext)
+   const { toggleDeleteProductModal, toDeleteProduct } = useContext(ModalsContext)
 
    return (
       <div className="delete-product-modal">
          <h2>Deletar Produto?</h2>
 
          <p>
-            Tem certeza de que deseja deletar o produto "Tomate"? Após essa ação não será possível recuperá-lo.
+            {`Tem certeza de que deseja deletar o produto "${toDeleteProduct}"? Após essa ação não será possível recuperá-lo.`}
          </p>
 
          <div className="delete-product-modal__buttons-area">

@@ -6,15 +6,17 @@ import "../css/components/delete-category-modal.css"
 
 const DeleteCategoryModal = () => {
 
-   const { toggleDeleteCategoryModal } = useContext(ModalsContext)
+   const { toggleDeleteCategoryModal, toDeleteCategory } = useContext(ModalsContext)
 
    return (
       <div className="delete-category-modal">
          <h2>Deletar Categoria?</h2>
 
          <p>
-            Tem certeza de que deseja deletar a categoria "Cozinheiro"?
-            Após essa ação não será possível recuperá-la.
+            {
+               `Tem certeza de que deseja deletar a categoria "${toDeleteCategory}"? Após essa ação não será possível recuperá-la.`
+            }
+            
          </p>
 
          <div className="delete-category-modal__buttons-area">

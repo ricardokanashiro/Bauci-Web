@@ -7,14 +7,14 @@ import IconTrash from "../assets/IconTrashBlack.svg"
 
 import "../css/components/produtos-header.css"
 
-const ProdutosHeader = () => {
+const ProdutosHeader = ({ title }) => {
 
-   const { toggleEditCategoryModal, toggleDeleteCategoryModal } = useContext(ModalsContext)
+   const { toggleEditCategoryModal, toggleDeleteCategoryModal, setToDeleteCategory } = useContext(ModalsContext)
 
    return (
       <header className="produtos-header">
 
-            <h1>Cozinheiro</h1>
+            <h1>{title}</h1>
 
             <div className="produtos__actions-area">
 
@@ -23,7 +23,13 @@ const ProdutosHeader = () => {
                   <img src={IconEdit} alt="ícone de editar" />
                </button>
 
-               <button className="produtos__deletar-btn" onClick={toggleDeleteCategoryModal}>
+               <button 
+                  className="produtos__deletar-btn" 
+                  onClick={() => {
+                     toggleDeleteCategoryModal()
+                     setToDeleteCategory(title)
+                  }}
+               >
                   <span>Deletar</span>
                   <img src={IconTrash} alt="ícone de deletar" />
                </button>

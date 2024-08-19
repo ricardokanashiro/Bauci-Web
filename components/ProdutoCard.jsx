@@ -6,7 +6,7 @@ import "../css/components/produtos-card.css"
 
 const ProdutoCard = ({ produtoImg, produtoNome, produtoPrazo, produtoDescricao }) => {
 
-   const { toggleDeleteProductModal } = useContext(ModalsContext)
+   const { toggleDeleteProductModal, setToDeleteProduct } = useContext(ModalsContext)
 
    return (
       <div className="produto-card">
@@ -30,7 +30,13 @@ const ProdutoCard = ({ produtoImg, produtoNome, produtoPrazo, produtoDescricao }
                   <img src="../assets/IconEditWhite.svg" alt="ícone de editar" />
                </button>
 
-               <button className="produto-card__deletar-btn" onClick={toggleDeleteProductModal}>
+               <button 
+                  className="produto-card__deletar-btn" 
+                  onClick={() => {
+                     toggleDeleteProductModal()
+                     setToDeleteProduct(produtoNome)
+                  }}
+               >
                   <span>Deletar</span>
                   <img src="../assets/IconTrashBlack.svg" alt="ícone de deletar" />
                </button>
