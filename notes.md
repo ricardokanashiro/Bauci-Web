@@ -24,3 +24,5 @@
 -> Ao dar git checkout na main, não irá perder as alterações que está fazendo em outra branch (as que não tem commit em add). Porém, se elas conflitarem com as da branch main, terá que executar o git stash para salvar as alterações conflitantes antes de ir.
 
 -> git commit --amend (mudar último commit)
+
+# => Continuar modal de editar categoria

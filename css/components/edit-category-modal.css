@@ -1,0 +1,41 @@
+.edit-category-modal {
+  width: min(40rem, 80%);
+  background-color: white;
+  padding: 2.2rem 2rem;
+  border-radius: 0.6rem;
+}
+.edit-category-modal header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.edit-category-modal header h2 {
+  font-size: 2.5rem;
+}
+.edit-category-modal header button {
+  background-color: transparent;
+  cursor: pointer;
+}
+.edit-category-modal input {
+  width: 100%;
+  border: 1px solid #838393;
+  outline: none;
+  margin-top: 3rem;
+  font-size: 1.4rem;
+  padding: 1rem;
+  border-radius: 0.4rem;
+}
+.edit-category-modal .edit-category-modal__apply-btn {
+  width: 100%;
+  display: block;
+  background-color: #333840;
+  color: white;
+  margin-top: 2rem;
+  padding: 1.4rem;
+  border-radius: 0.4rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=edit-category-modal.css.map */

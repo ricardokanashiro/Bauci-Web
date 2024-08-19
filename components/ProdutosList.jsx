@@ -1,9 +1,10 @@
+import { useState } from "react"
+
 import ProdutoCard from "./ProdutoCard"
 
 import { produtos } from "../data"
 
 import "../css/components/produtos-list.css"
-import { useState } from "react"
 
 const ProdutosList = () => {
 
