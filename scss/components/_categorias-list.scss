@@ -1,41 +1,56 @@
 @use "../utils/" as *;
 
-.categorias__actions-area {
+.Categorias-list {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column
+}
+
+.Categorias-list header {
     @include flex(space-between, center);
     width: 100%;
     padding: 2rem;
     border-radius: .6rem;
+    background-color: transparent;
 }
 
-.categorias__input-wrapper {
-    height: 100%;
-    @include flex(flex-start, center)
+.categorias-list__icon-search {
+    width: 1.8rem;
+    margin-right: 1rem;
 }
 
-.categorias__input-wrapper input {
-    width: max(40rem, 40%);
-    border: 1px solid $cinzaEscuro;
-    border-radius: .4rem;
-    padding: .6rem .8rem;
+.categorias-list__input-wrapper input {
     outline: none;
+    width: 100%;
 
     &::placeholder {
         font-size: 1.2rem;
     }
 }
 
-.categorias__input-wrapper button {
-    background-color: $preto;
-    width: 3rem;
-    border-radius: .4rem;
+.categorias-list__clean-input-button {
+    padding: 0;
+    border: none;
+    background: none;
+    display: inline-block;
+    width: 2rem;
     cursor: pointer;
-    height: 3rem;
-    margin-left: 1.5rem;
-    @include flex(center, center);
+}
 
-    img {
-        height: 1.8rem;
-    }
+.categorias-list__clean-input-button img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.categorias-list__input-wrapper {
+    width: max(40rem, 40%);
+    border: 1px solid $cinzaEscuro;
+    border-radius: .4rem;
+    padding: .6rem .8rem;
+    height: 100%;
+    @include flex(flex-start, center)
 }
 
 .adicionar-categoria-btn {

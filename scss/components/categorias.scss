@@ -1,6 +1,6 @@
 @use "../components/categoria-card" as *;
 @use "../utils/" as *;
-@use "../components/categorias-header" as *;
+@use "../components/categorias-list" as *;
 
 .section-wrapper {
     background-color: $brancoAzulado;
@@ -14,11 +14,11 @@
     height: 100%;
 }
 
-.categorias__actions-area {
+.Categorias-list header {
     background-color: white;
 }
 
-.categorias__categorias-lista {
+.categorias-list__categorias-wrapper {
     background-color: white;
     margin-top: 4rem;
     padding: 2rem;
