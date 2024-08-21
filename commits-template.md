@@ -1,4 +1,5 @@
 - adding: ⭐
-- delete: ⭐
-- edit: ⭐
+- deleting: ⭐
+- editing: ⭐
 - refactoring: ⭐
+- fixing ⭐

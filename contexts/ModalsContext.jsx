@@ -8,6 +8,7 @@ const ModalsContextProvider = ({ children }) => {
    const [editCategoryModalActive, setEditCategoryModalActive] = useState(false)
    const [deleteCategoryModalActive, setDeleteCategoryModalActive] = useState(false)
    const [deleteProductModalActive, setDeleteProductModalActive] = useState(false)
+   const [addProductModalActive, setAddProductModalActive] = useState(false)
 
    const [toDeleteCategory, setToDeleteCategory] = useState("")
    const [toDeleteProduct, setToDeleteProduct] = useState("")
@@ -27,6 +28,11 @@ const ModalsContextProvider = ({ children }) => {
       setDeleteProductModalActive(prev => !prev)
    }
 
+   function toggleAddProductModal() {
+      setModalWrapperActive(prev => !prev)
+      setAddProductModalActive(prev => !prev)
+   }
+
    return (
       <ModalsContext.Provider value={{
          modalWrapperActive, 
@@ -34,7 +40,8 @@ const ModalsContextProvider = ({ children }) => {
          deleteCategoryModalActive, toggleDeleteCategoryModal,
          deleteProductModalActive, toggleDeleteProductModal,
          toDeleteCategory, setToDeleteCategory,
-         toDeleteProduct, setToDeleteProduct
+         toDeleteProduct, setToDeleteProduct,
+         addProductModalActive, toggleAddProductModal
       }}>
          { children }
       </ModalsContext.Provider>

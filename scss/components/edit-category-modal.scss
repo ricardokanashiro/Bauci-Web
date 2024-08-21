@@ -1,5 +1,9 @@
 @use "../utils/" as *;
 
+.edit-category-modal--disabled {
+   display: none;
+}
+
 .edit-category-modal {
    width: min(40rem, 80%);
    background-color: white;
@@ -41,5 +45,9 @@
       font-size: 1.4rem;
       font-weight: 700;
       cursor: pointer;
+   }
+
+   .edit-category-modal__apply-btn:hover {
+      filter: brightness(1.2);
    }
 }

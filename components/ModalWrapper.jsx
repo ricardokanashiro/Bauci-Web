@@ -3,6 +3,7 @@ import { useContext } from "react"
 import EditCategoryModal from "./EditCategoryModal"
 import DeleteCategoryModal from "./DeleteCategoryModal"
 import DeleteProductModal from "./DeleteProductModal"
+import AddProductModal from "./AddProductModal"
 
 import { ModalsContext } from "../contexts/ModalsContext"
 
@@ -22,6 +23,7 @@ const ModalWrapper = ({ selectedSection }) => {
                   { editCategoryModalActive && <EditCategoryModal /> }
                   { deleteCategoryModalActive && <DeleteCategoryModal /> }
                   { deleteProductModalActive && <DeleteProductModal /> }
+                  <AddProductModal />
                </>
             )
          }

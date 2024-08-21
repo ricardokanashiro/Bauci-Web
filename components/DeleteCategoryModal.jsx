@@ -6,10 +6,10 @@ import "../css/components/delete-category-modal.css"
 
 const DeleteCategoryModal = () => {
 
-   const { toggleDeleteCategoryModal, toDeleteCategory } = useContext(ModalsContext)
+   const { toggleDeleteCategoryModal, toDeleteCategory, deleteCategoryModalActive } = useContext(ModalsContext)
 
    return (
-      <div className="delete-category-modal">
+      <div className={deleteCategoryModalActive ? "delete-category-modal" : "delete-category-modal--disabled"}>
          <h2>Deletar Categoria?</h2>
 
          <p>

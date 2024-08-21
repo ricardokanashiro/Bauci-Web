@@ -1,0 +1,189 @@
+@use "../utils/" as *;
+
+.add-product-modal--disabled {
+   display: none;
+}
+
+.add-product-modal {
+   width: min(60rem, 80%);
+   background-color: white;
+   padding: 2.2rem 2rem;
+   border-radius: .6rem;
+
+   header {
+
+      @include flex(space-between, center);
+
+      h2 {
+         font-size: 2.5rem;
+         color: $preto;
+      }
+
+      button {
+
+         background-color: transparent;
+         cursor: pointer;
+
+         @include flex(center, center);
+      }
+   }
+
+
+   form {
+
+      width: 100%;
+      margin: 3rem 0;
+      
+      @include flex(space-between, stretch);
+      gap: 4rem;
+
+      .add-product-modal__image-picker {
+         border: 1px solid $cinzaEscuro;
+         width: 24rem;
+         position: relative;
+         border-radius: .4rem;
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-position: center center;
+
+         @include flex(center, center);
+
+         p {
+            font-size: 2rem;
+            color: gray;
+            font-weight: 500;
+         }
+
+         button {
+            width: 4rem;
+            height: 4rem;
+
+            position: absolute;
+            bottom: -1.2rem;
+            right: -1.2rem;
+
+            background-color: $preto;
+            border-radius: 50%;
+            cursor: pointer;
+
+            .add-product-modal__image-picker-content-wrapper {
+               position: relative;
+               width: 100%;
+               height: 100%;
+
+               @include flex(center, center);
+
+               input[type="file"] {
+                  display: none;
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  z-index: 1;
+               }
+
+               img {
+                  height: 1.8rem;
+               }
+            }
+
+         }
+
+      }
+
+      .add-product-modal__product-info-area {
+
+         @include flex(center, flex-start);
+         flex-flow: column nowrap;
+         gap: 1.5rem;
+         flex: 1;
+
+         input {
+            width: 100%;
+            border: 1px solid $cinzaEscuro;
+            outline: none;
+            font-size: 1.4rem;
+            padding: 1rem;
+            border-radius: .4rem;
+         }
+
+         textarea {
+            width: 100%;
+            border: 1px solid $cinzaEscuro;
+            outline: none;
+            font-size: 1.4rem;
+            padding: 1rem;
+            border-radius: .4rem;
+            resize: none;
+         }
+
+         .add-product-modal__prazo-area {
+            position: relative;
+
+            h2 {
+               color: rgb(114, 114, 114);
+               font-size: 1.45rem;
+               font-weight: 400;
+               margin-bottom: 1rem;
+            }
+         }
+
+         .add-product-modal__input-area {
+
+            @include flex(space-between, center);
+            gap: 1rem;
+
+            div {
+               width: 2rem;
+               height: .1rem;
+               background-color: $cinzaEscuro;
+            }
+
+            input[type=number]::-webkit-inner-spin-button{
+               appearance: none; 
+           }
+         }
+
+         button {
+
+            font-size: 1.4rem;
+            padding: 1rem;
+            border-radius: .4rem;
+            background-color: transparent;
+            border: 1px solid $cinzaEscuro;
+            color: gray;
+            cursor: pointer;
+
+            @include flex(flex-start, center);
+            gap: 1.5rem;
+
+            .add-product-modal__arrow-icon {
+               height: 2rem;
+            }
+
+            .add-product-modal__arrow-icon--active {
+               transform: rotate(180deg);
+            }
+         }
+
+      }
+   }
+
+   .add-product-modal__add-btn {
+      width: 100%;
+      display: block;
+      background-color: $preto;
+      color: white;
+      margin-top: 2rem;
+      padding: 1.4rem;
+      border-radius: .4rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      cursor: pointer;
+   }
+
+   .add-product-modal__add-btn:hover {
+      filter: brightness(1.2);
+   }
+}

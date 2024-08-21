@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 
 import ProdutoCard from "./ProdutoCard"
+import { ModalsContext } from "../contexts/ModalsContext"
 
 import { produtos } from "../data"
 
@@ -9,6 +10,8 @@ import "../css/components/produtos-list.css"
 const ProdutosList = () => {
 
    const [searchValue, setSearchValue] = useState("")
+
+   const { toggleAddProductModal } = useContext(ModalsContext)
 
    return (
       <section className="produtos-list">
@@ -41,7 +44,7 @@ const ProdutosList = () => {
 
             </div>
 
-            <button className="produtos-list__add-produto-btn">
+            <button className="produtos-list__add-produto-btn" onClick={toggleAddProductModal}>
 
                <span>Adicionar Produto</span>
 

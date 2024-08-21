@@ -1,5 +1,9 @@
 @use "../utils/" as *;
 
+.delete-category-modal--disabled {
+   display: none;
+}
+
 .delete-category-modal {
    width: min(40rem, 80%);
    background-color: white;
