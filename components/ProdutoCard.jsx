@@ -6,7 +6,7 @@ import "../css/components/produtos-card.css"
 
 const ProdutoCard = ({ produtoImg, produtoNome, produtoPrazo, produtoDescricao }) => {
 
-   const { toggleDeleteProductModal, setToDeleteProduct } = useContext(ModalsContext)
+   const { toggleDeleteProductModal, setToDeleteProduct, toggleEditProductModal } = useContext(ModalsContext)
 
    return (
       <div className="produto-card">
@@ -25,7 +25,7 @@ const ProdutoCard = ({ produtoImg, produtoNome, produtoPrazo, produtoDescricao }
 
             <div className="produto-card__actions-area">
 
-               <button className="produto-card__editar-btn">
+               <button className="produto-card__editar-btn" onClick={toggleEditProductModal}>
                   <span>Editar</span>
                   <img src="../assets/IconEditWhite.svg" alt="ícone de editar" />
                </button>

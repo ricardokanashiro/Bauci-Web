@@ -4,6 +4,7 @@ import EditCategoryModal from "./EditCategoryModal"
 import DeleteCategoryModal from "./DeleteCategoryModal"
 import DeleteProductModal from "./DeleteProductModal"
 import AddProductModal from "./AddProductModal"
+import EditProductModal from "./EditProductModal"
 
 import { ModalsContext } from "../contexts/ModalsContext"
 
@@ -12,7 +13,9 @@ import "../css/components/modal-wrapper.css"
 const ModalWrapper = ({ selectedSection }) => {
 
    const { 
-      editCategoryModalActive, deleteCategoryModalActive, deleteProductModalActive 
+      editCategoryModalActive, deleteCategoryModalActive, 
+      deleteProductModalActive, addProductModalActive,
+      editProductModalActive
    } = useContext(ModalsContext)
 
    return (
@@ -23,7 +26,8 @@ const ModalWrapper = ({ selectedSection }) => {
                   { editCategoryModalActive && <EditCategoryModal /> }
                   { deleteCategoryModalActive && <DeleteCategoryModal /> }
                   { deleteProductModalActive && <DeleteProductModal /> }
-                  <AddProductModal />
+                  { addProductModalActive && <AddProductModal /> }
+                  { editProductModalActive && <EditProductModal /> }
                </>
             )
          }
