@@ -25,4 +25,10 @@
 
 -> git commit --amend (mudar último commit)
 
+--> Para remover mudanças do staged pode dar "git reset", e para remover mudanças do unstaged pode dar "git checkout -- ."
+--> "git add -p" para adicionar apenas blocos ou partes menores de um arquivo em stage
+--> git stash é um atalho para git stash push (a mesma coisa), mas caso queira utilizar mais configurações como flags, é recomendado o uso de git stash push
+--> git stash push -k vs git stash push - com a flag "-k" você STASHA apenas mudanças unstaged, preservando as staged
+--> Caso eu queira ir para uma outra branch com checkout, devo dar "git stash push" NORMAL, pois mudanças em staged também conflitam
+
 # => Continuar modal de editar categoria
