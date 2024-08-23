@@ -6,7 +6,7 @@ import "../css/components/edit-product-modal.css"
 
 const EditProductModal = () => {
 
-   const { toggleEditProductModal } = useContext(ModalsContext)
+   const { toggleEditProductModal, toEditProduct } = useContext(ModalsContext)
 
    function loadImage(e) {
 
@@ -51,9 +51,9 @@ const EditProductModal = () => {
 
          <form onSubmit={(e) => e.preventDefault()}>
 
-            <fieldset className="edit-product-modal__image-picker">
+            <fieldset className="edit-product-modal__image-picker" style={{ backgroundImage: `url(${toEditProduct.produtoImg})` }}>
 
-               <p>Imagem</p>
+               <p style={{ display: "none" }}>Imagem</p>
 
                <button
                   className="edit-product-modal__image-picker-btn"
@@ -73,8 +73,8 @@ const EditProductModal = () => {
 
             <fieldset className="edit-product-modal__product-info-area">
 
-               <input type="text" placeholder="Nome do produto" />
-               <textarea placeholder="Descrição do produto"></textarea>
+               <input type="text" placeholder="Nome do produto" value={toEditProduct.produtoNome} />
+               <textarea placeholder="Descrição do produto" value={toEditProduct.produtoDescricao}></textarea>
 
                <div className="edit-product-modal__prazo-area">
 
@@ -82,11 +82,11 @@ const EditProductModal = () => {
                   
                   <div className="edit-product-modal__input-area">
 
-                     <input type="number" placeholder="Mínimo" />
+                     <input type="number" placeholder="Mínimo" value={toEditProduct.produtoPrazoMin} />
 
                      <div></div>
 
-                     <input type="number" placeholder="Máximo" />
+                     <input type="number" placeholder="Máximo" value={toEditProduct.produtoPrazoMax} />
 
                   </div>
 
@@ -96,7 +96,7 @@ const EditProductModal = () => {
 
          </form>
 
-         <button type="submit" className="edit-product-modal__add-btn">Adicionar</button>
+         <button type="submit" className="edit-product-modal__add-btn">Aplicar</button>
 
       </div>
    )

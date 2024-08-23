@@ -7,6 +7,9 @@ import { produtos } from "../data"
 
 import "../css/components/produtos-list.css"
 
+console.log(produtos[0].prazoMinimo)
+console.log(produtos[0].prazoMaximo)
+
 const ProdutosList = () => {
 
    const [searchValue, setSearchValue] = useState("")
@@ -67,7 +70,8 @@ const ProdutosList = () => {
                      <ProdutoCard
                         produtoImg={produto.img}
                         produtoNome={produto.nome}
-                        produtoPrazo={produto.prazo}
+                        produtoPrazoMin={produto.prazoMinimo}
+                        produtoPrazoMax={produto.prazoMaximo}
                         produtoDescricao={produto.descricao}
                      />
                   ))
@@ -78,7 +82,8 @@ const ProdutosList = () => {
                      <ProdutoCard
                         produtoImg={produto.img}
                         produtoNome={produto.nome}
-                        produtoPrazo={produto.prazo}
+                        produtoPrazoMin={produto.prazoMinimo}
+                        produtoPrazoMax={produto.prazoMaximo}
                         produtoDescricao={produto.descricao}
                      />
                   ))
