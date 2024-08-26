@@ -1,0 +1,53 @@
+@use "../utils/" as *;
+
+.edit-category-modal--disabled {
+   display: none;
+}
+
+.edit-category-modal {
+   width: min(40rem, 80%);
+   background-color: white;
+   padding: 2.2rem 2rem;
+   border-radius: .6rem;
+
+   header {
+
+      @include flex(space-between, center);
+
+      h2 {
+         font-size: 2.5rem;
+      }
+
+      button {
+         background-color: transparent;
+         cursor: pointer;
+      }
+   }
+
+   input {
+      width: 100%;
+      border: 1px solid $cinzaEscuro;
+      outline: none;
+      margin-top: 3rem;
+      font-size: 1.4rem;
+      padding: 1rem;
+      border-radius: .4rem;
+   }
+
+   .edit-category-modal__apply-btn {
+      width: 100%;
+      display: block;
+      background-color: $preto;
+      color: white;
+      margin-top: 2rem;
+      padding: 1.4rem;
+      border-radius: .4rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      cursor: pointer;
+   }
+
+   .edit-category-modal__apply-btn:hover {
+      filter: brightness(1.2);
+   }
+}

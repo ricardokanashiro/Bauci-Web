@@ -1,0 +1,161 @@
+.edit-product-modal {
+  width: min(60rem, 80%);
+  background-color: white;
+  padding: 2.2rem 2rem;
+  border-radius: 0.6rem;
+}
+.edit-product-modal header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.edit-product-modal header h2 {
+  font-size: 2.5rem;
+  color: #333840;
+}
+.edit-product-modal header button {
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.edit-product-modal form {
+  width: 100%;
+  margin: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 4rem;
+}
+.edit-product-modal form .edit-product-modal__image-picker {
+  border: 1px solid #838393;
+  width: 24rem;
+  position: relative;
+  border-radius: 0.4rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.edit-product-modal form .edit-product-modal__image-picker p {
+  font-size: 2rem;
+  color: gray;
+  font-weight: 500;
+}
+.edit-product-modal form .edit-product-modal__image-picker button {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  bottom: -1.2rem;
+  right: -1.2rem;
+  background-color: #333840;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.edit-product-modal form .edit-product-modal__image-picker button .edit-product-modal__image-picker-content-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.edit-product-modal form .edit-product-modal__image-picker button .edit-product-modal__image-picker-content-wrapper input[type=file] {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.edit-product-modal form .edit-product-modal__image-picker button .edit-product-modal__image-picker-content-wrapper img {
+  height: 1.8rem;
+}
+.edit-product-modal form .edit-product-modal__product-info-area {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: column nowrap;
+  gap: 1.5rem;
+  flex: 1;
+}
+.edit-product-modal form .edit-product-modal__product-info-area input {
+  width: 100%;
+  border: 1px solid #838393;
+  outline: none;
+  font-size: 1.4rem;
+  padding: 1rem;
+  border-radius: 0.4rem;
+}
+.edit-product-modal form .edit-product-modal__product-info-area textarea {
+  width: 100%;
+  border: 1px solid #838393;
+  outline: none;
+  font-size: 1.4rem;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  resize: none;
+}
+.edit-product-modal form .edit-product-modal__product-info-area .edit-product-modal__prazo-area {
+  position: relative;
+}
+.edit-product-modal form .edit-product-modal__product-info-area .edit-product-modal__prazo-area h2 {
+  color: rgb(114, 114, 114);
+  font-size: 1.45rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.edit-product-modal form .edit-product-modal__product-info-area .edit-product-modal__input-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.edit-product-modal form .edit-product-modal__product-info-area .edit-product-modal__input-area div {
+  width: 2rem;
+  height: 0.1rem;
+  background-color: #838393;
+}
+.edit-product-modal form .edit-product-modal__product-info-area .edit-product-modal__input-area input[type=number]::-webkit-inner-spin-button {
+  appearance: none;
+}
+.edit-product-modal form .edit-product-modal__product-info-area button {
+  font-size: 1.4rem;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  background-color: transparent;
+  border: 1px solid #838393;
+  color: gray;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+}
+.edit-product-modal form .edit-product-modal__product-info-area button .edit-product-modal__arrow-icon {
+  height: 2rem;
+}
+.edit-product-modal form .edit-product-modal__product-info-area button .edit-product-modal__arrow-icon--active {
+  transform: rotate(180deg);
+}
+.edit-product-modal .edit-product-modal__add-btn {
+  width: 100%;
+  display: block;
+  background-color: #333840;
+  color: white;
+  margin-top: 2rem;
+  padding: 1.4rem;
+  border-radius: 0.4rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.edit-product-modal .edit-product-modal__add-btn:hover {
+  filter: brightness(1.2);
+}
+
+/*# sourceMappingURL=edit-product-modal.css.map */

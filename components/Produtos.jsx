@@ -1,28 +1,15 @@
+import ProdutosHeader from "./ProdutosHeader"
+import ProdutosList from "./ProdutosList"
+
 import "../css/components/produtos.css"
 
 const Produtos = () => {
    return (
       <section className="produtos">
 
-         <header>
+         <ProdutosHeader title="Cozinha" />
 
-            <h1>Cozinheiro</h1>
-
-            <div className="produtos__actions-area">
-
-               <button>
-                  <span>Editar</span>
-                  <img src="#" alt="#" />
-               </button>
-
-               <button>
-                  <span>Deletar</span>
-                  <img src="#" alt="#" />
-               </button>
-
-            </div>
-
-         </header>
+         <ProdutosList />
 
       </section>
    )

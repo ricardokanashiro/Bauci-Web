@@ -1,0 +1,91 @@
+@charset "UTF-8";
+.produtos-list {
+  margin-top: 6rem;
+  width: 100%;
+}
+.produtos-list header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.produtos-list__search-area {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 2rem;
+}
+.produtos-list__search-area .produtos-list__input-wrapper {
+  width: 40rem;
+  width: max(40rem, 40%);
+  border: 1px solid #838393;
+  border-radius: 0.4rem;
+  padding: 1rem 0.8rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+}
+.produtos-list__search-area .produtos-list__input-wrapper img {
+  height: 2rem;
+}
+.produtos-list__search-area .produtos-list__input-wrapper input {
+  flex: 1;
+  outline: none;
+}
+.produtos-list__search-area .produtos-list__input-wrapper button {
+  background-color: transparent;
+  width: min-content;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.produtos-list__add-produto-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.produtos-list__add-produto-btn span {
+  white-space: nowrap;
+}
+
+.produtos-list__add-produto-btn {
+  background-color: #333840;
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+  padding: 1.2rem 1.6rem;
+  border-radius: 0.4rem;
+  border: 2px solid transparent;
+  transition-duration: 200ms;
+  transition-property: border, background-color, color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.produtos-list__add-produto-btn .add-produto-btn__ícone-preto {
+  display: none;
+}
+
+.produtos-list__add-produto-btn:hover {
+  filter: brightness(1.2);
+}
+.produtos-list__add-produto-btn:hover .add-produto-btn__ícone-branco {
+  display: none;
+}
+.produtos-list__add-produto-btn:hover .add-produto-btn__ícone-preto {
+  display: block;
+}
+
+.produtos-list__produtos-wrapper {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  gap: 2rem;
+}
+
+/*# sourceMappingURL=produtos-list.css.map */
