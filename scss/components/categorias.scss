@@ -1,7 +1,7 @@
-@use "../components/categoria-card" as *;
+@use "./categoria-card" as *;
 @use "../utils/" as *;
-@use "../components/categorias-list" as *;
-@use "../components/add-category-modal" as *;
+@use "./categorias-list" as *;
+@use "./add-category-modal" as *;
 
 .section-wrapper {
     background-color: $brancoAzulado;
