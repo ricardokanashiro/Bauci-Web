@@ -1,5 +1,9 @@
 import { useState } from "react"
 
+import { useContext } from "react"
+
+import { ModalsContext } from "../contexts/ModalsContext"
+
 import CategoriaCard from "./CategoriaCard"
 
 import { categorias } from "../data.js"
@@ -15,6 +19,8 @@ import "../assets/IconPlus.svg"
 const CategoriasList = () => {
 
     const [searchValue, setSearchValue] = useState("");
+
+    const { toggleAddCategoryModal } = useContext(ModalsContext);
 
     return (
         <section className="Categorias-list">
@@ -42,7 +48,7 @@ const CategoriasList = () => {
 
                 </div>
 
-                <button className="adicionar-categoria-btn">
+                <button className="adicionar-categoria-btn"  onClick={toggleAddCategoryModal}>
                     <span>Adicionar Categoria</span>
                     <img className="add-produto-btnícone-branco" src="../assets/IconPlus.svg" alt="Ícone de +" />
                 </button>

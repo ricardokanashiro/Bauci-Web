@@ -6,6 +6,7 @@ import UsersIconWhite from "../assets/iconUsersWhite.svg"
 import UsersIconGray from "../assets/IconUsers.svg"
 
 const Layout = ({ children, setSelectedSection, selectedSection }) => {
+
    return (
       <section className="layout">
 
@@ -49,6 +50,7 @@ const Layout = ({ children, setSelectedSection, selectedSection }) => {
          </section>
 
       </section>
+      
    )
 }
 
