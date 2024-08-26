@@ -1,0 +1,47 @@
+.produtos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.produtos-header h1 {
+  font-size: 4.5rem;
+}
+
+.produtos__actions-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.produtos__actions-area button {
+  border: 2px solid #333840;
+  padding: 1rem 2rem;
+  border-radius: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.produtos__editar-btn {
+  background-color: #333840;
+  color: white;
+}
+
+.produtos__editar-btn:hover {
+  filter: brightness(1.2);
+}
+
+.produtos__deletar-btn {
+  background-color: transparent;
+  color: #333840;
+}
+
+.produtos__deletar-btn:hover {
+  filter: brightness(1.2);
+}
+
+/*# sourceMappingURL=produtos-header.css.map */

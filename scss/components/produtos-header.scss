@@ -1,0 +1,44 @@
+@use "../utils/" as *;
+
+.produtos-header {
+   @include flex(space-between, center);
+
+   h1 {
+      font-size: 4.5rem;
+   }
+}
+
+.produtos__actions-area {
+   @include flex(center, center);
+   gap: 1rem;
+
+   button {
+      border: 2px solid $preto;
+      padding: 1rem 2rem;
+      border-radius: .6rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      cursor: pointer;
+
+      @include flex(center, center);
+      gap: 1rem;
+   }
+}
+
+.produtos__editar-btn {
+   background-color: $preto;
+   color: white;
+}
+
+.produtos__editar-btn:hover {
+   filter: brightness(1.2);
+}
+
+.produtos__deletar-btn {
+   background-color: transparent;
+   color: $preto;
+}
+
+.produtos__deletar-btn:hover {
+   filter: brightness(1.2);
+}

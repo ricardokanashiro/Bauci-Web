@@ -1,9 +1,9 @@
 import { useState } from "react"
 
 import Layout from "../components/Layout"
-import Categorias from "../components/Categorias"
 import Usuarios from "../components/Usuarios"
 import Produtos from "../components/Produtos"
+
 import ModalsContextProvider from "../contexts/ModalsContext"
 
 const App = () => {
@@ -12,13 +12,13 @@ const App = () => {
 
    return (
       <ModalsContextProvider>
-      <Layout
-         selectedSection={selectedSection}
-         setSelectedSection={setSelectedSection}
-      >
-         {selectedSection === "produtos" && (<Categorias />)}
-         {selectedSection === "usuarios" && (<Usuarios />)}
-      </Layout>
+         <Layout
+            selectedSection={selectedSection}
+            setSelectedSection={setSelectedSection}
+         >
+            {selectedSection === "produtos" && (<Produtos />)}
+            {selectedSection === "usuarios" && (<Usuarios />)}
+         </Layout>
       </ModalsContextProvider>
    )
 }

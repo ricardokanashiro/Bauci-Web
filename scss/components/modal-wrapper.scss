@@ -1,0 +1,12 @@
+@use "../utils/" as *;
+
+.modal-wrapper {
+   background-color: rgba(0, 0, 0, 0.45);
+   width: 100dvw;
+   height: 100dvh;
+   position: absolute;
+   top: 0;
+   left: 0;
+
+   @include flex(center, center);
+}
