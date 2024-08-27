@@ -1,6 +1,4 @@
-import { useState } from "react"
-
-import { useContext } from "react"
+import { useState, useContext } from "react"
 
 import { ModalsContext } from "../contexts/ModalsContext"
 
@@ -9,12 +7,6 @@ import CategoriaCard from "./CategoriaCard"
 import { categorias } from "../data.js"
 
 import "../css/components/categorias.css"
-
-import "../assets/IconSearch.svg"
-
-import "../assets/IconSearch.svg"
-
-import "../assets/IconPlus.svg"
 
 const CategoriasList = () => {
 
@@ -65,7 +57,7 @@ const CategoriasList = () => {
 
                             categorias.map(categoria => categoria.nome.toLowerCase().includes(searchValue.toLowerCase()) && (
                                 <CategoriaCard
-                                    categoriaNome={categoria.nome}
+                                    categoria={categoria}
                                 />
                             ))
 
@@ -73,7 +65,7 @@ const CategoriasList = () => {
 
                             categorias.map(categoria => (
                                 <CategoriaCard
-                                    categoriaNome={categoria.nome}
+                                    categoria={categoria}
                                 />
                             ))
 

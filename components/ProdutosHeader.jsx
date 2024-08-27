@@ -1,20 +1,22 @@
 import { useContext } from "react"
 
 import { ModalsContext } from "../contexts/ModalsContext"
+import { NavigationContext } from "../contexts/NavigationContext"
 
 import IconEdit from "../assets/IconEditWhite.svg"
 import IconTrash from "../assets/IconTrashBlack.svg"
 
 import "../css/components/produtos-header.css"
 
-const ProdutosHeader = ({ title }) => {
+const ProdutosHeader = () => {
 
    const { toggleEditCategoryModal, toggleDeleteCategoryModal, setToDeleteCategory } = useContext(ModalsContext)
+   const { selectedCategory, setSelectedCategory } = useContext(NavigationContext)
 
    return (
       <header className="produtos-header">
 
-            <h1>{title}</h1>
+            <h1>{selectedCategory.nome}</h1>
 
             <div className="produtos__actions-area">
 

@@ -1,18 +1,16 @@
 import { useContext, useState } from "react"
 
 import ProdutoCard from "./ProdutoCard"
-import { ModalsContext } from "../contexts/ModalsContext"
 
-import { produtos } from "../data"
+import { ModalsContext } from "../contexts/ModalsContext"
+import { NavigationContext } from "../contexts/NavigationContext"
 
 import "../css/components/produtos-list.css"
-
-console.log(produtos[0].prazoMinimo)
-console.log(produtos[0].prazoMaximo)
 
 const ProdutosList = () => {
 
    const [searchValue, setSearchValue] = useState("")
+   const { selectedCategory, setSelectedCategory } = useContext(NavigationContext)
 
    const { toggleAddProductModal } = useContext(ModalsContext)
 
@@ -66,27 +64,29 @@ const ProdutosList = () => {
 
                searchValue !== "" ?
 
-                  produtos.map(produto => produto.nome.toLowerCase().includes(searchValue.toLowerCase()) && (
-                     <ProdutoCard
-                        produtoImg={produto.img}
-                        produtoNome={produto.nome}
-                        produtoPrazoMin={produto.prazoMinimo}
-                        produtoPrazoMax={produto.prazoMaximo}
-                        produtoDescricao={produto.descricao}
-                     />
-                  ))
+                  selectedCategory.produtos
+                     .map(produto => produto.nome.toLowerCase().includes(searchValue.toLowerCase()) && (
+                        <ProdutoCard
+                           produtoImg={produto.img}
+                           produtoNome={produto.nome}
+                           produtoPrazoMin={produto.prazoMinimo}
+                           produtoPrazoMax={produto.prazoMaximo}
+                           produtoDescricao={produto.descricao}
+                        />
+                     ))
 
                   :
 
-                  produtos.map(produto => (
-                     <ProdutoCard
-                        produtoImg={produto.img}
-                        produtoNome={produto.nome}
-                        produtoPrazoMin={produto.prazoMinimo}
-                        produtoPrazoMax={produto.prazoMaximo}
-                        produtoDescricao={produto.descricao}
-                     />
-                  ))
+                  selectedCategory.produtos
+                     .map(produto => (
+                        <ProdutoCard
+                           produtoImg={produto.img}
+                           produtoNome={produto.nome}
+                           produtoPrazoMin={produto.prazoMinimo}
+                           produtoPrazoMax={produto.prazoMaximo}
+                           produtoDescricao={produto.descricao}
+                        />
+                     ))
 
             }
 

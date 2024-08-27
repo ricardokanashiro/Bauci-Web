@@ -3,6 +3,7 @@ import { useContext } from "react"
 import ModalWrapper from "./ModalWrapper"
 
 import { ModalsContext } from "../contexts/ModalsContext"
+import { NavigationContext } from "../contexts/NavigationContext"
 
 import CartIconWhite from "../assets/IconCart.svg"
 import CartIconGray from "../assets/IconCartGray.svg"
@@ -11,9 +12,11 @@ import UsersIconGray from "../assets/IconUsers.svg"
 
 import "../css/main.css"
 
-const Layout = ({ children, setSelectedSection, selectedSection }) => {
+const Layout = ({ children }) => {
 
    const { modalWrapperActive } = useContext(ModalsContext)
+
+   const { selectedSection, setSelectedSection } = useContext(NavigationContext)
 
    return (
 
@@ -28,11 +31,11 @@ const Layout = ({ children, setSelectedSection, selectedSection }) => {
                <nav className="navbar__links-area">
 
                   <button
-                     className={selectedSection === "produtos" ? "navbar-item navbar-item--active" : "navbar-item"}
-                     onClick={() => setSelectedSection("produtos")}
+                     className={selectedSection === "produtos" || selectedSection === "categorias" ? "navbar-item navbar-item--active" : "navbar-item"}
+                     onClick={() => setSelectedSection("categorias")}
                   >
 
-                     <img src={selectedSection === "produtos" ? CartIconWhite : CartIconGray} alt="ícone de carrinho" />
+                     <img src={selectedSection === "produtos" || selectedSection === "categorias" ? CartIconWhite : CartIconGray} alt="ícone de carrinho" />
                      <span>Produtos</span>
 
                   </button>

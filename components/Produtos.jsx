@@ -7,7 +7,7 @@ const Produtos = () => {
    return (
       <section className="produtos">
 
-         <ProdutosHeader title="Cozinha" />
+         <ProdutosHeader />
 
          <ProdutosList />
 
