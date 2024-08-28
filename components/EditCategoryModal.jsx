@@ -1,12 +1,31 @@
 import { useContext } from "react"
 
 import { ModalsContext } from "../contexts/ModalsContext"
+import { DataContext } from "../contexts/DataContext"
 
 import "../css/components/edit-category-modal.css"
+import { NavigationContext } from "../contexts/NavigationContext"
 
 const EditCategoryModal = () => {
 
    const { toggleEditCategoryModal, editCategoryModalActive } = useContext(ModalsContext)
+   const { setSharedCategorias, sharedCategorias } = useContext(DataContext)
+   const { selectedCategory, setSelectedCategory } = useContext(NavigationContext)
+
+   function editCategory() {
+      const newName = document.querySelector(".edit-category-modal input").value
+
+      setSharedCategorias(categorias => categorias.map(
+         categoria => categoria.nome === selectedCategory ?
+            { ...categoria, nome: newName }
+            :
+            categoria
+      ))
+
+      setSelectedCategory(newName)
+
+      toggleEditCategoryModal()
+   }
 
    return (
       <div className={editCategoryModalActive ? "edit-category-modal" : "edit-category-modal--disabled"}>
@@ -22,7 +41,7 @@ const EditCategoryModal = () => {
 
          <input type="text" placeholder="Nome da categoria" />
 
-         <button className="edit-category-modal__apply-btn">Aplicar</button>
+         <button className="edit-category-modal__apply-btn" onClick={editCategory}>Aplicar</button>
       </div>
    )
 }

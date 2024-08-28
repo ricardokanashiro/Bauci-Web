@@ -5,7 +5,7 @@ export const NavigationContext = createContext()
 const NavigationContextProvider = ({ children }) => {
 
    const [selectedSection, setSelectedSection] = useState("categorias")
-   const [selectedCategory, setSelectedCategory] = useState({})
+   const [selectedCategory, setSelectedCategory] = useState("")
 
    return (
       <NavigationContext.Provider value={
