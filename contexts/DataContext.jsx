@@ -9,7 +9,7 @@ const DataContextProvider = ({ children }) => {
    const [sharedCategorias, setSharedCategorias] = useState(categorias)
 
    return (
-      <DataContext.Provider>
+      <DataContext.Provider value={{ sharedCategorias, setSharedCategorias }}>
          { children }
       </DataContext.Provider>
    )

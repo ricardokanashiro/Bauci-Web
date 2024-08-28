@@ -1,6 +1,7 @@
 import { useState, useContext } from "react"
 
 import { ModalsContext } from "../contexts/ModalsContext"
+import { DataContext } from "../contexts/DataContext"
 
 import CategoriaCard from "./CategoriaCard"
 
@@ -11,7 +12,7 @@ const CategoriasList = () => {
     const [searchValue, setSearchValue] = useState("");
 
     const { toggleAddCategoryModal } = useContext(ModalsContext);
-    const { sharedCategorias } = useContext(DataCon)
+    const { sharedCategorias } = useContext(DataContext)
 
     return (
         <section className="Categorias-list">
@@ -54,7 +55,7 @@ const CategoriasList = () => {
 
                         searchValue !== "" ?
 
-                            categorias.map(categoria => categoria.nome.toLowerCase().includes(searchValue.toLowerCase()) && (
+                            sharedCategorias.map(categoria => categoria.nome.toLowerCase().includes(searchValue.toLowerCase()) && (
                                 <CategoriaCard
                                     categoria={categoria}
                                 />
@@ -62,7 +63,7 @@ const CategoriasList = () => {
 
                             :
 
-                            categorias.map(categoria => (
+                            sharedCategorias.map(categoria => (
                                 <CategoriaCard
                                     categoria={categoria}
                                 />

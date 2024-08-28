@@ -4,15 +4,17 @@ import ProdutoCard from "./ProdutoCard"
 
 import { ModalsContext } from "../contexts/ModalsContext"
 import { NavigationContext } from "../contexts/NavigationContext"
+import { DataContext } from "../contexts/DataContext"
 
 import "../css/components/produtos-list.css"
 
 const ProdutosList = () => {
 
    const [searchValue, setSearchValue] = useState("")
-   const { selectedCategory, setSelectedCategory } = useContext(NavigationContext)
 
+   const { selectedCategory } = useContext(NavigationContext)
    const { toggleAddProductModal } = useContext(ModalsContext)
+   const { sharedCategorias } = useContext(DataContext)
 
    return (
       <section className="produtos-list">
@@ -64,7 +66,7 @@ const ProdutosList = () => {
 
                searchValue !== "" ?
 
-                  selectedCategory.produtos
+                  sharedCategorias.filter(categoria => categoria.nome === selectedCategory.nome)[0].produtos
                      .map(produto => produto.nome.toLowerCase().includes(searchValue.toLowerCase()) && (
                         <ProdutoCard
                            produtoImg={produto.img}
@@ -77,7 +79,7 @@ const ProdutosList = () => {
 
                   :
 
-                  selectedCategory.produtos
+                  sharedCategorias.filter(categoria => categoria.nome === selectedCategory.nome)[0].produtos
                      .map(produto => (
                         <ProdutoCard
                            produtoImg={produto.img}

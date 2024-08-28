@@ -33,6 +33,7 @@
 .produtos-list__search-area .produtos-list__input-wrapper input {
   flex: 1;
   outline: none;
+  background-color: transparent;
 }
 .produtos-list__search-area .produtos-list__input-wrapper button {
   background-color: transparent;

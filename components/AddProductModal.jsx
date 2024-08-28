@@ -1,12 +1,38 @@
 import { useContext } from "react"
 
 import { ModalsContext } from "../contexts/ModalsContext"
+import { DataContext } from "../contexts/DataContext"
+import { NavigationContext } from "../contexts/NavigationContext"
 
 import "../css/components/add-product-modal.css"
 
 const AddProductModal = () => {
 
    const { toggleAddProductModal, addProductModalActive } = useContext(ModalsContext)
+   const { setSharedCategorias } = useContext(DataContext)
+   const { selectedCategory } = useContext(NavigationContext)
+
+   let selectedImg;
+
+   function addProduct() {
+
+      console.log(selectedImg)
+
+      const newProduct = {
+         img: selectedImg,
+         nome: document.querySelector(".add-product-modal__product-info-area input").value,
+         prazoMinimo: document.querySelector(".add-product-modal__inputMin").value,
+         prazoMaximo: document.querySelector(".add-product-modal__inputMax").value,
+         descricao: document.querySelector(".add-product-modal__product-info-area textarea").value
+      }
+
+      setSharedCategorias(categorias => categorias.map(
+         categoria => categoria.nome === selectedCategory.nome ? 
+         {...categoria, produtos: [...categoria.produtos, newProduct]}
+         : categoria
+      ))
+
+   }
 
    function loadImage(e) {
 
@@ -21,9 +47,11 @@ const AddProductModal = () => {
 
          reader.onload = (event) => {
             imagePicker.style.backgroundImage = `url(${event.target.result})`
+            selectedImg = event.target.result
          }
 
          reader.readAsDataURL(file)
+
 
          label.style.display = "none"
 
@@ -82,11 +110,11 @@ const AddProductModal = () => {
                   
                   <div className="add-product-modal__input-area">
 
-                     <input type="number" placeholder="Mínimo" />
+                     <input type="number" placeholder="Mínimo" className="add-product-modal__inputMin" />
 
                      <div></div>
 
-                     <input type="number" placeholder="Máximo" />
+                     <input type="number" placeholder="Máximo" className="add-product-modal__inputMax" />
 
                   </div>
 
@@ -96,7 +124,12 @@ const AddProductModal = () => {
 
          </form>
 
-         <button type="submit" className="add-product-modal__add-btn">Adicionar</button>
+         <button 
+            className="add-product-modal__add-btn" 
+            onClick={() => {addProduct(); toggleAddProductModal()}}
+         >
+            Adicionar
+         </button>
 
       </div>
    )
