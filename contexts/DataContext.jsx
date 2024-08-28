@@ -1,10 +1,12 @@
 import { createContext, useState } from "react"
 
-const DataContext = createContext()
+import { categorias } from "../data.js"
+
+export const DataContext = createContext()
 
 const DataContextProvider = ({ children }) => {
 
-   const [categorias, setCategorias] = useState([])
+   const [sharedCategorias, setSharedCategorias] = useState(categorias)
 
    return (
       <DataContext.Provider>

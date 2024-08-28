@@ -4,8 +4,6 @@ import { ModalsContext } from "../contexts/ModalsContext"
 
 import CategoriaCard from "./CategoriaCard"
 
-import { categorias } from "../data.js"
-
 import "../css/components/categorias.css"
 
 const CategoriasList = () => {
@@ -13,6 +11,7 @@ const CategoriasList = () => {
     const [searchValue, setSearchValue] = useState("");
 
     const { toggleAddCategoryModal } = useContext(ModalsContext);
+    const { sharedCategorias } = useContext(DataCon)
 
     return (
         <section className="Categorias-list">

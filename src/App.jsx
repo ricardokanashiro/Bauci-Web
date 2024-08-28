@@ -6,6 +6,8 @@ import Produtos from "../components/Produtos"
 import Categorias from "../components/Categorias"
 
 import ModalsContextProvider from "../contexts/ModalsContext"
+import DataContextProvider from "../contexts/DataContext"
+
 import { NavigationContext } from "../contexts/NavigationContext"
 
 const App = () => {
@@ -13,6 +15,7 @@ const App = () => {
    const { selectedSection, setSelectedSection } = useContext(NavigationContext)
 
    return (
+      <DataContextProvider>
       <ModalsContextProvider>
          <Layout
             selectedSection={selectedSection}
@@ -23,6 +26,7 @@ const App = () => {
             {selectedSection === "produtos" && (<Produtos />)}
          </Layout>
       </ModalsContextProvider>
+      </DataContextProvider>
    )
 }
 
