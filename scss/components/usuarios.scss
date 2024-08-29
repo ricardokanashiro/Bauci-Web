@@ -1,0 +1,36 @@
+@use "../utils/" as *;
+@use "./usuarios-card" as *;
+@use "./usuarios-list" as *;
+
+.section-wrapper {
+    background-color: $brancoAzulado;
+    padding: 4rem 3rem;
+    height: 100%
+}
+
+.sectionwrapper__usuarios-page-wrapper {
+    @include flex(flex-start, flex-start);
+    flex-direction: column;
+    height: 100%;
+}
+
+.Usuarios-list header {
+    background-color: white;
+}
+
+.usuarios-list__categorias-wrapper {
+    background-color: white;
+    margin-top: 4rem;
+    padding: 2rem;
+    border-radius: .6rem;
+    width: 100%;
+    flex: 1;
+    margin-bottom: 4rem;
+}
+
+.usuarios-list__Wrapper {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.5rem;
+}

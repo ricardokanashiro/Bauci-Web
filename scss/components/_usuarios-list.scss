@@ -1,0 +1,80 @@
+@use "../utils/" as *;
+
+.Usuarios-list {
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.Usuarios-list header {
+    @include flex(space-between, center);
+    width: 100%;
+    padding: 2rem;
+    border-radius: .6rem;
+    background-color: transparent;
+}
+
+.usuarios-list__icon-search {
+    width: 1.8rem;
+    margin-right: 1rem;
+}
+
+.usuarios-list__input-wrapper input {
+    outline: none;
+    width: 100%;
+
+    &::placeholder {
+        font-size: 1.2rem;
+    }
+}
+
+.usuarios-list__clean-input-button {
+    padding: 0;
+    border: none;
+    background: none;
+    display: inline-block;
+    width: 2rem;
+    cursor: pointer;
+}
+
+.usuarios-list__clean-input-button img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.usuarios-list__input-wrapper {
+    width: max(40rem, 40%);
+    border: 1px solid $cinzaEscuro;
+    border-radius: .4rem;
+    padding: .6rem .8rem;
+    height: 100%;
+    @include flex(flex-start, center)
+}
+
+.adicionar-usuario-btn {
+    background-color: $preto;
+    cursor: pointer;
+    color: white;
+    font-weight: 700;
+    padding: .6rem 1rem;
+    border-radius: .4rem;
+    border: 2px solid transparent;
+    transition-duration: 200ms;
+    transition-property: border, background-color, color;
+    height: 3rem;
+    font-size: 1.1rem;
+
+    @include flex(center, center);
+    gap: 1rem;
+
+    .add-produto-btnícone-preto {
+        display: none;
+    }
+
+    .add-produto-btnícone-branco {
+        width: 1.6rem;
+    }
+}
