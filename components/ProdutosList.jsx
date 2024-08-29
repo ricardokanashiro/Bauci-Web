@@ -66,7 +66,7 @@ const ProdutosList = () => {
 
                searchValue !== "" ?
 
-                  sharedCategorias.filter(categoria => categoria.nome === selectedCategory.nome)[0].produtos
+                  sharedCategorias.filter(categoria => categoria.nome === selectedCategory)[0].produtos
                      .map(produto => produto.nome.toLowerCase().includes(searchValue.toLowerCase()) && (
                         <ProdutoCard
                            produtoImg={produto.img}
@@ -79,7 +79,7 @@ const ProdutosList = () => {
 
                   :
 
-                  sharedCategorias.filter(categoria => categoria.nome === selectedCategory.nome)[0].produtos
+                  sharedCategorias.filter(categoria => categoria.nome === selectedCategory)[0].produtos
                      .map(produto => (
                         <ProdutoCard
                            produtoImg={produto.img}

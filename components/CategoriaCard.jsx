@@ -10,7 +10,7 @@ const CategoriaCard = ({ categoria }) => {
    const { setSelectedCategory, setSelectedSection } = useContext(NavigationContext)
 
    function selectCategory() {
-      setSelectedCategory(categoria)
+      setSelectedCategory(categoria.nome)
       setSelectedSection("produtos")
    }
 
