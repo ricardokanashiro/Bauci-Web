@@ -1,6 +1,10 @@
+import UsuariosList from "./UsuariosList"
+
 const Usuarios = () => {
    return (
-      <div>Usuarios</div>
+      <div className="sectionwrapper__usuarios-page-wrapper">
+         <UsuariosList/>
+      </div>
    )
 }
 

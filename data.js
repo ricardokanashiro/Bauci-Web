@@ -86,3 +86,17 @@ export let categorias = [
          ]
     },
 ]
+
+export let usuarios = [
+    {
+        nome: "Ricardo Kanashiro"
+    },
+
+    {
+        nome: "Gabriella Melo"
+    },
+
+    {
+        nome: "Fulano Silva"
+    },
+]
