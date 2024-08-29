@@ -6,10 +6,10 @@ import "../css/components/categorias.css"
 
 const AddCategoryModal = () => {
 
-   const { toggleAddCategoryModal, addCategoryModalActive } = useContext(ModalsContext)
+   const { toggleAddCategoryModal } = useContext(ModalsContext)
 
    return (
-      <div className={addCategoryModalActive ? "edit-category-modal" : "edit-category-modal--disabled"}>
+      <div>
 
          <header>
             <h2>Editar Categoria</h2>
