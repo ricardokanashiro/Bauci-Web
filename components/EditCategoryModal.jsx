@@ -9,7 +9,7 @@ import { NavigationContext } from "../contexts/NavigationContext"
 const EditCategoryModal = () => {
 
    const { toggleEditCategoryModal, editCategoryModalActive } = useContext(ModalsContext)
-   const { setSharedCategorias, sharedCategorias } = useContext(DataContext)
+   const { setSharedCategorias } = useContext(DataContext)
    const { selectedCategory, setSelectedCategory } = useContext(NavigationContext)
 
    function editCategory() {

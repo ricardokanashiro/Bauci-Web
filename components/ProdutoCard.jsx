@@ -7,7 +7,11 @@ import "../css/components/produtos-card.css"
 
 const ProdutoCard = ({ produtoImg, produtoNome, produtoPrazoMin, produtoPrazoMax, produtoDescricao }) => {
 
-   const { toggleDeleteProductModal, setToDeleteProduct, toggleEditProductModal, setToEditProduct } = useContext(ModalsContext)
+   const { 
+      toggleDeleteProductModal, setToDeleteProduct, 
+      toggleEditProductModal, setToEditProduct 
+   } = useContext(ModalsContext)
+
    const { setSelectedProduct } = useContext(NavigationContext)
 
    return (
@@ -43,6 +47,7 @@ const ProdutoCard = ({ produtoImg, produtoNome, produtoPrazoMin, produtoPrazoMax
                   className="produto-card__deletar-btn" 
                   onClick={() => {
                      toggleDeleteProductModal()
+                     setToDeleteProduct(produtoNome)
                   }}
                >
                   <span>Deletar</span>
