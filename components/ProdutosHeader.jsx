@@ -16,7 +16,7 @@ const ProdutosHeader = () => {
    return (
       <header className="produtos-header">
 
-            <h1>{selectedCategory.nome}</h1>
+            <h1>{selectedCategory}</h1>
 
             <div className="produtos__actions-area">
 

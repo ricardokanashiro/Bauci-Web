@@ -12,11 +12,9 @@ const AddProductModal = () => {
    const { setSharedCategorias } = useContext(DataContext)
    const { selectedCategory } = useContext(NavigationContext)
 
-   let selectedImg;
+   let selectedImg
 
    function addProduct() {
-
-      console.log(selectedImg)
 
       const newProduct = {
          img: selectedImg,
@@ -27,7 +25,7 @@ const AddProductModal = () => {
       }
 
       setSharedCategorias(categorias => categorias.map(
-         categoria => categoria.nome === selectedCategory.nome ? 
+         categoria => categoria.nome === selectedCategory ? 
          {...categoria, produtos: [...categoria.produtos, newProduct]}
          : categoria
       ))
