@@ -62,6 +62,8 @@ const ProdutosList = () => {
 
          <section className="produtos-list__produtos-wrapper">
 
+            { console.log(sharedCategorias) }
+
             {
 
                searchValue !== "" ?

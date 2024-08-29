@@ -1,12 +1,14 @@
 import { useContext } from "react"
 
 import { ModalsContext } from "../contexts/ModalsContext"
+import { NavigationContext } from "../contexts/NavigationContext"
 
 import "../css/components/produtos-card.css"
 
 const ProdutoCard = ({ produtoImg, produtoNome, produtoPrazoMin, produtoPrazoMax, produtoDescricao }) => {
 
    const { toggleDeleteProductModal, setToDeleteProduct, toggleEditProductModal, setToEditProduct } = useContext(ModalsContext)
+   const { setSelectedProduct } = useContext(NavigationContext)
 
    return (
       <div className="produto-card">
@@ -30,6 +32,7 @@ const ProdutoCard = ({ produtoImg, produtoNome, produtoPrazoMin, produtoPrazoMax
                   onClick={() => {
                      setToEditProduct({produtoImg, produtoNome, produtoPrazoMin, produtoPrazoMax, produtoDescricao})
                      toggleEditProductModal()
+                     setSelectedProduct(produtoNome)
                   }}
                >
                   <span>Editar</span>
@@ -40,7 +43,6 @@ const ProdutoCard = ({ produtoImg, produtoNome, produtoPrazoMin, produtoPrazoMax
                   className="produto-card__deletar-btn" 
                   onClick={() => {
                      toggleDeleteProductModal()
-                     setToDeleteProduct(produtoNome)
                   }}
                >
                   <span>Deletar</span>

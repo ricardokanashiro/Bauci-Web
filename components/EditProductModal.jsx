@@ -1,12 +1,49 @@
-import { useContext } from "react"
+import { useContext, useRef } from "react"
 
 import { ModalsContext } from "../contexts/ModalsContext"
+import { DataContext } from "../contexts/DataContext";
+import { NavigationContext } from "../contexts/NavigationContext"
 
 import "../css/components/edit-product-modal.css"
 
 const EditProductModal = () => {
 
-   const { toggleEditProductModal, toEditProduct } = useContext(ModalsContext)
+   const { toggleEditProductModal, toEditProduct, setToEditProduct } = useContext(ModalsContext)
+   const { setSharedCategorias } = useContext(DataContext)
+   const { selectedProduct, selectedCategory } = useContext(NavigationContext)
+
+   const updatedImg = useRef(toEditProduct.produtoImg)
+
+   function editProduct() {
+
+      let updatedProduto = {
+         img: updatedImg.current,
+         nome: document.querySelector(".edit-product-modal__product-info-area input").value,
+         prazoMinimo: document.querySelector(".edit-product-modal__InputMin").value,
+         prazoMaximo: document.querySelector(".edit-product-modal__InputMax").value,
+         descricao: document.querySelector(".edit-product-modal__product-info-area textarea").value
+      }
+
+      setSharedCategorias(
+         categorias => categorias
+            .map(
+               categoria => categoria.nome === selectedCategory ?
+                  { 
+                     ...categoria, produtos: categoria.produtos
+                        .map(
+                           produto => produto.nome === selectedProduct ?
+                              updatedProduto
+                              :
+                              produto
+                        )
+                  }
+               :
+               categoria
+            )
+      )
+
+      toggleEditProductModal()
+   }
 
    function loadImage(e) {
 
@@ -21,6 +58,7 @@ const EditProductModal = () => {
 
          reader.onload = (event) => {
             imagePicker.style.backgroundImage = `url(${event.target.result})`
+            updatedImg.current = event.target.result
          }
 
          reader.readAsDataURL(file)
@@ -73,8 +111,18 @@ const EditProductModal = () => {
 
             <fieldset className="edit-product-modal__product-info-area">
 
-               <input type="text" placeholder="Nome do produto" value={toEditProduct.produtoNome} />
-               <textarea placeholder="Descrição do produto" value={toEditProduct.produtoDescricao}></textarea>
+               <input 
+                  type="text" 
+                  placeholder="Nome do produto" 
+                  value={toEditProduct.produtoNome} 
+                  onChange={(e) => setToEditProduct(produto => ({...produto, produtoNome: e.target.value}))}
+               />
+
+               <textarea 
+                  placeholder="Descrição do produto" 
+                  value={toEditProduct.produtoDescricao}
+                  onChange={(e) => setToEditProduct(produto => ({...produto, produtoDescricao: e.target.value}))}
+               ></textarea>
 
                <div className="edit-product-modal__prazo-area">
 
@@ -82,11 +130,23 @@ const EditProductModal = () => {
                   
                   <div className="edit-product-modal__input-area">
 
-                     <input type="number" placeholder="Mínimo" value={toEditProduct.produtoPrazoMin} />
+                     <input 
+                        type="number" 
+                        placeholder="Mínimo" 
+                        className="edit-product-modal__InputMin" 
+                        value={toEditProduct.produtoPrazoMin}
+                        onChange={(e) => setToEditProduct(produto => ({...produto, produtoPrazoMin: e.target.value}))}
+                     />
 
                      <div></div>
 
-                     <input type="number" placeholder="Máximo" value={toEditProduct.produtoPrazoMax} />
+                     <input 
+                        className="edit-product-modal__InputMax"
+                        type="number" 
+                        placeholder="Máximo" 
+                        value={toEditProduct.produtoPrazoMax}
+                        onChange={(e) => setToEditProduct(produto => ({...produto, produtoPrazoMax: e.target.value}))}
+                     />
 
                   </div>
 
@@ -96,7 +156,7 @@ const EditProductModal = () => {
 
          </form>
 
-         <button type="submit" className="edit-product-modal__add-btn">Aplicar</button>
+         <button className="edit-product-modal__add-btn" onClick={editProduct}>Aplicar</button>
 
       </div>
    )
