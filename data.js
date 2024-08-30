@@ -85,6 +85,7 @@ export let categorias = [
          },
       ]
    },
+
 ]
 
 export let usuarios = [

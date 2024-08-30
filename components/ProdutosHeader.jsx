@@ -29,7 +29,7 @@ const ProdutosHeader = () => {
                   className="produtos__deletar-btn" 
                   onClick={() => {
                      toggleDeleteCategoryModal()
-                     setToDeleteCategory(title)
+                     setToDeleteCategory(selectedCategory)
                   }}
                >
                   <span>Deletar</span>

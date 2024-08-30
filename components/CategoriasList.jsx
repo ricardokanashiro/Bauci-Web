@@ -40,7 +40,7 @@ const CategoriasList = () => {
 
                 </div>
 
-                <button className="adicionar-categoria-btn"  onClick={toggleAddCategoryModal}>
+                <button className="adicionar-categoria-btn" onClick={toggleAddCategoryModal}>
                     <span>Adicionar Categoria</span>
                     <img className="add-produto-btnícone-branco" src="../assets/IconPlus.svg" alt="Ícone de +" />
                 </button>
