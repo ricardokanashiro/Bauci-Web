@@ -1,6 +1,7 @@
 @use "../utils/" as *;
 @use "./usuarios-card" as *;
 @use "./usuarios-list" as *;
+@use "./add-user-modal" as *;
 
 .section-wrapper {
     background-color: $brancoAzulado !important;

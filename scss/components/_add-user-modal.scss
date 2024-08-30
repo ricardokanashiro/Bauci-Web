@@ -1,0 +1,109 @@
+@use "../utils/" as *;
+
+.add-user-modal {
+    width: min(40rem, 60%);
+    background-color: white;
+    padding: 2.2rem 2rem;
+    border-radius: .6rem;
+}
+
+.add-user-modal__header {
+    @include flex(space-between, center);
+}
+
+.add-user-modal__header h2 {
+    font-size: 2.5rem;
+    color: $preto;
+}
+
+.add-user-modal__header button {
+    background-color: transparent;
+    cursor: pointer;
+
+    @include flex(center, center);
+}
+
+.add-user-modal__input-wrapper {
+
+    @include flex(center, flex-start);
+    flex-flow: column nowrap;
+    gap: 1.5rem;
+    flex: 1;
+    margin: 3rem 0;
+
+}
+
+.add-user-modal__classic-input {
+    width: 100%;
+    border: 1px solid $cinzaEscuro;
+    outline: none;
+    font-size: 1.4rem;
+    padding: 1rem;
+    border-radius: .4rem;
+}
+
+.add-user-modal__input-category-wrapper {
+    @include flex (space-between, center);
+    width: 50%;
+    border: 1px solid $cinzaEscuro;
+    padding: .85rem 1rem;
+    border-radius: .4rem;
+}
+
+.add-user-modal__arrow-dropdown-menu {
+    @include flex(center, center);
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+
+    img {
+        width: 2rem;
+    }
+}
+
+.add-user-modal__category-input {
+    outline: none;
+    font-size: 1.4rem;
+    width: 100%;
+    background-color: transparent;
+}
+
+.add-user-modal__apply-btn {
+    width: 100%;
+    display: block;
+    background-color: $preto;
+    color: white;
+    margin-top: 2rem;
+    padding: 1.4rem;
+    border-radius: .4rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.add-user-modal__apply-btn:hover {
+    filter: brightness(1.2);
+}
+
+.add-user-modal__dropdown-category-menu {
+    position: absolute;
+    top: 63.8%;
+    background-color: white;
+    border-radius: .4rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    width: 18rem;
+    z-index: 2;
+    display: none;
+
+    p {
+        padding: .5rem;
+        cursor: pointer;
+        font-size: 1.2rem;
+        font-weight: 450;
+    }
+
+    p:hover {
+        background-color: #f1f1f1;
+    }
+}
