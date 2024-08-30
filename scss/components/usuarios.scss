@@ -3,9 +3,9 @@
 @use "./usuarios-list" as *;
 
 .section-wrapper {
-    background-color: $brancoAzulado;
-    padding: 4rem 3rem;
-    height: 100%
+    background-color: $brancoAzulado !important;
+    padding: 4rem 3rem 0rem 3rem !important;
+    height: 100% !important;
 }
 
 .sectionwrapper__usuarios-page-wrapper {
