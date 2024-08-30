@@ -5,8 +5,8 @@
 
 .section-wrapper {
     background-color: $brancoAzulado;
-    padding: 4rem 3rem;
-    height: 100%
+    padding: 4rem 3rem 0rem 3rem;
+    height: 100%;
 }
 
 .sectionwrapper__categorias-page-wrapper {
@@ -26,6 +26,7 @@
     border-radius: .6rem;
     width: 100%;
     flex: 1;
+    margin-bottom: 4rem;
 }
 
 .categoriasLista__Wrapper {
