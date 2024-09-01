@@ -1,5 +1,7 @@
 import "../assets/IconArrowDownGray.svg"
 
+import "../css/components/categorias.css"
+
 const AddUserModal = () => {
 
     return (
