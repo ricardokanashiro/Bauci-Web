@@ -3,6 +3,7 @@
 @use "./usuarios-list" as *;
 @use "./add-user-modal" as *;
 @use "./edit-user-modal" as *;
+@use "./delete-user-modal" as *;
 
 .section-wrapper {
     background-color: $brancoAzulado !important;
