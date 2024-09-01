@@ -1,6 +1,6 @@
 import "../assets/IconArrowDownGray.svg"
 
-import "../css/components/categorias.css"
+import "../css/components/usuarios.css"
 
 const AddUserModal = () => {
 
