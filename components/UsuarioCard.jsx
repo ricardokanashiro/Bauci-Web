@@ -1,7 +1,7 @@
 import "../assets/IconArrowWhite.png"
 import "../css/components/usuarios.css"
 
-const UsuarioCard = ({ usuarioNome }) => {
+const UsuarioCard = ({ usuarioNome, usuarioLogin, usuarioSenha, usuarioCategoria }) => {
    return (
 
       <div className="usuariosCard">
@@ -13,14 +13,14 @@ const UsuarioCard = ({ usuarioNome }) => {
                <div className="usuarios-card__login-wrapper">
                   <h3>Login: </h3>
                   <div className="usuarios-card__login-name-wrapper">
-                     <h4>loginexemplo@</h4>
+                     <h4>{usuarioLogin}</h4>
                   </div>
                </div>
 
                <div className="usuarios-card__password-wrapper">
                   <h3>Senha: </h3>
                   <div className="usuarios-card__password-name-wrapper">
-                     <h4>senhaexemplo123</h4>
+                     <h4>{usuarioSenha}</h4>
                   </div>
                </div>
 
@@ -29,7 +29,7 @@ const UsuarioCard = ({ usuarioNome }) => {
             <div className="usuarios-card__category-wrapper">
                <h3>Categorias: </h3>
                <div className="usuarios-card__category-name-wrapper">
-                  <h4>Cozinha</h4>
+                  <h4>{usuarioCategoria}</h4>
                </div>
             </div>
 

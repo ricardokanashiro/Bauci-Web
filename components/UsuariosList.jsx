@@ -61,6 +61,9 @@ const UsuariosList = () => {
                             usuarios.map(usuario => usuario.nome.toLowerCase().includes(searchValue.toLowerCase()) && (
                                 <UsuarioCard
                                     usuarioNome={usuario.nome}
+                                    usuarioLogin={usuario.login}
+                                    usuarioSenha={usuario.senha}
+                                    usuarioCategoria={usuario.categoria}
                                 />
                             ))
 
@@ -69,6 +72,9 @@ const UsuariosList = () => {
                             usuarios.map(usuario => (
                                 <UsuarioCard
                                     usuarioNome={usuario.nome}
+                                    usuarioLogin={usuario.login}
+                                    usuarioSenha={usuario.senha}
+                                    usuarioCategoria={usuario.categoria}
                                 />
                             ))
 

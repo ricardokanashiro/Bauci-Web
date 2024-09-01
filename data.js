@@ -90,15 +90,24 @@ export let categorias = [
 
 export let usuarios = [
    {
-      nome: "Ricardo Kanashiro"
+      nome: "Ricardo Kanashiro",
+      login: "loginRicardo",
+      senha: "senhaRicardo",
+      categoria: "Cozinha"
    },
 
    {
-      nome: "Gabriella Melo"
+      nome: "Gabriella Melo",
+      login: "loginGabriella",
+      senha: "senhaGabriella",
+      categoria: "Atendente"
    },
 
    {
-      nome: "Fulano Silva"
+      nome: "Fulano Silva",
+      login: "loginFulano",
+      senha: "senhaFulano",
+      categoria: "Cozinha"
    },
 
 ]
