@@ -29,6 +29,10 @@
   width: 2rem;
 }
 
+.categoriasCard__btn-gotoprodutos:hover {
+  filter: brightness(1.2);
+}
+
 .Categorias-list {
   display: flex;
   width: 100%;
@@ -108,6 +112,10 @@
 }
 .adicionar-categoria-btn .add-produto-btnícone-branco {
   width: 1.6rem;
+}
+
+.adicionar-categoria-btn:hover {
+  filter: brightness(1.2);
 }
 
 .add-category-modal--disabled {

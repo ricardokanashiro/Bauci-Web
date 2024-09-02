@@ -176,6 +176,10 @@
   width: 1.6rem;
 }
 
+.adicionar-usuario-btn:hover {
+  filter: brightness(1.2);
+}
+
 .add-user-modal {
   width: min(40rem, 60%);
   background-color: white;
