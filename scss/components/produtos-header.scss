@@ -2,9 +2,10 @@
 
 .produtos-header {
    @include flex(space-between, center);
+   flex-wrap: wrap;
 
    h1 {
-      font-size: 4.5rem;
+      font-size: clamp(2.9rem, 2.8vw, 4.5rem);
    }
 }
 
@@ -14,14 +15,27 @@
 
    button {
       border: 2px solid $preto;
-      padding: 1rem 2rem;
+      //padding: 1vw 1vw;
+      //padding: 0.8rem 1.5rem;
+      padding: clamp(0.8rem, 0.5vw, 1rem) clamp(1rem, 1vw, 2rem);
       border-radius: .6rem;
+      //font-size: clamp(1.2rem, 1vw, 1.4rem);
+      //font-size: 1.2rem;
       font-size: 1.4rem;
       font-weight: 700;
       cursor: pointer;
 
       @include flex(center, center);
       gap: 1rem;
+   }
+
+   span {
+      @include respond-to(tablet){
+         display: none;
+      }
+      @include respond-to (mobile){
+         display: none;
+      }
    }
 }
 

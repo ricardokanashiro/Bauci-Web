@@ -5,7 +5,14 @@
 width: 100%;
 
    header {
-      @include flex(space-between, center);
+      @include flex(space-between, stretch);
+      
+      @include respond-to (tablet){
+         gap: 1.5rem;
+      }
+      @include respond-to (mobile){
+         gap: 1.5rem;
+      }
    }
 }
 
@@ -17,14 +24,20 @@ width: 100%;
    gap: 2rem;
 
    .produtos-list__input-wrapper {
-      width: 40rem;
-      width: max(40rem, 40%);
+      width: clamp(20rem, 40%, 50rem);
       border: 1px solid $cinzaEscuro;
       border-radius: .4rem;
       padding: 1rem .8rem;
 
       @include flex(flex-start, center);
       gap: 1.5rem;
+
+      @include respond-to (tablet){
+         flex: 1;
+      }
+      @include respond-to (mobile){
+         flex: 1;
+      }
 
       img {
          height: 2rem;
@@ -34,6 +47,7 @@ width: 100%;
          flex: 1;
          outline: none;
          background-color: transparent;
+         width: 100%;
       }
 
       button {
@@ -51,6 +65,13 @@ width: 100%;
 
    span {
       white-space: nowrap;
+
+      @include respond-to (tablet){
+         display: none;
+      }
+      @include respond-to (mobile){
+         display: none;
+      }
    }
 }
 
@@ -59,7 +80,7 @@ width: 100%;
    cursor: pointer;
    color: white;
    font-weight: 700;
-   padding: 1.2rem 1.6rem;
+   padding: clamp(0.5rem, 0.58vw, 1.2rem) clamp(0.8rem, 0.8vw, 1.6rem);
    border-radius: .4rem;
    border: 2px solid transparent;
    transition-duration: 200ms;
@@ -70,6 +91,18 @@ width: 100%;
 
    .add-produto-btn__ícone-preto {
       display: none;
+   }
+
+   img {
+      width: clamp(1.25rem, 1.3vw, 1.6rem); 
+
+        @include respond-to(tablet) {
+            width: 2.2rem;
+        }
+
+        @include respond-to(mobile) {
+            width: 2.2rem;
+        }
    }
 }
 

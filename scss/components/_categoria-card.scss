@@ -3,16 +3,24 @@
 .categoriasCard {
     background-color: $brancoAzulado;
     @include flex(space-between, center);
-    padding: 4.5rem 3rem;
+    padding: clamp(3rem, 3vw, 4.5rem) clamp(2rem, 3vw,3rem);
     border: 2px solid $preto;
     border-radius: .6rem;
     width: 100%;
+
+    @include respond-to(tablet){
+        gap: 2rem;
+    }
+
+    @include respond-to(mobile){
+        gap: 2rem;
+    }
 }
 
 .categoriasCard h1 {
     font-family: $fontePrincipal;
     color: $preto;
-    font-size: 2.5rem;
+    font-size: clamp(1.7rem, 1.8vw, 2.5rem);
 }
 
 .categoriasCard__btn-gotoprodutos {
@@ -23,7 +31,7 @@
     cursor: pointer;
 
     img {
-        width: 2rem;
+        width: clamp(1.4rem, 1.8vw, 2rem);
     }
 }
 

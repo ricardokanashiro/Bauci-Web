@@ -27,10 +27,24 @@ html, body {
 .navbar {
   padding: 2rem;
   height: 100%;
+  width: clamp(17rem, 14vw, 18rem);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column nowrap;
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .navbar {
+    display: none;
+  }
+}
+.navbar .navbar__bauci-logo {
+  width: 100%;
 }
 
 .navbar__links-area {
@@ -46,9 +60,9 @@ html, body {
 
 .navbar-item {
   width: 100%;
-  padding: 1.6rem 2rem;
+  padding: clamp(1.3rem, 1vw, 1.6rem) clamp(1.9rem, 1vw, 2rem);
   border-radius: 0.6rem;
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 1vw, 1.4rem);
   font-weight: bold;
   background-color: transparent;
   color: #838393;
@@ -57,6 +71,9 @@ html, body {
   justify-content: center;
   align-items: center;
   gap: 1.4rem;
+}
+.navbar-item img {
+  width: clamp(1.8rem, 2vw, 2rem);
 }
 
 .navbar-item--active {
@@ -68,15 +85,19 @@ html, body {
   color: #838393;
   border: 2px solid #838393;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: clamp(0.9rem, 1vw, 1rem) clamp(1.8rem, 1.5vw, 2rem);
   border-radius: 0.6rem;
   font-weight: bold;
   cursor: pointer;
   background-color: transparent;
+  font-size: clamp(1.3rem, 1.1vw, 1.5rem);
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+.navbar__logout-btn img {
+  width: clamp(1.8rem, 1.5vw, 2.1rem);
 }
 
 .section-wrapper {

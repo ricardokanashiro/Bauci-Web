@@ -6,7 +6,17 @@
 .produtos-list header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .produtos-list header {
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .produtos-list header {
+    gap: 1.5rem;
+  }
 }
 
 .produtos-list__search-area {
@@ -17,8 +27,7 @@
   gap: 2rem;
 }
 .produtos-list__search-area .produtos-list__input-wrapper {
-  width: 40rem;
-  width: max(40rem, 40%);
+  width: clamp(20rem, 40%, 50rem);
   border: 1px solid #838393;
   border-radius: 0.4rem;
   padding: 1rem 0.8rem;
@@ -27,6 +36,16 @@
   align-items: center;
   gap: 1.5rem;
 }
+@media (min-width: 481px) and (max-width: 768px) {
+  .produtos-list__search-area .produtos-list__input-wrapper {
+    flex: 1;
+  }
+}
+@media (max-width: 480px) {
+  .produtos-list__search-area .produtos-list__input-wrapper {
+    flex: 1;
+  }
+}
 .produtos-list__search-area .produtos-list__input-wrapper img {
   height: 2rem;
 }
@@ -34,6 +53,7 @@
   flex: 1;
   outline: none;
   background-color: transparent;
+  width: 100%;
 }
 .produtos-list__search-area .produtos-list__input-wrapper button {
   background-color: transparent;
@@ -52,13 +72,23 @@
 .produtos-list__add-produto-btn span {
   white-space: nowrap;
 }
+@media (min-width: 481px) and (max-width: 768px) {
+  .produtos-list__add-produto-btn span {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .produtos-list__add-produto-btn span {
+    display: none;
+  }
+}
 
 .produtos-list__add-produto-btn {
   background-color: #333840;
   cursor: pointer;
   color: white;
   font-weight: 700;
-  padding: 1.2rem 1.6rem;
+  padding: clamp(0.5rem, 0.58vw, 1.2rem) clamp(0.8rem, 0.8vw, 1.6rem);
   border-radius: 0.4rem;
   border: 2px solid transparent;
   transition-duration: 200ms;
@@ -70,6 +100,19 @@
 }
 .produtos-list__add-produto-btn .add-produto-btn__ícone-preto {
   display: none;
+}
+.produtos-list__add-produto-btn img {
+  width: clamp(1.25rem, 1.3vw, 1.6rem);
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .produtos-list__add-produto-btn img {
+    width: 2.2rem;
+  }
+}
+@media (max-width: 480px) {
+  .produtos-list__add-produto-btn img {
+    width: 2.2rem;
+  }
 }
 
 .produtos-list__add-produto-btn:hover {

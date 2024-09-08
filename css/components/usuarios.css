@@ -448,7 +448,7 @@
 
 .section-wrapper {
   background-color: #F0F2F5 !important;
-  padding: 4rem 3rem 0rem 3rem !important;
+  padding: 4rem clamp(1.8rem, 2vw, 3rem) 0rem clamp(1.8rem, 2vw, 3rem) !important;
   height: 100% !important;
 }
 

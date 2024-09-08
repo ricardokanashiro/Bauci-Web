@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
 
             <section className="navbar">
 
-               <img src="../assets/logo.svg" alt="Logo da bauci em cores pretas" />
+               <img src="../assets/logo.svg" alt="Logo da bauci em cores pretas" className="navbar__bauci-logo"/>
 
                <nav className="navbar__links-area">
 

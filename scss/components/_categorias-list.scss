@@ -9,11 +9,19 @@
 }
 
 .Categorias-list header {
-    @include flex(space-between, center);
+    @include flex(space-between, stretch);
     width: 100%;
     padding: 2rem;
     border-radius: .6rem;
     background-color: transparent;
+
+    @include respond-to(tablet){
+        gap: 1.5rem;
+    }
+
+    @include respond-to(mobile){
+        gap: 1.5rem;
+    }
 }
 
 .categorias-list__icon-search {
@@ -46,7 +54,7 @@
 }
 
 .categorias-list__input-wrapper {
-    width: max(40rem, 40%);
+    width: clamp(35rem, 40%, 50rem);
     border: 1px solid $cinzaEscuro;
     border-radius: .4rem;
     padding: .6rem .8rem;
@@ -59,23 +67,41 @@
     cursor: pointer;
     color: white;
     font-weight: 700;
-    padding: .6rem 1rem;
+    padding: clamp(.2rem, .58vw, .6rem) clamp(.5rem, .8vw, 1rem);
     border-radius: .4rem;
     border: 2px solid transparent;
     transition-duration: 200ms;
     transition-property: border, background-color, color;
-    height: 3rem;
-    font-size: 1.1rem;
+    height: 100%;
+    font-size: clamp(0.9rem, 0.9vw, 1.1rem);
 
     @include flex(center, center);
-    gap: 1rem;
+    gap: clamp(.3rem, .5vw, 1rem);
+
+    span {
+        @include respond-to(tablet){
+            display: none;
+        }
+
+        @include respond-to(mobile){
+            display: none;
+        }
+    }
 
     .add-produto-btnícone-preto {
         display: none;
     }
 
     .add-produto-btnícone-branco {
-        width: 1.6rem;
+        width: clamp(1.25rem, 1.3vw, 1.6rem); 
+
+        @include respond-to(tablet) {
+            width: 1.8rem;
+        }
+
+        @include respond-to(mobile) {
+            width: 1.8rem;
+        }
     }
 }
 

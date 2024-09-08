@@ -4,16 +4,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4.5rem 3rem;
+  padding: clamp(3rem, 3vw, 4.5rem) clamp(2rem, 3vw, 3rem);
   border: 2px solid #333840;
   border-radius: 0.6rem;
   width: 100%;
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .categoriasCard {
+    gap: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .categoriasCard {
+    gap: 2rem;
+  }
 }
 
 .categoriasCard h1 {
   font-family: "Inter", sans-serif;
   color: #333840;
-  font-size: 2.5rem;
+  font-size: clamp(1.7rem, 1.8vw, 2.5rem);
 }
 
 .categoriasCard__btn-gotoprodutos {
@@ -26,7 +36,7 @@
   cursor: pointer;
 }
 .categoriasCard__btn-gotoprodutos img {
-  width: 2rem;
+  width: clamp(1.4rem, 1.8vw, 2rem);
 }
 
 .categoriasCard__btn-gotoprodutos:hover {
@@ -44,11 +54,21 @@
 .Categorias-list header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   width: 100%;
   padding: 2rem;
   border-radius: 0.6rem;
   background-color: transparent;
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .Categorias-list header {
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .Categorias-list header {
+    gap: 1.5rem;
+  }
 }
 
 .categorias-list__icon-search {
@@ -80,7 +100,7 @@
 }
 
 .categorias-list__input-wrapper {
-  width: max(40rem, 40%);
+  width: clamp(35rem, 40%, 50rem);
   border: 1px solid #838393;
   border-radius: 0.4rem;
   padding: 0.6rem 0.8rem;
@@ -95,23 +115,43 @@
   cursor: pointer;
   color: white;
   font-weight: 700;
-  padding: 0.6rem 1rem;
+  padding: clamp(0.2rem, 0.58vw, 0.6rem) clamp(0.5rem, 0.8vw, 1rem);
   border-radius: 0.4rem;
   border: 2px solid transparent;
   transition-duration: 200ms;
   transition-property: border, background-color, color;
-  height: 3rem;
-  font-size: 1.1rem;
+  height: 100%;
+  font-size: clamp(0.9rem, 0.9vw, 1.1rem);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: clamp(0.3rem, 0.5vw, 1rem);
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .adicionar-categoria-btn span {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .adicionar-categoria-btn span {
+    display: none;
+  }
 }
 .adicionar-categoria-btn .add-produto-btnícone-preto {
   display: none;
 }
 .adicionar-categoria-btn .add-produto-btnícone-branco {
-  width: 1.6rem;
+  width: clamp(1.25rem, 1.3vw, 1.6rem);
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .adicionar-categoria-btn .add-produto-btnícone-branco {
+    width: 1.8rem;
+  }
+}
+@media (max-width: 480px) {
+  .adicionar-categoria-btn .add-produto-btnícone-branco {
+    width: 1.8rem;
+  }
 }
 
 .adicionar-categoria-btn:hover {
@@ -198,6 +238,18 @@
   width: 100%;
   grid-template-columns: repeat(2, 1fr);
   gap: 3.5rem;
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .categoriasLista__Wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.8rem;
+  }
+}
+@media (max-width: 480px) {
+  .categoriasLista__Wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.8rem;
+  }
 }
 
 /*# sourceMappingURL=categorias.css.map */
