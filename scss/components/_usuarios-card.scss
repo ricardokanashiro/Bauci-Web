@@ -3,21 +3,22 @@
 .usuariosCard {
     background-color: $brancoAzulado;
     @include flex(space-between, center);
-    padding: 2rem 3rem;
+    padding: clamp(1.7rem, 1.5vw, 2.5rem) clamp(2.2rem, 2vw, 3rem);
     border: 2px solid $preto;
     border-radius: .6rem;
     width: 100%;
+    gap: 2rem;
 }
 
 .usuariosCard h1 {
     font-family: $fontePrincipal;
     color: $preto;
-    font-size: 2.5rem;
+    font-size: clamp(1.7rem, 1.8vw, 2.5rem);
 }
 
 .usuarios-card__user-info-wrapper h3 {
     color: $fontLabelColor;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 0.5vw, 1.3rem);
 }
 
 .usuarios-card__login-passw-wrapper {
@@ -34,6 +35,7 @@
 
     h4 {
         font-weight: 450;
+        font-size: 1.1rem;
     }
 }
 
@@ -77,7 +79,7 @@
     font-weight: 600;
     padding: .7rem 1rem;
     border-radius: .4rem;
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 0.5vw, 1.1rem);
     cursor: pointer;
 }
 
@@ -89,6 +91,6 @@
     padding: .6rem .5289rem;
     border: 1px solid $preto;
     border-radius: .4rem;
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 0.5vw, 1.1rem);
     cursor: pointer;
 }

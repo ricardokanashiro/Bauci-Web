@@ -109,6 +109,16 @@
   justify-content: flex-start;
   align-items: center;
 }
+@media (min-width: 481px) and (max-width: 768px) {
+  .categorias-list__input-wrapper {
+    flex: 1;
+  }
+}
+@media (max-width: 480px) {
+  .categorias-list__input-wrapper {
+    flex: 1;
+  }
+}
 
 .adicionar-categoria-btn {
   background-color: #333840;

@@ -17,13 +17,6 @@ const UsuarioCard = ({ usuarioNome, usuarioLogin, usuarioSenha, usuarioCategoria
                   </div>
                </div>
 
-               <div className="usuarios-card__password-wrapper">
-                  <h3>Senha: </h3>
-                  <div className="usuarios-card__password-name-wrapper">
-                     <h4>{usuarioSenha}</h4>
-                  </div>
-               </div>
-
             </div>
 
             <div className="usuarios-card__category-wrapper">

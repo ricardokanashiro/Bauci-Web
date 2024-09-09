@@ -62,7 +62,6 @@ const UsuariosList = () => {
                                 <UsuarioCard
                                     usuarioNome={usuario.nome}
                                     usuarioLogin={usuario.login}
-                                    usuarioSenha={usuario.senha}
                                     usuarioCategoria={usuario.categoria}
                                 />
                             ))
@@ -73,7 +72,6 @@ const UsuariosList = () => {
                                 <UsuarioCard
                                     usuarioNome={usuario.nome}
                                     usuarioLogin={usuario.login}
-                                    usuarioSenha={usuario.senha}
                                     usuarioCategoria={usuario.categoria}
                                 />
                             ))

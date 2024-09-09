@@ -59,7 +59,14 @@
     border-radius: .4rem;
     padding: .6rem .8rem;
     height: 100%;
-    @include flex(flex-start, center)
+    @include flex(flex-start, center);
+
+    @include respond-to (tablet){
+        flex: 1;
+     }
+     @include respond-to (mobile){
+        flex: 1;
+     }
 }
 
 .adicionar-categoria-btn {
