@@ -14,7 +14,7 @@
   align-items: center;
 }
 .add-product-modal header h2 {
-  font-size: 2.5rem;
+  font-size: clamp(2.2rem, 1.8vw, 2.5rem);
   color: #333840;
 }
 .add-product-modal header button {
@@ -79,6 +79,24 @@
 .add-product-modal form .add-product-modal__image-picker button .add-product-modal__image-picker-content-wrapper img {
   height: 1.8rem;
 }
+@media (min-width: 481px) and (max-width: 768px) {
+  .add-product-modal form .add-product-modal__image-picker {
+    width: 100%;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 480px) {
+  .add-product-modal form .add-product-modal__image-picker {
+    width: 100%;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .add-product-modal form .add-product-modal__product-info-area {
   display: flex;
   justify-content: center;
@@ -113,6 +131,16 @@
   font-weight: 400;
   margin-bottom: 1rem;
 }
+@media (min-width: 481px) and (max-width: 768px) {
+  .add-product-modal form .add-product-modal__product-info-area .add-product-modal__prazo-area {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .add-product-modal form .add-product-modal__product-info-area .add-product-modal__prazo-area {
+    width: 100%;
+  }
+}
 .add-product-modal form .add-product-modal__product-info-area .add-product-modal__input-area {
   display: flex;
   justify-content: space-between;
@@ -145,6 +173,32 @@
 }
 .add-product-modal form .add-product-modal__product-info-area button .add-product-modal__arrow-icon--active {
   transform: rotate(180deg);
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .add-product-modal form .add-product-modal__product-info-area {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .add-product-modal form .add-product-modal__product-info-area {
+    width: 100%;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .add-product-modal form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  .add-product-modal form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 .add-product-modal .add-product-modal__add-btn {
   width: 100%;
