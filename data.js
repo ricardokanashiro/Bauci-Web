@@ -92,19 +92,22 @@ export let usuarios = [
    {
       nome: "Ricardo Kanashiro",
       login: "loginRicardo",
-      categoria: "Cozinha"
+      categoria: "Cozinha",
+      senha: "senha123"
    },
 
    {
       nome: "Gabriella Melo",
       login: "loginGabriella",
-      categoria: "Atendente"
+      categoria: "Atendente",
+      senha: "senha456"
    },
 
    {
       nome: "Fulano Silva",
       login: "loginFulano",
-      categoria: "Cozinha"
+      categoria: "Cozinha",
+      senha: "senha789"
    },
 
 ]

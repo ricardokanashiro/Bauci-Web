@@ -1,5 +1,7 @@
 import { useContext } from "react"
 
+import notify from "../utils/notify"
+
 import { ModalsContext } from "../contexts/ModalsContext"
 import { DataContext } from "../contexts/DataContext"
 import { NavigationContext } from "../contexts/NavigationContext"
@@ -30,6 +32,8 @@ const DeleteProductModal = () => {
       )
 
       toggleDeleteProductModal()
+
+      notify(`Produto "${toDeleteProduct}" deletado com sucesso!`)
    }
 
    return (

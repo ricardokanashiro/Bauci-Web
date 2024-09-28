@@ -1,10 +1,11 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 
 import "../css/components/usuarios.css"
 
 import { usuarios } from "../data.js"
 
 import UsuarioCard from "./UsuarioCard"
+import { ModalsContext } from "../contexts/ModalsContext.jsx"
 
 import "../assets/IconSearch.svg"
 
@@ -14,7 +15,9 @@ import "../assets/IconPlus.svg"
 
 const UsuariosList = () => {
 
-    const [searchValue, setSearchValue] = useState("");
+    const [searchValue, setSearchValue] = useState("")
+
+    const { toggleAddUserModal } = useContext(ModalsContext)
 
     return (
         <section className="Usuarios-list">
@@ -43,7 +46,7 @@ const UsuariosList = () => {
 
                 </div>
 
-                <button className="adicionar-usuario-btn">
+                <button className="adicionar-usuario-btn" onClick={toggleAddUserModal}>
                     <span>Adicionar Usuário</span>
                     <img className="add-produto-btnícone-branco" src="../assets/IconPlus.svg" alt="Ícone de +" />
                 </button>
@@ -63,6 +66,7 @@ const UsuariosList = () => {
                                     usuarioNome={usuario.nome}
                                     usuarioLogin={usuario.login}
                                     usuarioCategoria={usuario.categoria}
+                                    usuarioSenha={usuario.senha}
                                 />
                             ))
 
@@ -73,6 +77,7 @@ const UsuariosList = () => {
                                     usuarioNome={usuario.nome}
                                     usuarioLogin={usuario.login}
                                     usuarioCategoria={usuario.categoria}
+                                    usuarioSenha={usuario.senha}
                                 />
                             ))
 

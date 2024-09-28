@@ -105,3 +105,8 @@ html, body {
    height: 100%;
    overflow-x: hidden;
 }
+
+.Toastify__toast--success {
+   font-size: 1.4rem;
+   font-family: $fontePrincipal;
+}

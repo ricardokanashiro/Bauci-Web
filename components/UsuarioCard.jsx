@@ -1,7 +1,14 @@
+import { useContext } from "react"
+
+import { ModalsContext } from "../contexts/ModalsContext"
+
 import "../assets/IconArrowWhite.png"
 import "../css/components/usuarios.css"
 
-const UsuarioCard = ({ usuarioNome, usuarioLogin, usuarioSenha, usuarioCategoria }) => {
+const UsuarioCard = ({ usuarioNome, usuarioLogin, usuarioCategoria, usuarioSenha }) => {
+
+   const { toggleEditUserModal, toggleDeleteUserModal, setToEditUser, setToDeleteUser } = useContext(ModalsContext)
+
    return (
 
       <div className="usuariosCard">
@@ -29,8 +36,27 @@ const UsuarioCard = ({ usuarioNome, usuarioLogin, usuarioSenha, usuarioCategoria
          </div>
 
          <div className="usuarios-card__edit-delete-button-wrapper">
-            <button className="usuarios-card__edit-button">Editar</button>
-            <button className="usuarios-card__delete-button">Deletar</button>
+
+            <button 
+               className="usuarios-card__edit-button" 
+               onClick={() => {
+                  toggleEditUserModal()
+                  setToEditUser({ usuarioNome, usuarioLogin, usuarioCategoria, usuarioSenha })
+               }}
+            >
+               Editar
+            </button>
+
+            <button 
+               className="usuarios-card__delete-button" 
+               onClick={() => {
+                  toggleDeleteUserModal()
+                  setToDeleteUser(usuarioNome)
+               }}
+            >
+               Deletar
+            </button>
+
          </div>
       </div>
    )

@@ -1,4 +1,6 @@
-import { useContext } from "react"
+import { useContext, useRef } from "react"
+
+import notify from "../utils/notify"
 
 import { ModalsContext } from "../contexts/ModalsContext"
 import { DataContext } from "../contexts/DataContext"
@@ -11,6 +13,8 @@ const EditCategoryModal = () => {
    const { toggleEditCategoryModal, editCategoryModalActive } = useContext(ModalsContext)
    const { setSharedCategorias } = useContext(DataContext)
    const { selectedCategory, setSelectedCategory } = useContext(NavigationContext)
+
+   const oldName = useRef(selectedCategory)
 
    function editCategory() {
       const newName = document.querySelector(".edit-category-modal input").value
@@ -25,6 +29,8 @@ const EditCategoryModal = () => {
       setSelectedCategory(newName)
 
       toggleEditCategoryModal()
+
+      notify(`Categoria "${oldName.current}" editada com sucesso!`)
    }
 
    return (

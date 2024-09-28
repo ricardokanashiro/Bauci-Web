@@ -1,5 +1,7 @@
 import { useContext } from "react"
 
+import notify from "../utils/notify"
+
 import { ModalsContext } from "../contexts/ModalsContext"
 import { DataContext } from "../contexts/DataContext"
 import { NavigationContext } from "../contexts/NavigationContext"
@@ -14,12 +16,12 @@ const DeleteCategoryModal = () => {
 
    function deleteCategory() {
 
-      console.log(toDeleteCategory)
-
       setSharedCategorias(categorias => categorias.filter(categoria => categoria.nome !== toDeleteCategory))
 
       toggleDeleteCategoryModal()
       setSelectedSection("categorias")
+
+      notify(`Categoria "${toDeleteCategory}" deletada com sucesso!`)
    }
 
    return (

@@ -1,5 +1,7 @@
 import { useContext, useRef } from "react"
 
+import notify from "../utils/notify"
+
 import { ModalsContext } from "../contexts/ModalsContext"
 import { DataContext } from "../contexts/DataContext";
 import { NavigationContext } from "../contexts/NavigationContext"
@@ -13,6 +15,7 @@ const EditProductModal = () => {
    const { selectedProduct, selectedCategory } = useContext(NavigationContext)
 
    const updatedImg = useRef(toEditProduct.produtoImg)
+   const oldName = useRef(toEditProduct.produtoNome)
 
    function editProduct() {
 
@@ -43,6 +46,8 @@ const EditProductModal = () => {
       )
 
       toggleEditProductModal()
+
+   notify(`Produto ${oldName.current} editado com sucesso!`)
    }
 
    function loadImage(e) {
@@ -114,7 +119,7 @@ const EditProductModal = () => {
                <input 
                   type="text" 
                   placeholder="Nome do produto" 
-                  value={toEditProduct.produtoNome} 
+                  value={toEditProduct.produtoNome}
                   onChange={(e) => setToEditProduct(produto => ({...produto, produtoNome: e.target.value}))}
                />
 

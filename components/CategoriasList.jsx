@@ -9,9 +9,9 @@ import "../css/components/categorias.css"
 
 const CategoriasList = () => {
 
-    const [searchValue, setSearchValue] = useState("");
+    const [searchValue, setSearchValue] = useState("")
 
-    const { toggleAddCategoryModal } = useContext(ModalsContext);
+    const { toggleAddCategoryModal } = useContext(ModalsContext)
     const { sharedCategorias } = useContext(DataContext)
 
     return (

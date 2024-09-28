@@ -6,6 +6,9 @@ import DeleteProductModal from "./DeleteProductModal"
 import AddProductModal from "./AddProductModal"
 import EditProductModal from "./EditProductModal"
 import AddCategoryModal from "./AddCategoryModal"
+import AddUserModal from "./AddUserModal"
+import EditUserModal from "./EditUserModal"
+import DeleteUserModal from "./DeleteUserModal"
 
 import { ModalsContext } from "../contexts/ModalsContext"
 
@@ -13,10 +16,12 @@ import "../css/components/modal-wrapper.css"
 
 const ModalWrapper = ({ selectedSection }) => {
 
-   const { 
-      editCategoryModalActive, deleteCategoryModalActive, 
+   const {
+      editCategoryModalActive, deleteCategoryModalActive,
       deleteProductModalActive, addProductModalActive,
-      editProductModalActive, addCategoryModalActive
+      editProductModalActive, addCategoryModalActive,
+      addUserModalActive, editUserModalActive,
+      deleteUserModalActive,
    } = useContext(ModalsContext)
 
    return (
@@ -24,11 +29,11 @@ const ModalWrapper = ({ selectedSection }) => {
          {
             selectedSection === "produtos" && (
                <>
-                  { editCategoryModalActive && <EditCategoryModal /> }
-                  { deleteCategoryModalActive && <DeleteCategoryModal /> }
-                  { deleteProductModalActive && <DeleteProductModal /> }
-                  { addProductModalActive && <AddProductModal /> }
-                  { editProductModalActive && <EditProductModal /> }
+                  {editCategoryModalActive && <EditCategoryModal />}
+                  {deleteCategoryModalActive && <DeleteCategoryModal />}
+                  {deleteProductModalActive && <DeleteProductModal />}
+                  {addProductModalActive && <AddProductModal />}
+                  {editProductModalActive && <EditProductModal />}
                </>
             )
          }
@@ -36,7 +41,17 @@ const ModalWrapper = ({ selectedSection }) => {
          {
             selectedSection === "categorias" && (
                <>
-                  { addCategoryModalActive && <AddCategoryModal /> }
+                  {addCategoryModalActive && <AddCategoryModal />}
+               </>
+            )
+         }
+
+         {
+            selectedSection === "usuarios" && (
+               <>
+                  { addUserModalActive && <AddUserModal /> }
+                  { editUserModalActive && <EditUserModal /> }
+                  { deleteUserModalActive && <DeleteUserModal /> }
                </>
             )
          }

@@ -12,11 +12,16 @@ const ModalsContextProvider = ({ children }) => {
    const [deleteProductModalActive, setDeleteProductModalActive] = useState(false)
    const [addProductModalActive, setAddProductModalActive] = useState(false)
    const [editProductModalActive, setEditProdutModalActive] = useState(false)
+   const [addUserModalActive, setAddUserModalActive] = useState(false)
+   const [editUserModalActive, setEditUserModalActive] = useState(false)
+   const [deleteUserModalActive, setDeleteUserModalActive] = useState(false)
 
    const [toDeleteCategory, setToDeleteCategory] = useState("")
-   const [toDeleteProduct, setToDeleteProduct] = useState("")
 
+   const [toDeleteProduct, setToDeleteProduct] = useState("")
    const [toEditProduct, setToEditProduct] = useState({})
+
+   const [toDeleteUser, setToDeleteUser] = useState("")
 
    function toggleAddCategoryModal() {
       setModalWrapperActive(prev => !prev)
@@ -48,6 +53,21 @@ const ModalsContextProvider = ({ children }) => {
       setEditProdutModalActive(prev => !prev)
    }
 
+   function toggleAddUserModal() {
+      setModalWrapperActive(prev => !prev)
+      setAddUserModalActive(prev => !prev)
+   }
+
+   function toggleEditUserModal() {
+      setModalWrapperActive(prev => !prev)
+      setEditUserModalActive(prev => !prev)
+   }
+
+   function toggleDeleteUserModal() {
+      setModalWrapperActive(prev => !prev)
+      setDeleteUserModalActive(prev => !prev)
+   }
+
    return (
       <ModalsContext.Provider value={{
          modalWrapperActive, 
@@ -59,7 +79,11 @@ const ModalsContextProvider = ({ children }) => {
          addProductModalActive, toggleAddProductModal,
          editProductModalActive, toggleEditProductModal,
          toEditProduct, setToEditProduct,
-         addCategoryModalActive, toggleAddCategoryModal
+         addCategoryModalActive, toggleAddCategoryModal,
+         addUserModalActive, toggleAddUserModal,
+         editUserModalActive, toggleEditUserModal,
+         deleteUserModalActive, toggleDeleteUserModal,
+         toDeleteUser, setToDeleteUser
       }}>
          { children }
       </ModalsContext.Provider>
