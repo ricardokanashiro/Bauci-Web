@@ -57,9 +57,8 @@ const EditUserModal = () => {
                             <img src="../assets/IconArrowDownGray.svg" alt="Ícone de seta apontando para baixo" />
                         </button>
 
-                    </div>
-
-                    {
+                        {
+                            
                         categoriaMenuActive && (
 
                             <div className="edit-user-modal__dropdown-category-menu">
@@ -80,6 +79,8 @@ const EditUserModal = () => {
                             </div>
                         )
                     }
+
+                    </div>
 
                 </div>
 

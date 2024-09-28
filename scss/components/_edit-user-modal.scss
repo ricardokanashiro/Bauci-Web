@@ -12,7 +12,7 @@
 }
 
 .edit-user-modal__header h2 {
-    font-size: 2.5rem;
+    font-size: clamp(1.9rem, 1.8vw, 2.5rem);
     color: $preto;
 }
 
@@ -44,10 +44,15 @@
 
 .edit-user-modal__input-category-wrapper {
     @include flex (space-between, center);
-    width: 50%;
+    width: clamp(16rem, 50%, 18rem);
     border: 1px solid $cinzaEscuro;
     padding: .85rem 1rem;
     border-radius: .4rem;
+    position: relative;
+
+    @include respond-to(mobile) {
+        width: 100%;
+     }
 }
 
 .edit-user-modal__arrow-dropdown-menu {
@@ -88,21 +93,28 @@
 
 .edit-user-modal__dropdown-category-menu {
     position: absolute;
-    top: 63.8%;
+    top: 110%;
+    left: 0;
     background-color: white;
     border-radius: .4rem;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    width: 18rem;
+    width: 100%;
     z-index: 2;
-    
+
     p {
-        padding: .5rem;
         cursor: pointer;
-        font-size: 1.2rem;
-        font-weight: 450;
+        padding: .5rem;
     }
 
     p:hover {
         background-color: #f1f1f1;
+    }
+
+    button {
+        width: 100%;
+        background-color: transparent;
+        font-size: 1.2rem;
+        font-weight: 450;
+        text-align: left;
     }
 }
