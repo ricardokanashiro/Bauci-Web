@@ -80,7 +80,7 @@ const AddProductModal = () => {
 
          <form onSubmit={(e) => e.preventDefault()}>
 
-            <fieldset className="add-product-modal__image-picker">
+            <div className="add-product-modal__image-picker">
 
                <p>Imagem</p>
 
@@ -98,7 +98,7 @@ const AddProductModal = () => {
 
                </button>
 
-            </fieldset>
+            </div>
 
             <fieldset className="add-product-modal__product-info-area">
 

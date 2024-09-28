@@ -15,7 +15,7 @@
       @include flex(space-between, center);
 
       h2 {
-         font-size: 2.5rem;
+         font-size: clamp(2.2rem, 1.8vw, 2.5rem);
          color: $preto;
       }
 
@@ -33,7 +33,7 @@
 
       width: 100%;
       margin: 3rem 0;
-      
+
       @include flex(space-between, stretch);
       gap: 4rem;
 
@@ -90,6 +90,18 @@
 
          }
 
+         @include respond-to(tablet) {
+            width: 100%;
+            height: 15rem;
+            @include flex(center, center);
+         }
+
+         @include respond-to(mobile) {
+            width: 100%;
+            height: 15rem;
+            @include flex(center, center);
+         }
+
       }
 
       .add-product-modal__product-info-area {
@@ -127,6 +139,14 @@
                font-weight: 400;
                margin-bottom: 1rem;
             }
+
+            @include respond-to(tablet) {
+               width: 100%;
+            }
+   
+            @include respond-to(mobile) {
+               width: 100%;
+            }
          }
 
          .add-product-modal__input-area {
@@ -140,9 +160,9 @@
                background-color: $cinzaEscuro;
             }
 
-            input[type=number]::-webkit-inner-spin-button{
-               appearance: none; 
-           }
+            input[type=number]::-webkit-inner-spin-button {
+               appearance: none;
+            }
          }
 
          button {
@@ -167,6 +187,24 @@
             }
          }
 
+         @include respond-to(tablet) {
+            width: 100%;
+         }
+
+         @include respond-to(mobile) {
+            width: 100%;
+         }
+
+      }
+
+      @include respond-to(tablet) {
+         @include flex(space-between, center);
+         flex-direction: column;
+      }
+
+      @include respond-to(mobile) {
+         @include flex(space-between, center);
+         flex-direction: column;
       }
    }
 

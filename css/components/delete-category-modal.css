@@ -9,13 +9,13 @@
   border-radius: 0.6rem;
 }
 .delete-category-modal h2 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 1.8vw, 2.5rem);
   text-align: center;
 }
 .delete-category-modal p {
   color: #979DAB;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: clamp(1.3rem, 1.15vw, 1.5rem);
   line-height: 2.6rem;
   margin-top: 2rem;
 }
@@ -28,10 +28,10 @@
 }
 .delete-category-modal .delete-category-modal__buttons-area button {
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: clamp(1.3rem, 1.15vw, 1.5rem);
   font-weight: 600;
   flex: 1;
-  padding: 1.4rem;
+  padding: clamp(1.1rem, 1vw, 1.4rem);
 }
 .delete-category-modal .delete-category-modal__cancelar-btn {
   color: #333840;
