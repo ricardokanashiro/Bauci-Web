@@ -9,7 +9,7 @@
 }
 
 .Usuarios-list header {
-    @include flex(space-between, center);
+    @include flex(space-between, stretch);
     width: 100%;
     padding: 2rem;
     border-radius: .6rem;
@@ -79,7 +79,7 @@
     border: 2px solid transparent;
     transition-duration: 200ms;
     transition-property: border, background-color, color;
-    height: 3rem;
+    height: 100%;
     font-size: clamp(0.9rem, 0.9vw, 1.1rem);
 
     @include flex(center, center);

@@ -24,14 +24,14 @@ const Layout = ({ children }) => {
    return (
 
       <>
-      
+
          <section className="layout">
 
             <ToastContainer />
 
             <section className="navbar">
 
-               <img src="../assets/logo.svg" alt="Logo da bauci em cores pretas" className="navbar__bauci-logo"/>
+               <img src="../assets/logo.svg" alt="Logo da bauci em cores pretas" className="navbar__bauci-logo" />
 
                <nav className="navbar__links-area">
 
@@ -66,6 +66,46 @@ const Layout = ({ children }) => {
 
             <section className="section-wrapper">
                {children}
+            </section>
+
+         </section>
+
+         <section className="layout-mobile">
+
+            <ToastContainer />
+
+            <section className="section-wrapper">
+               {children}
+            </section>
+
+            <section className="navbar-mobile">
+
+               <nav className="navbar-mobile__links-area">
+
+                  <button
+                     className={selectedSection === "produtos" || selectedSection === "categorias" ? "navbar-item navbar-item--active" : "navbar-item"}
+                     onClick={() => setSelectedSection("categorias")}
+                  >
+
+                     <img src={selectedSection === "produtos" || selectedSection === "categorias" ? CartIconWhite : CartIconGray} alt="ícone de carrinho" />
+
+                  </button>
+
+                  <button
+                     className={selectedSection === "usuarios" ? "navbar-item navbar-item--active" : "navbar-item"}
+                     onClick={() => setSelectedSection("usuarios")}
+                  >
+
+                     <img src={selectedSection === "usuarios" ? UsersIconWhite : UsersIconGray} alt="#" />
+
+                  </button>
+
+                  <button className="navbar-mobile__logout-btn">
+                     <img src="../assets/IconLogOut.svg" alt="logout icon" />
+                  </button>
+
+               </nav>
+
             </section>
 
          </section>

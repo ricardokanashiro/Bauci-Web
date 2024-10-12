@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  gap: 1rem;
 }
 .produtos-header h1 {
   font-size: clamp(2.9rem, 2.8vw, 4.5rem);

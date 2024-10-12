@@ -2,7 +2,7 @@
 
 .produtos-header {
    @include flex(space-between, center);
-   flex-wrap: wrap;
+   gap: 1rem;
 
    h1 {
       font-size: clamp(2.9rem, 2.8vw, 4.5rem);
