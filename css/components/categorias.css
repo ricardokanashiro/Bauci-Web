@@ -190,14 +190,36 @@
   background-color: transparent;
   cursor: pointer;
 }
-.add-category-modal input {
+.add-category-modal .add-category-modal__input-wrapper {
   width: 100%;
   border: 1px solid #838393;
-  outline: none;
   margin-top: 3rem;
+  border-radius: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.add-category-modal .add-category-modal__input-wrapper p {
+  color: #838393;
+  font-size: 1.1rem;
+  padding-right: 1rem;
+  background-color: transparent;
+}
+.add-category-modal input {
+  width: 100%;
+  outline: none;
   font-size: 1.4rem;
   padding: 1rem;
-  border-radius: 0.4rem;
+  background-color: transparent;
+}
+.add-category-modal .add-category-modal__error-message {
+  width: 100%;
+}
+.add-category-modal .add-category-modal__error-message p {
+  font-size: 1.2rem;
+  padding-top: 0.3rem;
+  color: red;
 }
 .add-category-modal .add-category-modal__apply-btn {
   width: 100%;

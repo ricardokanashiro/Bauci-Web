@@ -253,18 +253,42 @@
   justify-content: center;
   align-items: flex-start;
   flex-flow: column nowrap;
-  gap: 1.5rem;
+  gap: 1.2rem;
   flex: 1;
-  margin: 3rem 0;
+  margin: 2rem 0;
+}
+
+.add-user-modal__error-message-wrapper {
+  width: 100%;
+}
+.add-user-modal__error-message-wrapper p {
+  font-size: 1.2rem;
+  padding-top: 0.3rem;
+  color: red;
+}
+
+.add-user-modal__classic-input-wrapper {
+  width: 100%;
+  border: 1px solid #838393;
+  border-radius: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.add-user-modal__classic-input-wrapper p {
+  color: #838393;
+  font-size: 1.1rem;
+  padding-right: 1rem;
+  background-color: transparent;
 }
 
 .add-user-modal__classic-input {
   width: 100%;
-  border: 1px solid #838393;
   outline: none;
   font-size: 1.4rem;
   padding: 1rem;
-  border-radius: 0.4rem;
+  background-color: transparent;
 }
 
 .add-user-modal__input-category-wrapper {
@@ -376,18 +400,42 @@
   justify-content: center;
   align-items: flex-start;
   flex-flow: column nowrap;
-  gap: 1.5rem;
+  gap: 1.2rem;
   flex: 1;
-  margin: 3rem 0;
+  margin: 2rem 0;
+}
+
+.edit-user-modal__error-message-wrapper {
+  width: 100%;
+}
+.edit-user-modal__error-message-wrapper .edit-user-modal__error-message {
+  font-size: 1.2rem;
+  padding-top: 0.3rem;
+  color: red;
+}
+
+.edit-user-modal__classic-input-wrapper {
+  width: 100%;
+  border: 1px solid #838393;
+  border-radius: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.edit-user-modal__classic-input-wrapper p {
+  color: #838393;
+  font-size: 1.1rem;
+  padding-right: 1rem;
+  background-color: transparent;
 }
 
 .edit-user-modal__classic-input {
   width: 100%;
-  border: 1px solid #838393;
   outline: none;
   font-size: 1.4rem;
   padding: 1rem;
-  border-radius: 0.4rem;
+  background-color: transparent;
 }
 
 .edit-user-modal__input-category-wrapper {
@@ -515,7 +563,8 @@
 .section-wrapper {
   background-color: #F0F2F5 !important;
   padding: 4rem clamp(1.8rem, 2vw, 3rem) 0rem clamp(1.8rem, 2vw, 3rem) !important;
-  height: 100% !important;
+  min-height: 100% !important;
+  height: auto !important;
 }
 
 .sectionwrapper__usuarios-page-wrapper {

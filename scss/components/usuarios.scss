@@ -8,7 +8,8 @@
 .section-wrapper {
     background-color: $brancoAzulado !important;
     padding: 4rem clamp(1.8rem, 2vw, 3rem) 0rem clamp(1.8rem, 2vw, 3rem)!important;
-    height: 100% !important;
+    min-height: 100% !important;
+    height: auto !important;
 }
 
 .sectionwrapper__usuarios-page-wrapper {

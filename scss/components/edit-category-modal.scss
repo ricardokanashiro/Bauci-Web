@@ -24,14 +24,37 @@
       }
    }
 
-   input {
+   .edit-category-modal__input-wrapper {
       width: 100%;
       border: 1px solid $cinzaEscuro;
-      outline: none;
       margin-top: 3rem;
+      border-radius: .4rem;
+      @include flex(center, center);
+      flex-direction: row;
+
+      p {
+         color: $cinzaEscuro;
+         font-size: 1.1rem;
+         padding-right: 1rem;
+         background-color: transparent;
+      }
+   }
+
+   input {
+      width: 100%;
+      outline: none;
       font-size: 1.4rem;
       padding: 1rem;
-      border-radius: .4rem;
+      background-color: transparent;
+   }
+
+   .edit-category-modal__error-message{
+      width: 100%;
+      p {
+         font-size: 1.2rem;
+         padding-top: .3rem;
+         color: red;
+      }
    }
 
    .edit-category-modal__apply-btn {

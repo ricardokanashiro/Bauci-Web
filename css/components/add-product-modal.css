@@ -102,25 +102,62 @@
   justify-content: center;
   align-items: flex-start;
   flex-flow: column nowrap;
-  gap: 1.5rem;
+  gap: 1rem;
   flex: 1;
+}
+.add-product-modal form .add-product-modal__product-info-area .add-product-modal__error-message-wrapper {
+  width: 100%;
+}
+.add-product-modal form .add-product-modal__product-info-area .add-product-modal__error-message-wrapper .add-product-modal__error-message {
+  font-size: 1.2rem;
+  padding-top: 0.3rem;
+  color: red;
+}
+.add-product-modal form .add-product-modal__product-info-area .add-product-modal__input-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  border: 1px solid #838393;
+  border-radius: 0.4rem;
+}
+.add-product-modal form .add-product-modal__product-info-area .add-product-modal__input-wrapper p {
+  color: #838393;
+  font-size: 1.1rem;
+  padding-right: 1rem;
+  background-color: transparent;
 }
 .add-product-modal form .add-product-modal__product-info-area input {
   width: 100%;
-  border: 1px solid #838393;
   outline: none;
   font-size: 1.4rem;
   padding: 1rem;
+  background-color: transparent;
+}
+.add-product-modal form .add-product-modal__product-info-area .add-product-modal__textarea-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  width: 100%;
+  border: 1px solid #838393;
   border-radius: 0.4rem;
+}
+.add-product-modal form .add-product-modal__product-info-area .add-product-modal__textarea-wrapper p {
+  color: #838393;
+  font-size: 1.1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  background-color: transparent;
 }
 .add-product-modal form .add-product-modal__product-info-area textarea {
   width: 100%;
-  border: 1px solid #838393;
   outline: none;
   font-size: 1.4rem;
   padding: 1rem;
-  border-radius: 0.4rem;
   resize: none;
+  background-color: transparent;
 }
 .add-product-modal form .add-product-modal__product-info-area .add-product-modal__prazo-area {
   position: relative;
@@ -144,13 +181,31 @@
 .add-product-modal form .add-product-modal__product-info-area .add-product-modal__input-area {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
 }
-.add-product-modal form .add-product-modal__product-info-area .add-product-modal__input-area div {
+.add-product-modal form .add-product-modal__product-info-area .add-product-modal__input-area .add-product-modal__hifen {
   width: 2rem;
   height: 0.1rem;
   background-color: #838393;
+  margin-top: 1.95rem;
+}
+.add-product-modal form .add-product-modal__product-info-area .add-product-modal__input-area .add-product-modal__error-message-wrapper-number {
+  width: 100%;
+}
+.add-product-modal form .add-product-modal__product-info-area .add-product-modal__input-area .add-product-modal__error-message-wrapper-number .add-product-modal__error-message {
+  font-size: 1rem;
+  padding-top: 0.3rem;
+  color: red;
+}
+.add-product-modal form .add-product-modal__product-info-area .add-product-modal__input-area input[type=number] {
+  width: 100%;
+  border: 1px solid #838393;
+  border-radius: 0.4rem;
+  width: 100%;
+  outline: none;
+  font-size: 1.4rem;
+  padding: 1rem;
 }
 .add-product-modal form .add-product-modal__product-info-area .add-product-modal__input-area input[type=number]::-webkit-inner-spin-button {
   appearance: none;
@@ -190,6 +245,8 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    gap: 2.5rem;
+    margin: 2rem 0;
   }
 }
 @media (max-width: 480px) {
@@ -198,6 +255,8 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    gap: 2.5rem;
+    margin: 2rem 0;
   }
 }
 .add-product-modal .add-product-modal__add-btn {
