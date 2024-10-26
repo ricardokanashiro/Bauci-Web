@@ -29,7 +29,7 @@
 
       width: 100%;
       margin: 3rem 0;
-      
+
       @include flex(space-between, stretch);
       gap: 4rem;
 
@@ -87,7 +87,7 @@
             @include respond-to(tablet) {
                bottom: -16rem;
             }
-   
+
             @include respond-to(mobile) {
                bottom: -16rem;
             }
@@ -112,26 +112,72 @@
 
          @include flex(center, flex-start);
          flex-flow: column nowrap;
-         gap: 1.5rem;
+         gap: 1rem;
          flex: 1;
+
+         .edit-product-modal__error-message-wrapper {
+            width: 100%;
+
+            .edit-product-modal__error-message {
+               font-size: 1.2rem;
+               padding-top: .3rem;
+               color: red;
+            }
+         }
+
+         .edit-product-modal__input-wrapper {
+            @include flex(center, center);
+            flex-direction: row;
+            width: 100%;
+            border: 1px solid $cinzaEscuro;
+            border-radius: .4rem;
+
+            p {
+               color: $cinzaEscuro;
+               font-size: 1.1rem;
+               padding-right: 1rem;
+               background-color: transparent;
+            }
+         }
 
          input {
             width: 100%;
-            border: 1px solid $cinzaEscuro;
             outline: none;
             font-size: 1.4rem;
             padding: 1rem;
+            background-color: transparent;
+         }
+
+         .edit-product-modal__textarea-wrapper {
+            @include flex(center, flex-start);
+            flex-direction: row;
+            width: 100%;
+            border: 1px solid $cinzaEscuro;
             border-radius: .4rem;
+            overflow-y: auto;
+            /* Permite rolagem vertical no container */
+            box-sizing: border-box;
+            /* Inclui padding no cálculo do tamanho */
+
+            p {
+               color: $cinzaEscuro;
+               font-size: 1.1rem;
+               padding-right: 1rem;
+               padding-top: 1rem;
+               background-color: transparent;
+            }
          }
 
          textarea {
             width: 100%;
-            border: 1px solid $cinzaEscuro;
             outline: none;
             font-size: 1.4rem;
             padding: 1rem;
-            border-radius: .4rem;
             resize: none;
+            background-color: transparent;
+            box-sizing: border-box; /* Inclui o padding no cálculo do tamanho */
+            overflow: hidden; 
+            height: auto;
          }
 
          .edit-product-modal__prazo-area {
@@ -147,7 +193,7 @@
             @include respond-to(tablet) {
                width: 100%;
             }
-   
+
             @include respond-to(mobile) {
                width: 100%;
             }
@@ -155,18 +201,39 @@
 
          .edit-product-modal__input-area {
 
-            @include flex(space-between, center);
+            @include flex(space-between, flex-start);
             gap: 1rem;
 
-            div {
+            .edit-product-modal__hifen {
                width: 2rem;
                height: .1rem;
                background-color: $cinzaEscuro;
+               margin-top: 1.95rem;
             }
 
-            input[type=number]::-webkit-inner-spin-button{
-               appearance: none; 
-           }
+            .edit-product-modal__error-message-wrapper-number {
+               width: 100%;
+
+               .edit-product-modal__error-message {
+                  font-size: 1rem;
+                  padding-top: .3rem;
+                  color: red;
+               }
+            }
+
+            input[type=number] {
+               width: 100%;
+               border: 1px solid $cinzaEscuro;
+               border-radius: .4rem;
+               width: 100%;
+               outline: none;
+               font-size: 1.4rem;
+               padding: 1rem;
+            }
+
+            input[type=number]::-webkit-inner-spin-button {
+               appearance: none;
+            }
          }
 
          button {
@@ -204,11 +271,15 @@
       @include respond-to(tablet) {
          @include flex(space-between, center);
          flex-direction: column;
+         gap: 2.5rem;
+         margin: 2rem 0;
       }
 
       @include respond-to(mobile) {
          @include flex(space-between, center);
          flex-direction: column;
+         gap: 2.5rem;
+         margin: 2rem 0;
       }
    }
 

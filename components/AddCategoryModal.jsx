@@ -38,8 +38,14 @@ const AddCategoryModal = () => {
             </button>
          </header>
 
+         <div className="add-category-modal__input-wrapper">
+            <input type="text" placeholder="Nome da categoria" onChange={(e) => setCategoriaName(e.target.value)} />
+            <p>1/20</p>
+         </div>
 
-         <input type="text" placeholder="Nome da categoria" onChange={(e) => setCategoriaName(e.target.value)} />
+         <div className="add-category-modal__error-message">
+            <p>O campo deve ser preenchido!</p>
+         </div>
 
          <button className="add-category-modal__apply-btn" onClick={addCategoria}>Adicionar</button>
       </div>

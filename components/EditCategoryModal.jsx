@@ -44,8 +44,14 @@ const EditCategoryModal = () => {
             </button>
          </header>
 
+         <div className="edit-category-modal__input-wrapper">
+            <input type="text" placeholder="Nome da categoria" />
+            <p>1/20</p>
+         </div>
 
-         <input type="text" placeholder="Nome da categoria" />
+         <div className="edit-category-modal__error-message">
+            <p>O campo deve ser preenchido!</p>
+         </div>
 
          <button className="edit-category-modal__apply-btn" onClick={editCategory}>Aplicar</button>
       </div>

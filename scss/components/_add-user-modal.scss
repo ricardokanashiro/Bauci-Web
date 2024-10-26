@@ -27,19 +27,43 @@
 
     @include flex(center, flex-start);
     flex-flow: column nowrap;
-    gap: 1.5rem;
+    gap: 1.2rem;
     flex: 1;
-    margin: 3rem 0;
+    margin: 2rem 0;
 
+}
+
+.add-user-modal__error-message-wrapper {
+    width: 100%;
+
+    p {
+        font-size: 1.2rem;
+        padding-top: .3rem;
+        color: red;
+    }
+}
+
+.add-user-modal__classic-input-wrapper {
+    width: 100%;
+    border: 1px solid $cinzaEscuro;
+    border-radius: .4rem;
+    @include flex(center, center);
+    flex-direction: row;
+
+    p {
+        color: $cinzaEscuro;
+        font-size: 1.1rem;
+        padding-right: 1rem;
+        background-color: transparent;
+    }
 }
 
 .add-user-modal__classic-input {
     width: 100%;
-    border: 1px solid $cinzaEscuro;
     outline: none;
     font-size: 1.4rem;
     padding: 1rem;
-    border-radius: .4rem;
+    background-color: transparent
 }
 
 .add-user-modal__input-category-wrapper {
@@ -52,7 +76,7 @@
 
     @include respond-to(mobile) {
         width: 100%;
-     }
+    }
 }
 
 .add-user-modal__arrow-dropdown-menu {

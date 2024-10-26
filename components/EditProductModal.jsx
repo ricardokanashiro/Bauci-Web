@@ -31,7 +31,7 @@ const EditProductModal = () => {
          categorias => categorias
             .map(
                categoria => categoria.nome === selectedCategory ?
-                  { 
+                  {
                      ...categoria, produtos: categoria.produtos
                         .map(
                            produto => produto.nome === selectedProduct ?
@@ -40,14 +40,14 @@ const EditProductModal = () => {
                               produto
                         )
                   }
-               :
-               categoria
+                  :
+                  categoria
             )
       )
 
       toggleEditProductModal()
 
-   notify(`Produto ${oldName.current} editado com sucesso!`)
+      notify(`Produto ${oldName.current} editado com sucesso!`)
    }
 
    function loadImage(e) {
@@ -116,43 +116,64 @@ const EditProductModal = () => {
 
             <fieldset className="edit-product-modal__product-info-area">
 
-               <input 
-                  type="text" 
-                  placeholder="Nome do produto" 
-                  value={toEditProduct.produtoNome}
-                  onChange={(e) => setToEditProduct(produto => ({...produto, produtoNome: e.target.value}))}
-               />
+               <div className="edit-product-modal__error-message-wrapper">
+                  <div className="edit-product-modal__input-wrapper">
+                     <input
+                        type="text"
+                        placeholder="Nome do produto"
+                        value={toEditProduct.produtoNome}
+                        onChange={(e) => setToEditProduct(produto => ({ ...produto, produtoNome: e.target.value }))}
+                     />
+                     <p>1/20</p>
+                  </div>
 
-               <textarea 
-                  placeholder="Descrição do produto" 
-                  value={toEditProduct.produtoDescricao}
-                  onChange={(e) => setToEditProduct(produto => ({...produto, produtoDescricao: e.target.value}))}
-               ></textarea>
+                  <p className="edit-product-modal__error-message">O campo deve ser preenchido!</p>
+               </div>
+
+               <div className="edit-product-modal__error-message-wrapper">
+                  <div className="edit-product-modal__textarea-wrapper">
+                     <textarea
+                        placeholder="Descrição do produto"
+                        value={toEditProduct.produtoDescricao}
+                        onChange={(e) => setToEditProduct(produto => ({ ...produto, produtoDescricao: e.target.value }))}
+                     ></textarea>
+                     <p>1/20</p>
+                  </div>
+
+                  <p className="edit-product-modal__error-message">O campo deve ser preenchido!</p>
+               </div>
 
                <div className="edit-product-modal__prazo-area">
 
                   <h2>Prazo</h2>
-                  
+
                   <div className="edit-product-modal__input-area">
 
-                     <input 
-                        type="number" 
-                        placeholder="Mínimo" 
-                        className="edit-product-modal__InputMin" 
-                        value={toEditProduct.produtoPrazoMin}
-                        onChange={(e) => setToEditProduct(produto => ({...produto, produtoPrazoMin: e.target.value}))}
-                     />
+                     <div className="edit-product-modal__error-message-wrapper-number">
+                        <input
+                           type="number"
+                           placeholder="Mínimo"
+                           className="edit-product-modal__InputMin"
+                           value={toEditProduct.produtoPrazoMin}
+                           onChange={(e) => setToEditProduct(produto => ({ ...produto, produtoPrazoMin: e.target.value }))}
+                        />
 
-                     <div></div>
+                        <p className="edit-product-modal__error-message">O campo deve ser preenchido!</p>
+                     </div>
 
-                     <input 
-                        className="edit-product-modal__InputMax"
-                        type="number" 
-                        placeholder="Máximo" 
-                        value={toEditProduct.produtoPrazoMax}
-                        onChange={(e) => setToEditProduct(produto => ({...produto, produtoPrazoMax: e.target.value}))}
-                     />
+                     <div className="edit-product-modal__hifen"></div>
 
+                     <div className="edit-product-modal__error-message-wrapper-number">
+                        <input
+                           className="edit-product-modal__InputMax"
+                           type="number"
+                           placeholder="Máximo"
+                           value={toEditProduct.produtoPrazoMax}
+                           onChange={(e) => setToEditProduct(produto => ({ ...produto, produtoPrazoMax: e.target.value }))}
+                        />
+
+                        <p className="edit-product-modal__error-message">O campo deve ser preenchido!</p>
+                     </div>
                   </div>
 
                </div>

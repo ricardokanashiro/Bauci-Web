@@ -14,29 +14,55 @@ const AddUserModal = () => {
     const [selectedCategoria, setSelectedCategoria] = useState("")
 
     return (
-            <div className="add-user-modal">
+        <div className="add-user-modal">
 
-                <header className="add-user-modal__header">
-                    <h2>Adicionar Usuário</h2>
+            <header className="add-user-modal__header">
+                <h2>Adicionar Usuário</h2>
 
-                    <button onClick={toggleAddUserModal}>
-                        <img src="../assets/iconXGray.svg" alt="ícone de x" />
-                    </button>
-                </header>
+                <button onClick={toggleAddUserModal}>
+                    <img src="../assets/iconXGray.svg" alt="ícone de x" />
+                </button>
+            </header>
 
-                <div className="add-user-modal__input-wrapper">
+            <div className="add-user-modal__input-wrapper">
 
-                    <input className="add-user-modal__classic-input" type="text" placeholder="Nome do usuário" />
+                <div className="add-user-modal__error-message-wrapper">
+                    <div className="add-user-modal__classic-input-wrapper">
+                        <input className="add-user-modal__classic-input" type="text" placeholder="Nome do usuário" />
 
-                    <input className="add-user-modal__classic-input" type="text" placeholder="Login do usuário" />
+                        <p>1/20</p>
+                    </div>
 
-                    <input className="add-user-modal__classic-input" type="text" placeholder="Senha do usuário" />
+                    <p className="add-user-modal__error-message">O campo deve ser preenchido!</p>
+                </div>
+
+                <div className="add-user-modal__error-message-wrapper">
+                    <div className="add-user-modal__classic-input-wrapper">
+                        <input className="add-user-modal__classic-input" type="text" placeholder="Login do usuário" />
+
+                        <p>1/20</p>
+                    </div>
+
+                    <p className="add-user-modal__error-message">O campo deve ser preenchido!</p>
+                </div>
+
+                <div className="add-user-modal__error-message-wrapper">
+                    <div className="add-user-modal__classic-input-wrapper">
+                        <input className="add-user-modal__classic-input" type="text" placeholder="Senha do usuário" />
+
+                        <p>1/20</p>
+                    </div>
+
+                    <p className="add-user-modal__error-message">O campo deve ser preenchido!</p>
+                </div>
+
+                <div className="add-user-modal__error-message-wrapper">
 
                     <div className="add-user-modal__input-category-wrapper">
 
                         <input className="add-user-modal__category-input" type="text" placeholder="Categoria" disabled value={selectedCategoria} />
 
-                        <button 
+                        <button
                             className="add-user-modal__arrow-dropdown-menu"
                             onClick={() => setCategoriaMenuActive(prev => !prev)}
                         >
@@ -44,31 +70,34 @@ const AddUserModal = () => {
                         </button>
 
                         {
-                        categoriaMenuActive && (
-                            <div className="add-user-modal__dropdown-category-menu">
+                            categoriaMenuActive && (
+                                <div className="add-user-modal__dropdown-category-menu">
 
-                                <button onClick={() => setSelectedCategoria("Cozinheiro")}>
-                                    <p>Cozinheiro</p>
-                                </button>
+                                    <button onClick={() => setSelectedCategoria("Cozinheiro")}>
+                                        <p>Cozinheiro</p>
+                                    </button>
 
-                                <button onClick={() => setSelectedCategoria("Outro Cozinheiro")}>
-                                    <p>Outro Cozinheiro</p>
-                                </button>
+                                    <button onClick={() => setSelectedCategoria("Outro Cozinheiro")}>
+                                        <p>Outro Cozinheiro</p>
+                                    </button>
 
-                                <button onClick={() => setSelectedCategoria("Atendente")}>
-                                    <p>Atendente</p>
-                                </button>
+                                    <button onClick={() => setSelectedCategoria("Atendente")}>
+                                        <p>Atendente</p>
+                                    </button>
 
-                            </div>
-                        )
-                    }
+                                </div>
+                            )
+                        }
 
                     </div>
 
+                    <p className="add-user-modal__error-message">O campo deve ser preenchido!</p>
                 </div>
 
-                <button className="add-user-modal__apply-btn">Adicionar</button>
             </div>
+
+            <button className="add-user-modal__apply-btn">Adicionar</button>
+        </div>
     )
 }
 

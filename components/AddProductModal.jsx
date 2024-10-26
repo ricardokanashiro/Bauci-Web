@@ -27,9 +27,9 @@ const AddProductModal = () => {
       }
 
       setSharedCategorias(categorias => categorias.map(
-         categoria => categoria.nome === selectedCategory ? 
-         {...categoria, produtos: [...categoria.produtos, newProduct]}
-         : categoria
+         categoria => categoria.nome === selectedCategory ?
+            { ...categoria, produtos: [...categoria.produtos, newProduct] }
+            : categoria
       ))
 
       notify(`Produto "${newProduct.nome}" adicionado com sucesso!`)
@@ -102,20 +102,41 @@ const AddProductModal = () => {
 
             <fieldset className="add-product-modal__product-info-area">
 
-               <input type="text" placeholder="Nome do produto" />
-               <textarea placeholder="Descrição do produto"></textarea>
+               <div className="add-product-modal__error-message-wrapper">
+                  <div className="add-product-modal__input-wrapper">
+                     <input type="text" placeholder="Nome do produto" />
+                     <p>1/20</p>
+                  </div>
+
+                  <p className="add-product-modal__error-message">O campo deve ser preenchido!</p>
+               </div>
+
+               <div className="add-product-modal__error-message-wrapper">
+                  <div className="add-product-modal__textarea-wrapper">
+                     <textarea placeholder="Descrição do produto"></textarea>
+                     <p>1/20</p>
+                  </div>
+
+                  <p className="add-product-modal__error-message">O campo deve ser preenchido!</p>
+               </div>
 
                <div className="add-product-modal__prazo-area">
 
                   <h2>Prazo</h2>
-                  
+
                   <div className="add-product-modal__input-area">
 
-                     <input type="number" placeholder="Mínimo" className="add-product-modal__inputMin" />
+                     <div className="add-product-modal__error-message-wrapper-number">
+                        <input type="number" placeholder="Mínimo" className="add-product-modal__inputMin" />
+                        <p className="add-product-modal__error-message">O campo deve ser preenchido!</p>
+                     </div>
 
-                     <div></div>
+                     <div className="add-product-modal__hifen"></div>
 
-                     <input type="number" placeholder="Máximo" className="add-product-modal__inputMax" />
+                     <div className="add-product-modal__error-message-wrapper-number">
+                        <input type="number" placeholder="Máximo" className="add-product-modal__inputMax" />
+                        <p className="add-product-modal__error-message">O campo deve ser preenchido!</p>
+                     </div>
 
                   </div>
 
@@ -125,9 +146,9 @@ const AddProductModal = () => {
 
          </form>
 
-         <button 
-            className="add-product-modal__add-btn" 
-            onClick={() => {addProduct(); toggleAddProductModal()}}
+         <button
+            className="add-product-modal__add-btn"
+            onClick={() => { addProduct(); toggleAddProductModal() }}
          >
             Adicionar
          </button>
