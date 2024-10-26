@@ -1,6 +1,9 @@
 import { useContext, useState } from "react"
 
 import { ModalsContext } from "../contexts/ModalsContext"
+import { DataContext } from "../contexts/DataContext"
+
+import notify from "../utils/notify"
 
 import "../assets/IconArrowDownGray.svg"
 
@@ -9,9 +12,17 @@ import "../css/components/usuarios.css"
 const AddUserModal = () => {
 
     const { toggleAddUserModal } = useContext(ModalsContext)
+    const { setSharedUsers, sharedCategorias } = useContext(DataContext)
 
     const [categoriaMenuActive, setCategoriaMenuActive] = useState(false)
-    const [selectedCategoria, setSelectedCategoria] = useState("")
+    const [newUser, setNewUser] = useState({ nome: "", login: "", senha: "", categoria: "" })
+
+    function addUser()
+    {
+        setSharedUsers(prev => [newUser, ...prev])
+        notify(`Usuário ${newUser.nome} adicionado com sucesso!`)
+        toggleAddUserModal()
+    }
 
     return (
             <div className="add-user-modal">
@@ -26,15 +37,33 @@ const AddUserModal = () => {
 
                 <div className="add-user-modal__input-wrapper">
 
-                    <input className="add-user-modal__classic-input" type="text" placeholder="Nome do usuário" />
+                    <input 
+                        className="add-user-modal__classic-input" 
+                        type="text" 
+                        placeholder="Nome do usuário" 
+                        onChange={(e) => setNewUser(prev => ({...prev, nome: e.target.value}))}
+                        value={newUser.nome}
+                    />
 
-                    <input className="add-user-modal__classic-input" type="text" placeholder="Login do usuário" />
+                    <input 
+                        className="add-user-modal__classic-input" 
+                        type="text" 
+                        placeholder="Login do usuário"
+                        onChange={(e) => setNewUser(prev => ({...prev, login: e.target.value}))}
+                        value={newUser.login}
+                    />
 
-                    <input className="add-user-modal__classic-input" type="text" placeholder="Senha do usuário" />
+                    <input 
+                        className="add-user-modal__classic-input" 
+                        type="password" 
+                        placeholder="Senha do usuário"
+                        onChange={(e) => setNewUser(prev => ({...prev, senha: e.target.value}))}
+                        value={newUser.senha}
+                    />
 
                     <div className="add-user-modal__input-category-wrapper">
 
-                        <input className="add-user-modal__category-input" type="text" placeholder="Categoria" disabled value={selectedCategoria} />
+                        <input className="add-user-modal__category-input" type="text" placeholder="Categoria" disabled value={newUser.categoria} />
 
                         <button 
                             className="add-user-modal__arrow-dropdown-menu"
@@ -45,19 +74,21 @@ const AddUserModal = () => {
 
                         {
                         categoriaMenuActive && (
+
                             <div className="add-user-modal__dropdown-category-menu">
 
-                                <button onClick={() => setSelectedCategoria("Cozinheiro")}>
-                                    <p>Cozinheiro</p>
-                                </button>
-
-                                <button onClick={() => setSelectedCategoria("Outro Cozinheiro")}>
-                                    <p>Outro Cozinheiro</p>
-                                </button>
-
-                                <button onClick={() => setSelectedCategoria("Atendente")}>
-                                    <p>Atendente</p>
-                                </button>
+                                {
+                                    sharedCategorias.map(categoria => (
+                                        <button 
+                                            onClick={() => {
+                                                setNewUser(prev => ({...prev, categoria: categoria.nome}))
+                                                setCategoriaMenuActive(prev => !prev)
+                                            }}
+                                        >
+                                            <p>{categoria.nome}</p>
+                                        </button>
+                                    ))
+                                }
 
                             </div>
                         )
@@ -67,7 +98,13 @@ const AddUserModal = () => {
 
                 </div>
 
-                <button className="add-user-modal__apply-btn">Adicionar</button>
+                <button 
+                    className="add-user-modal__apply-btn" 
+                    onClick={addUser}
+                >
+                    Adicionar
+                </button>
+
             </div>
     )
 }

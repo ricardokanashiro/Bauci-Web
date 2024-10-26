@@ -10,6 +10,9 @@ import DataContextProvider from "../contexts/DataContext"
 
 import { NavigationContext } from "../contexts/NavigationContext"
 
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 const App = () => {
 
    const { selectedSection, setSelectedSection } = useContext(NavigationContext)
@@ -25,6 +28,7 @@ const App = () => {
             {selectedSection === "usuarios" && (<Usuarios />)}
             {selectedSection === "produtos" && (<Produtos />)}
          </Layout>
+         <ToastContainer />
       </ModalsContextProvider>
       </DataContextProvider>
    )

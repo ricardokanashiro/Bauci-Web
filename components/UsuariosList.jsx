@@ -2,15 +2,13 @@ import { useContext, useState } from "react"
 
 import "../css/components/usuarios.css"
 
-import { usuarios } from "../data.js"
-
 import UsuarioCard from "./UsuarioCard"
+
 import { ModalsContext } from "../contexts/ModalsContext.jsx"
+import { DataContext } from "../contexts/DataContext.jsx"
 
 import "../assets/IconSearch.svg"
-
 import "../assets/IconSearch.svg"
-
 import "../assets/IconPlus.svg"
 
 const UsuariosList = () => {
@@ -18,6 +16,7 @@ const UsuariosList = () => {
     const [searchValue, setSearchValue] = useState("")
 
     const { toggleAddUserModal } = useContext(ModalsContext)
+    const { sharedUsers } = useContext(DataContext)
 
     return (
         <section className="Usuarios-list">
@@ -61,23 +60,23 @@ const UsuariosList = () => {
 
                         searchValue !== "" ?
 
-                            usuarios.map(usuario => usuario.nome.toLowerCase().includes(searchValue.toLowerCase()) && (
+                            sharedUsers.map(usuario => usuario.nome.toLowerCase().includes(searchValue.toLowerCase()) && (
                                 <UsuarioCard
                                     usuarioNome={usuario.nome}
                                     usuarioLogin={usuario.login}
                                     usuarioCategoria={usuario.categoria}
-                                    usuarioSenha={usuario.senha}
+                                    usuarioId={usuario.id}
                                 />
                             ))
 
                             :
 
-                            usuarios.map(usuario => (
+                            sharedUsers.map(usuario => (
                                 <UsuarioCard
                                     usuarioNome={usuario.nome}
                                     usuarioLogin={usuario.login}
                                     usuarioCategoria={usuario.categoria}
-                                    usuarioSenha={usuario.senha}
+                                    usuarioId={usuario.id}
                                 />
                             ))
 

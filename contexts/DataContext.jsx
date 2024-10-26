@@ -10,7 +10,7 @@ const DataContextProvider = ({ children }) => {
    const [sharedUsers, setSharedUsers] = useState(usuarios)
 
    return (
-      <DataContext.Provider value={{ sharedCategorias, setSharedCategorias }}>
+      <DataContext.Provider value={{ sharedCategorias, setSharedCategorias, sharedUsers, setSharedUsers }}>
          { children }
       </DataContext.Provider>
    )

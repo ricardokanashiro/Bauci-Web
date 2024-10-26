@@ -5,7 +5,7 @@ import { ModalsContext } from "../contexts/ModalsContext"
 import "../assets/IconArrowWhite.png"
 import "../css/components/usuarios.css"
 
-const UsuarioCard = ({ usuarioNome, usuarioLogin, usuarioCategoria, usuarioSenha }) => {
+const UsuarioCard = ({ usuarioNome, usuarioLogin, usuarioCategoria, usuarioId }) => {
 
    const { toggleEditUserModal, toggleDeleteUserModal, setToEditUser, setToDeleteUser } = useContext(ModalsContext)
 
@@ -41,17 +41,17 @@ const UsuarioCard = ({ usuarioNome, usuarioLogin, usuarioCategoria, usuarioSenha
                className="usuarios-card__edit-button" 
                onClick={() => {
                   toggleEditUserModal()
-                  setToEditUser({ usuarioNome, usuarioLogin, usuarioCategoria, usuarioSenha })
+                  setToEditUser({ nome: usuarioNome, login: usuarioLogin, categoria: usuarioCategoria, id: usuarioId })
                }}
             >
                Editar
             </button>
 
             <button 
-               className="usuarios-card__delete-button" 
+               className="usuarios-card__delete-button"
                onClick={() => {
                   toggleDeleteUserModal()
-                  setToDeleteUser(usuarioNome)
+                  setToDeleteUser({ id: usuarioId, nome: usuarioNome })
                }}
             >
                Deletar

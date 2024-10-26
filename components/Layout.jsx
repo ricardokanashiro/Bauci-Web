@@ -1,7 +1,4 @@
 import { useContext } from "react"
-import { ToastContainer } from "react-toastify"
-
-import 'react-toastify/dist/ReactToastify.css'
 
 import ModalWrapper from "./ModalWrapper"
 
@@ -26,8 +23,6 @@ const Layout = ({ children }) => {
       <>
 
          <section className="layout">
-
-            <ToastContainer />
 
             <section className="navbar">
 
@@ -71,8 +66,6 @@ const Layout = ({ children }) => {
          </section>
 
          <section className="layout-mobile">
-
-            <ToastContainer />
 
             <section className="section-wrapper">
                {children}
