@@ -232,6 +232,7 @@
   font-size: 1.4rem;
   font-weight: 700;
   cursor: pointer;
+  transition-duration: 100ms;
 }
 .add-category-modal .add-category-modal__apply-btn:hover {
   filter: brightness(1.2);

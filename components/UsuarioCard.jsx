@@ -5,7 +5,7 @@ import { ModalsContext } from "../contexts/ModalsContext"
 import "../assets/IconArrowWhite.png"
 import "../css/components/usuarios.css"
 
-const UsuarioCard = ({ usuarioNome, usuarioLogin, usuarioCategoria, usuarioId }) => {
+const UsuarioCard = ({ usuarioNome, usuarioLogin, usuarioCategoria, usuarioId, categoriaId }) => {
 
    const { toggleEditUserModal, toggleDeleteUserModal, setToEditUser, setToDeleteUser } = useContext(ModalsContext)
 
@@ -41,7 +41,7 @@ const UsuarioCard = ({ usuarioNome, usuarioLogin, usuarioCategoria, usuarioId })
                className="usuarios-card__edit-button" 
                onClick={() => {
                   toggleEditUserModal()
-                  setToEditUser({ nome: usuarioNome, login: usuarioLogin, categoria: usuarioCategoria, id: usuarioId })
+                  setToEditUser({ nome: usuarioNome, login: usuarioLogin, categoria: {id: categoriaId, nome: usuarioCategoria}, id: usuarioId })
                }}
             >
                Editar

@@ -1,0 +1,37 @@
+.logout-modal {
+  width: min(35rem, 60%);
+  background-color: white;
+  padding: 2.2rem 2rem;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.5rem;
+}
+.logout-modal h2 {
+  font-size: clamp(2rem, 1.8vw, 2.5rem);
+  text-align: center;
+}
+.logout-modal .logout-modal__buttons-area {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: row nowrap;
+  gap: 1.2rem;
+  flex: 1;
+  margin-top: 2rem;
+}
+.logout-modal .logout-modal__buttons-area button {
+  cursor: pointer;
+  font-size: clamp(1.3rem, 1.15vw, 1.5rem);
+  font-weight: 600;
+  flex: 1;
+  padding: clamp(1.1rem, 1vw, 1.4rem);
+  background-color: transparent;
+}
+.logout-modal .logout-modal__buttons-area button + button {
+  color: white;
+  background-color: #333840;
+  border-radius: 0.4rem;
+}
+
+/*# sourceMappingURL=logout-modal.css.map */

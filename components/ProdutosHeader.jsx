@@ -11,12 +11,12 @@ import "../css/components/produtos-header.css"
 const ProdutosHeader = () => {
 
    const { toggleEditCategoryModal, toggleDeleteCategoryModal, setToDeleteCategory } = useContext(ModalsContext)
-   const { selectedCategory, setSelectedCategory } = useContext(NavigationContext)
+   const { selectedCategory } = useContext(NavigationContext)
 
    return (
       <header className="produtos-header">
 
-            <h1>{selectedCategory}</h1>
+            <h1>{selectedCategory.nome}</h1>
 
             <div className="produtos__actions-area">
 

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 
 import "../css/components/usuarios.css"
 
@@ -16,7 +16,37 @@ const UsuariosList = () => {
     const [searchValue, setSearchValue] = useState("")
 
     const { toggleAddUserModal } = useContext(ModalsContext)
-    const { sharedUsers } = useContext(DataContext)
+    const { sharedUsers, setSharedUsers } = useContext(DataContext)
+
+    useEffect(() => {
+
+        const fetchDataFunc = async () => {
+
+            const token = JSON.stringify(localStorage.getItem('loginCredentials')).replace(/"/g, "")
+   
+            if (token) {
+               try {
+                  const response = await fetch(`https://bauciapi-production.up.railway.app/usuario`, {
+                     method: "GET",
+                     headers: {
+                        'Authorization': `Bearer ${token}`,
+                     },
+                  })
+   
+                  const fetchedData = await response.json()
+   
+                  setSharedUsers(fetchedData)
+               }
+               catch (error) {
+                  console.log("erro: " + error.message)
+               }
+   
+            }
+         }
+   
+         fetchDataFunc()
+
+    }, [])
 
     return (
         <section className="Usuarios-list">
@@ -66,6 +96,7 @@ const UsuariosList = () => {
                                     usuarioLogin={usuario.login}
                                     usuarioCategoria={usuario.categoria}
                                     usuarioId={usuario.id}
+                                    categoriaId={usuario.categoriaid}
                                 />
                             ))
 
@@ -77,6 +108,7 @@ const UsuariosList = () => {
                                     usuarioLogin={usuario.login}
                                     usuarioCategoria={usuario.categoria}
                                     usuarioId={usuario.id}
+                                    categoriaId={usuario.categoriaid}
                                 />
                             ))
 

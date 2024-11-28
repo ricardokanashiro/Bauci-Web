@@ -5,6 +5,9 @@
     background-color: white;
     padding: 2.2rem 2rem;
     border-radius: .6rem;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1.2rem;
 }
 
 .add-user-modal__header {
@@ -14,6 +17,7 @@
 .add-user-modal__header h2 {
     font-size: clamp(1.5rem, 4.5vw, 2.5rem);
     color: $preto;
+    margin-bottom: 1.4rem;
 }
 
 .add-user-modal__header button {
@@ -48,7 +52,7 @@
     border: 1px solid $cinzaEscuro;
     border-radius: .4rem;
     @include flex(center, center);
-    flex-direction: row;
+    flex-direction: column;
 
     p {
         color: $cinzaEscuro;
@@ -96,6 +100,12 @@
     font-size: 1.4rem;
     width: 100%;
     background-color: transparent;
+}
+
+.add-user-modal__error-message {
+    font-size: 1.2rem;
+    margin-top: -.8rem;
+    color: red;
 }
 
 .add-user-modal__apply-btn {

@@ -5,7 +5,7 @@ import { NavigationContext } from "../contexts/NavigationContext"
 
 import "../css/components/produtos-card.css"
 
-const ProdutoCard = ({ produtoImg, produtoNome, produtoPrazoMin, produtoPrazoMax, produtoDescricao }) => {
+const ProdutoCard = ({ produtoImg, produtoNome, produtoPrazoMin, produtoPrazoMax, produtoDescricao, produtoId }) => {
 
    const { 
       toggleDeleteProductModal, setToDeleteProduct, 
@@ -36,7 +36,7 @@ const ProdutoCard = ({ produtoImg, produtoNome, produtoPrazoMin, produtoPrazoMax
                   onClick={() => {
                      setToEditProduct({produtoImg, produtoNome, produtoPrazoMin, produtoPrazoMax, produtoDescricao})
                      toggleEditProductModal()
-                     setSelectedProduct(produtoNome)
+                     setSelectedProduct({ id: produtoId, nome: produtoNome })
                   }}
                >
                   <span>Editar</span>
@@ -47,7 +47,7 @@ const ProdutoCard = ({ produtoImg, produtoNome, produtoPrazoMin, produtoPrazoMax
                   className="produto-card__deletar-btn" 
                   onClick={() => {
                      toggleDeleteProductModal()
-                     setToDeleteProduct(produtoNome)
+                     setToDeleteProduct({ id: produtoId, nome: produtoNome })
                   }}
                >
                   <span>Deletar</span>

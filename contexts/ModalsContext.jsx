@@ -15,6 +15,7 @@ const ModalsContextProvider = ({ children }) => {
    const [addUserModalActive, setAddUserModalActive] = useState(false)
    const [editUserModalActive, setEditUserModalActive] = useState(false)
    const [deleteUserModalActive, setDeleteUserModalActive] = useState(false)
+   const [logoutModalActive, setLogoutModalActive] = useState(false)
 
    const [toDeleteCategory, setToDeleteCategory] = useState("")
 
@@ -69,6 +70,11 @@ const ModalsContextProvider = ({ children }) => {
       setDeleteUserModalActive(prev => !prev)
    }
 
+   function toggleLogoutModal() {
+      setModalWrapperActive(prev => !prev)
+      setLogoutModalActive(prev => !prev)
+   }
+
    return (
       <ModalsContext.Provider value={{
          modalWrapperActive, 
@@ -85,7 +91,8 @@ const ModalsContextProvider = ({ children }) => {
          editUserModalActive, toggleEditUserModal,
          deleteUserModalActive, toggleDeleteUserModal,
          toDeleteUser, setToDeleteUser,
-         toEditUser, setToEditUser
+         toEditUser, setToEditUser,
+         logoutModalActive, toggleLogoutModal
       }}>
          { children }
       </ModalsContext.Provider>

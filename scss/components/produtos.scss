@@ -1,6 +1,7 @@
 @use "../utils/" as *;
 
 .produtos {
-   width: 100%;
    padding: clamp(0rem, 3vw, 4rem) clamp(0rem, 2vw, 3rem);
+   max-width: 100% !important;
+   
 }

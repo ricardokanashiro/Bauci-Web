@@ -227,6 +227,9 @@
   background-color: white;
   padding: 2.2rem 2rem;
   border-radius: 0.6rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.2rem;
 }
 
 .add-user-modal__header {
@@ -238,6 +241,7 @@
 .add-user-modal__header h2 {
   font-size: clamp(1.5rem, 4.5vw, 2.5rem);
   color: #333840;
+  margin-bottom: 1.4rem;
 }
 
 .add-user-modal__header button {
@@ -274,7 +278,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
 }
 .add-user-modal__classic-input-wrapper p {
   color: #838393;
@@ -327,6 +331,12 @@
   background-color: transparent;
 }
 
+.add-user-modal__error-message {
+  font-size: 1.2rem;
+  margin-top: -0.8rem;
+  color: red;
+}
+
 .add-user-modal__apply-btn {
   width: 100%;
   display: block;
@@ -374,6 +384,9 @@
   background-color: white;
   padding: 2.2rem 2rem;
   border-radius: 0.6rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.5rem;
 }
 
 .edit-user-modal__header {
@@ -405,12 +418,9 @@
   margin: 2rem 0;
 }
 
-.edit-user-modal__error-message-wrapper {
-  width: 100%;
-}
-.edit-user-modal__error-message-wrapper .edit-user-modal__error-message {
+.edit-user-modal__error-message {
   font-size: 1.2rem;
-  padding-top: 0.3rem;
+  margin-top: -0.8rem;
   color: red;
 }
 
@@ -421,7 +431,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
 }
 .edit-user-modal__classic-input-wrapper p {
   color: #838393;

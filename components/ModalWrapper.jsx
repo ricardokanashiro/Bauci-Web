@@ -9,6 +9,7 @@ import AddCategoryModal from "./AddCategoryModal"
 import AddUserModal from "./AddUserModal"
 import EditUserModal from "./EditUserModal"
 import DeleteUserModal from "./DeleteUserModal"
+import LogoutModal from "./LogoutModal"
 
 import { ModalsContext } from "../contexts/ModalsContext"
 
@@ -21,11 +22,14 @@ const ModalWrapper = ({ selectedSection }) => {
       deleteProductModalActive, addProductModalActive,
       editProductModalActive, addCategoryModalActive,
       addUserModalActive, editUserModalActive,
-      deleteUserModalActive,
+      deleteUserModalActive, logoutModalActive
    } = useContext(ModalsContext)
 
    return (
       <section className="modal-wrapper">
+
+         {logoutModalActive && <LogoutModal />}
+
          {
             selectedSection === "produtos" && (
                <>

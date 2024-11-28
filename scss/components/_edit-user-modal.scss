@@ -5,6 +5,9 @@
     background-color: white;
     padding: 2.2rem 2rem;
     border-radius: .6rem;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1.5rem;
 }
 
 .edit-user-modal__header {
@@ -33,14 +36,10 @@
 
 }
 
-.edit-user-modal__error-message-wrapper {
-    width: 100%;
-
-    .edit-user-modal__error-message {
-        font-size: 1.2rem;
-        padding-top: .3rem;
-        color: red;
-    }
+.edit-user-modal__error-message {
+    font-size: 1.2rem;
+    margin-top: -.8rem;
+    color: red;
 }
 
 .edit-user-modal__classic-input-wrapper {
@@ -48,7 +47,7 @@
     border: 1px solid $cinzaEscuro;
     border-radius: .4rem;
     @include flex(center, center);
-    flex-direction: row;
+    flex-direction: column;
 
     p {
         color: $cinzaEscuro;

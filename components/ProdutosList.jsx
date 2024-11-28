@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useState, useEffect } from "react"
 
 import ProdutoCard from "./ProdutoCard"
 
@@ -14,7 +14,38 @@ const ProdutosList = () => {
 
    const { selectedCategory } = useContext(NavigationContext)
    const { toggleAddProductModal } = useContext(ModalsContext)
-   const { sharedCategorias } = useContext(DataContext)
+   const { sharedProdutos, setSharedProdutos } = useContext(DataContext)
+
+   useEffect(() => {
+
+      async function fetchData() {
+
+         const token = JSON.stringify(localStorage.getItem('loginCredentials')).replace(/"/g, "")
+
+         try {
+
+            const response = await fetch(`https://bauciapi-production.up.railway.app/produto/${selectedCategory.id}`, {
+               method: "GET",
+               headers: {
+                  'Authorization': `Bearer ${token}`
+               }
+            })
+
+            const fetchedData = await response.json()
+
+            if (response.ok) {
+               setSharedProdutos(fetchedData)
+            }
+
+         }
+         catch (error) {
+            console.log("erro: " + error.message)
+         }
+      }
+
+      fetchData()
+
+   }, [])
 
    return (
       <section className="produtos-list">
@@ -66,29 +97,29 @@ const ProdutosList = () => {
 
                searchValue !== "" ?
 
-                  sharedCategorias.filter(categoria => categoria.nome === selectedCategory)[0].produtos
-                     .map(produto => produto.nome.toLowerCase().includes(searchValue.toLowerCase()) && (
-                        <ProdutoCard
-                           produtoImg={produto.img}
-                           produtoNome={produto.nome}
-                           produtoPrazoMin={produto.prazoMinimo}
-                           produtoPrazoMax={produto.prazoMaximo}
-                           produtoDescricao={produto.descricao}
-                        />
-                     ))
+                  sharedProdutos.map(produto => produto.nome.toLowerCase().includes(searchValue.toLowerCase()) && (
+                     <ProdutoCard
+                        produtoImg={produto.imagem}
+                        produtoNome={produto.nome}
+                        produtoPrazoMin={produto.prazominimo}
+                        produtoPrazoMax={produto.prazomaximo}
+                        produtoDescricao={produto.descricao}
+                        produtoId={produto.produtoid}
+                     />
+                  ))
 
                   :
 
-                  sharedCategorias.filter(categoria => categoria.nome === selectedCategory)[0].produtos
-                     .map(produto => (
-                        <ProdutoCard
-                           produtoImg={produto.img}
-                           produtoNome={produto.nome}
-                           produtoPrazoMin={produto.prazoMinimo}
-                           produtoPrazoMax={produto.prazoMaximo}
-                           produtoDescricao={produto.descricao}
-                        />
-                     ))
+                  sharedProdutos.map(produto => (
+                     <ProdutoCard
+                        produtoImg={produto.imagem}
+                        produtoNome={produto.nome}
+                        produtoPrazoMin={produto.prazominimo}
+                        produtoPrazoMax={produto.prazomaximo}
+                        produtoDescricao={produto.descricao}
+                        produtoId={produto.produtoid}
+                     />
+                  ))
 
             }
 

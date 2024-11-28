@@ -14,7 +14,7 @@ import "../css/main.css"
 
 const Layout = ({ children }) => {
 
-   const { modalWrapperActive } = useContext(ModalsContext)
+   const { modalWrapperActive, toggleLogoutModal } = useContext(ModalsContext)
 
    const { selectedSection, setSelectedSection } = useContext(NavigationContext)
 
@@ -52,7 +52,7 @@ const Layout = ({ children }) => {
 
                </nav>
 
-               <button className="navbar__logout-btn">
+               <button className="navbar__logout-btn" onClick={toggleLogoutModal}>
                   <span>Logout</span>
                   <img src="../assets/IconLogOut.svg" alt="logout icon" />
                </button>
@@ -93,7 +93,7 @@ const Layout = ({ children }) => {
 
                   </button>
 
-                  <button className="navbar-mobile__logout-btn">
+                  <button className="navbar-mobile__logout-btn" onClick={toggleLogoutModal}>
                      <img src="../assets/IconLogOut.svg" alt="logout icon" />
                   </button>
 

@@ -23,6 +23,7 @@ body {
 .layout {
    width: 100dvw;
    height: 100dvh;
+   overflow: hidden;
 
    @include flex(flex-start, flex-start);
 
@@ -183,8 +184,9 @@ body {
 
 .section-wrapper {
    flex-grow: 1;
-   height: 100%;
+   height: 100% !important;
    overflow-x: hidden;
+   overflow-y: auto;
 
    @include respond-to(tablet) {
       padding-bottom: 8rem !important;

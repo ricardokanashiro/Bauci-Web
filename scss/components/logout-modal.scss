@@ -1,0 +1,41 @@
+@use "../utils/" as *;
+
+.logout-modal {
+   width: min(35rem, 60%);
+   background-color: white;
+   padding: 2.2rem 2rem;
+   border-radius: .6rem;
+   display: flex;
+   flex-flow: column nowrap;
+   gap: 1.5rem;
+
+   h2 {
+      font-size: clamp(2rem, 1.8vw, 2.5rem);
+      text-align: center;
+   }
+
+   .logout-modal__buttons-area {
+
+      @include flex(center, flex-start);
+      
+      flex-flow: row nowrap;
+      gap: 1.2rem;
+      flex: 1;
+      margin-top: 2rem;
+
+      button {
+         cursor: pointer;
+         font-size: clamp(1.3rem, 1.15vw, 1.5rem);
+         font-weight: 600;
+         flex: 1;
+         padding: clamp(1.1rem, 1vw, 1.4rem);
+         background-color: transparent;
+      }
+
+      button + button {
+         color: white;
+         background-color: $preto;
+         border-radius: .4rem;
+      }
+   }
+}

@@ -21,7 +21,7 @@ const CategoriasList = () => {
 
                 <div className="categorias-list__input-wrapper">
 
-                    <img src="../assets/IconSearch.svg" alt="Ícone de busca" className="categorias-list__icon-search"/>
+                    <img src="../assets/IconSearch.svg" alt="Ícone de busca" className="categorias-list__icon-search" />
 
                     <input
                         type="text"
