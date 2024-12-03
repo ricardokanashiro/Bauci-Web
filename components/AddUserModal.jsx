@@ -7,8 +7,6 @@ import { CircularProgress } from "@mui/material"
 
 import notify, { notifyError } from "../utils/notify"
 
-import "../assets/IconArrowDownGray.svg"
-
 import "../css/components/usuarios.css"
 
 const AddUserModal = () => {
@@ -147,7 +145,7 @@ const AddUserModal = () => {
                 <h2>Adicionar Usuário</h2>
 
                 <button onClick={toggleAddUserModal}>
-                    <img src="../assets/iconXGray.svg" alt="ícone de x" />
+                    <img src="../src/assets/iconXGray.svg" alt="ícone de x" />
                 </button>
 
             </header>
@@ -209,7 +207,7 @@ const AddUserModal = () => {
                     className="add-user-modal__arrow-dropdown-menu"
                     onClick={() => setCategoriaMenuActive(prev => !prev)}
                 >
-                    <img src="../assets/IconArrowDownGray.svg" alt="Ícone de seta apontando para baixo" />
+                    <img src="../src/assets/IconArrowDownGray.svg" alt="Ícone de seta apontando para baixo" />
                 </button>
 
                 {

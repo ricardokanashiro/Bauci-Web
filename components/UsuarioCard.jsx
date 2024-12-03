@@ -2,7 +2,6 @@ import { useContext } from "react"
 
 import { ModalsContext } from "../contexts/ModalsContext"
 
-import "../assets/IconArrowWhite.png"
 import "../css/components/usuarios.css"
 
 const UsuarioCard = ({ usuarioNome, usuarioLogin, usuarioCategoria, usuarioId, categoriaId }) => {

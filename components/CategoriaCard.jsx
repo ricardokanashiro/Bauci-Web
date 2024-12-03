@@ -2,7 +2,6 @@ import { useContext } from "react"
 
 import { NavigationContext } from "../contexts/NavigationContext"
 
-import "../assets/IconArrowWhite.png"
 import "../css/components/categorias.css"
 
 const CategoriaCard = ({ categoria }) => {
@@ -21,7 +20,7 @@ const CategoriaCard = ({ categoria }) => {
 
          <button className="categoriasCard__btn-gotoprodutos" onClick={selectCategory}>
             <img 
-               src="../assets/IconArrowWhite.png" 
+               src="../src/assets/IconArrowWhite.png" 
                alt="Botão que possui um ícone de seta apotando para a direita e que ao ser clicado leva para a página de produtos dentro da categoria escolhida." 
             />
          </button>

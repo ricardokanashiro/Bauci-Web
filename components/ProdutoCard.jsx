@@ -40,7 +40,7 @@ const ProdutoCard = ({ produtoImg, produtoNome, produtoPrazoMin, produtoPrazoMax
                   }}
                >
                   <span>Editar</span>
-                  <img src="../assets/IconEditWhite.svg" alt="ícone de editar" />
+                  <img src="../src/assets/IconEditWhite.svg" alt="ícone de editar" />
                </button>
 
                <button 
@@ -51,7 +51,7 @@ const ProdutoCard = ({ produtoImg, produtoNome, produtoPrazoMin, produtoPrazoMax
                   }}
                >
                   <span>Deletar</span>
-                  <img src="../assets/IconTrashBlack.svg" alt="ícone de deletar" />
+                  <img src="../src/assets/IconTrashBlack.svg" alt="ícone de deletar" />
                </button>
 
             </div>

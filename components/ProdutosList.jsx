@@ -56,7 +56,7 @@ const ProdutosList = () => {
 
                <div className="produtos-list__input-wrapper">
 
-                  <img src="../assets/IconSearch.svg" alt="ícone de busca" />
+                  <img src="../src/assets/IconSearch.svg" alt="ícone de busca" />
 
                   <input
                      type="text"
@@ -68,7 +68,7 @@ const ProdutosList = () => {
                   {
                      searchValue !== "" && (
                         <button onClick={() => setSearchValue("")}>
-                           <img src="../assets/iconX.svg" alt="ícone de X" />
+                           <img src="../src/assets/iconX.svg" alt="ícone de X" />
                         </button>
                      )
                   }
@@ -83,7 +83,7 @@ const ProdutosList = () => {
                <span>Adicionar Produto</span>
 
                <img
-                  src="../assets/IconPlus.svg"
+                  src="../src/assets/IconPlus.svg"
                   alt="ícone de '+'"
                />
 

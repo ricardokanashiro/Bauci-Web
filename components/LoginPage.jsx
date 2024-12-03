@@ -3,7 +3,6 @@ import { useState } from "react"
 import { CircularProgress } from "@mui/material"
 
 import "../css/components/login-page.css"
-import "../assets/logo.svg"
 
 const Login = ({ setLogged }) => {
 
@@ -54,7 +53,7 @@ const Login = ({ setLogged }) => {
 
             <section className="login-page__wrapper">
 
-                <img src="../assets/logo.svg" alt="Logo da Bauci" className="login-page__logo" />
+                <img src="../src/assets/logo.svg" alt="Logo da Bauci" className="login-page__logo" />
 
                 <div className="login-page__inputs-wrapper">
 

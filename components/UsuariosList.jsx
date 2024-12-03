@@ -7,10 +7,6 @@ import UsuarioCard from "./UsuarioCard"
 import { ModalsContext } from "../contexts/ModalsContext.jsx"
 import { DataContext } from "../contexts/DataContext.jsx"
 
-import "../assets/IconSearch.svg"
-import "../assets/IconSearch.svg"
-import "../assets/IconPlus.svg"
-
 const UsuariosList = () => {
 
     const [searchValue, setSearchValue] = useState("")
@@ -56,7 +52,7 @@ const UsuariosList = () => {
 
                 <div className="usuarios-list__input-wrapper">
 
-                    <img src="../assets/IconSearch.svg" alt="Ícone de busca" className="usuarios-list__icon-search" />
+                    <img src="../src/assets/IconSearch.svg" alt="Ícone de busca" className="usuarios-list__icon-search" />
 
                     <input
                         type="text"
@@ -68,7 +64,7 @@ const UsuariosList = () => {
                     {
                         searchValue !== "" && (
                             <button onClick={() => setSearchValue("")} className="usuarios-list__clean-input-button">
-                                <img src="../assets/iconX.svg" alt="ícone de X" />
+                                <img src="../src/assets/iconX.svg" alt="ícone de X" />
                             </button>
                         )
                     }
@@ -77,7 +73,7 @@ const UsuariosList = () => {
 
                 <button className="adicionar-usuario-btn" onClick={toggleAddUserModal}>
                     <span>Adicionar Usuário</span>
-                    <img className="add-produto-btnícone-branco" src="../assets/IconPlus.svg" alt="Ícone de +" />
+                    <img className="add-produto-btnícone-branco" src="../src/assets/IconPlus.svg" alt="Ícone de +" />
                 </button>
 
             </header>

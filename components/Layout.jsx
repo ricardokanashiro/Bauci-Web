@@ -5,10 +5,10 @@ import ModalWrapper from "./ModalWrapper"
 import { ModalsContext } from "../contexts/ModalsContext"
 import { NavigationContext } from "../contexts/NavigationContext"
 
-import CartIconWhite from "../assets/IconCart.svg"
-import CartIconGray from "../assets/IconCartGray.svg"
-import UsersIconWhite from "../assets/iconUsersWhite.svg"
-import UsersIconGray from "../assets/IconUsers.svg"
+import CartIconWhite from "../src/assets/IconCart.svg"
+import CartIconGray from "../src/assets/IconCartGray.svg"
+import UsersIconWhite from "../src/assets/iconUsersWhite.svg"
+import UsersIconGray from "../src/assets/IconUsers.svg"
 
 import "../css/main.css"
 
@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
 
             <section className="navbar">
 
-               <img src="../assets/logo.svg" alt="Logo da bauci em cores pretas" className="navbar__bauci-logo" />
+               <img src="../src/assets/logo.svg" alt="Logo da bauci em cores pretas" className="navbar__bauci-logo" />
 
                <nav className="navbar__links-area">
 

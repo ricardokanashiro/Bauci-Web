@@ -5,8 +5,6 @@ import { CircularProgress } from "@mui/material"
 import { ModalsContext } from "../contexts/ModalsContext"
 import { DataContext } from "../contexts/DataContext"
 
-import "../assets/IconArrowDownGray.svg"
-
 import "../css/components/usuarios.css"
 
 import notify, { notifyError } from "../utils/notify"
@@ -39,28 +37,22 @@ const EditUserModal = () => {
 
         setisLoading(true)
 
-        console.log("Entrou")
-
         if(!editedUser.nome) {
-            console.log("Não tem nome")
             setErrorOnEdit(prev => ({ ...prev, nomeError: "Este campo deve ser preenchido!" }))
             thereIsError = true
         }
 
         if(!editedUser.senha) {
-            console.log("Não tem senha")
             setErrorOnEdit(prev => ({ ...prev, senhaError: "Este campo deve ser preenchido!" }))
             thereIsError = true
         }
 
         if(!editedUser.login) {
-            console.log("Não tem login")
             setErrorOnEdit(prev => ({ ...prev, loginError: "Este campo deve ser preenchido!" }))
             thereIsError = true
         }
 
         if(!editedUser.categoria.nome) {
-            console.log("Não tem cateogoria")
             setErrorOnEdit(prev => ({ ...prev, categoriaError: "Este campo deve ser preenchido!" }))
             thereIsError = true
         }
@@ -115,7 +107,7 @@ const EditUserModal = () => {
                 <h2>Editar Usuário</h2>
 
                 <button onClick={toggleEditUserModal}>
-                    <img src="../assets/iconXGray.svg" alt="ícone de x" />
+                    <img src="../src/assets/iconXGray.svg" alt="ícone de x" />
                 </button>
             </header>
 

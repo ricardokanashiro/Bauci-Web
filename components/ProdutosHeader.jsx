@@ -3,8 +3,8 @@ import { useContext } from "react"
 import { ModalsContext } from "../contexts/ModalsContext"
 import { NavigationContext } from "../contexts/NavigationContext"
 
-import IconEdit from "../assets/IconEditWhite.svg"
-import IconTrash from "../assets/IconTrashBlack.svg"
+import IconEdit from "../src/assets/IconEditWhite.svg"
+import IconTrash from "../src/assets/IconTrashBlack.svg"
 
 import "../css/components/produtos-header.css"
 
