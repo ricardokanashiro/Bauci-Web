@@ -56,7 +56,7 @@ const ProdutosList = () => {
 
                <div className="produtos-list__input-wrapper">
 
-                  <img src="../src/assets/IconSearch.svg" alt="ícone de busca" />
+                  <img src="/assets/IconSearch.svg" alt="ícone de busca" />
 
                   <input
                      type="text"
@@ -83,7 +83,7 @@ const ProdutosList = () => {
                <span>Adicionar Produto</span>
 
                <img
-                  src="../src/assets/IconPlus.svg"
+                  src="/assets/IconPlus.svg"
                   alt="ícone de '+'"
                />
 

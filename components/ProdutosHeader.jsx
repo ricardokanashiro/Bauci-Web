@@ -3,9 +3,6 @@ import { useContext } from "react"
 import { ModalsContext } from "../contexts/ModalsContext"
 import { NavigationContext } from "../contexts/NavigationContext"
 
-import IconEdit from "../src/assets/IconEditWhite.svg"
-import IconTrash from "../src/assets/IconTrashBlack.svg"
-
 import "../css/components/produtos-header.css"
 
 const ProdutosHeader = () => {
@@ -22,7 +19,7 @@ const ProdutosHeader = () => {
 
                <button className="produtos__editar-btn" onClick={toggleEditCategoryModal}>
                   <span>Editar</span>
-                  <img src={IconEdit} alt="ícone de editar" />
+                  <img src="/assets/IconEditWhite.svg" alt="ícone de editar" />
                </button>
 
                <button 
@@ -33,7 +30,7 @@ const ProdutosHeader = () => {
                   }}
                >
                   <span>Deletar</span>
-                  <img src={IconTrash} alt="ícone de deletar" />
+                  <img src="/assets/IconTrashBlack.svg" alt="ícone de deletar" />
                </button>
 
             </div>

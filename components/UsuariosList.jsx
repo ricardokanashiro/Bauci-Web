@@ -52,7 +52,7 @@ const UsuariosList = () => {
 
                 <div className="usuarios-list__input-wrapper">
 
-                    <img src="../src/assets/IconSearch.svg" alt="Ícone de busca" className="usuarios-list__icon-search" />
+                    <img src="/assets/IconSearch.svg" alt="Ícone de busca" className="usuarios-list__icon-search" />
 
                     <input
                         type="text"
@@ -64,7 +64,7 @@ const UsuariosList = () => {
                     {
                         searchValue !== "" && (
                             <button onClick={() => setSearchValue("")} className="usuarios-list__clean-input-button">
-                                <img src="../src/assets/iconX.svg" alt="ícone de X" />
+                                <img src="/assets/iconX.svg" alt="ícone de X" />
                             </button>
                         )
                     }
@@ -73,7 +73,7 @@ const UsuariosList = () => {
 
                 <button className="adicionar-usuario-btn" onClick={toggleAddUserModal}>
                     <span>Adicionar Usuário</span>
-                    <img className="add-produto-btnícone-branco" src="../src/assets/IconPlus.svg" alt="Ícone de +" />
+                    <img className="add-produto-btnícone-branco" src="/assets/IconPlus.svg" alt="Ícone de +" />
                 </button>
 
             </header>

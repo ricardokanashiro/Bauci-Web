@@ -21,7 +21,7 @@ const CategoriasList = () => {
 
                 <div className="categorias-list__input-wrapper">
 
-                    <img src="../src/assets/IconSearch.svg" alt="Ícone de busca" className="categorias-list__icon-search" />
+                    <img src="/assets/IconSearch.svg" alt="Ícone de busca" className="categorias-list__icon-search" />
 
                     <input
                         type="text"
@@ -33,7 +33,7 @@ const CategoriasList = () => {
                     {
                         searchValue !== "" && (
                             <button onClick={() => setSearchValue("")} className="categorias-list__clean-input-button">
-                                <img src="../assets/iconX.svg" alt="ícone de X" />
+                                <img src="/assets/iconX.svg" alt="ícone de X" />
                             </button>
                         )
                     }
@@ -42,7 +42,7 @@ const CategoriasList = () => {
 
                 <button className="adicionar-categoria-btn" onClick={toggleAddCategoryModal}>
                     <span>Adicionar Categoria</span>
-                    <img className="add-produto-btnícone-branco" src="../src/assets/IconPlus.svg" alt="Ícone de +" />
+                    <img className="add-produto-btnícone-branco" src="/assets/IconPlus.svg" alt="Ícone de +" />
                 </button>
 
             </header>

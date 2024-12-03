@@ -53,7 +53,7 @@ const Login = ({ setLogged }) => {
 
             <section className="login-page__wrapper">
 
-                <img src="../src/assets/logo.svg" alt="Logo da Bauci" className="login-page__logo" />
+                <img src="/assets/logo.svg" alt="Logo da Bauci" className="login-page__logo" />
 
                 <div className="login-page__inputs-wrapper">
 

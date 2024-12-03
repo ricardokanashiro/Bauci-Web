@@ -20,7 +20,7 @@ const CategoriaCard = ({ categoria }) => {
 
          <button className="categoriasCard__btn-gotoprodutos" onClick={selectCategory}>
             <img 
-               src="../src/assets/IconArrowWhite.png" 
+               src="/assets/IconArrowWhite.png" 
                alt="Botão que possui um ícone de seta apotando para a direita e que ao ser clicado leva para a página de produtos dentro da categoria escolhida." 
             />
          </button>

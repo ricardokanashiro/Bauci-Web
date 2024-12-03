@@ -5,10 +5,10 @@ import ModalWrapper from "./ModalWrapper"
 import { ModalsContext } from "../contexts/ModalsContext"
 import { NavigationContext } from "../contexts/NavigationContext"
 
-import CartIconWhite from "../src/assets/IconCart.svg"
-import CartIconGray from "../src/assets/IconCartGray.svg"
-import UsersIconWhite from "../src/assets/iconUsersWhite.svg"
-import UsersIconGray from "../src/assets/IconUsers.svg"
+import CartIconWhite from "/assets/IconCart.svg"
+import CartIconGray from "/assets/IconCartGray.svg"
+import UsersIconWhite from "/assets/iconUsersWhite.svg"
+import UsersIconGray from "/assets/IconUsers.svg"
 
 import "../css/main.css"
 
@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
 
             <section className="navbar">
 
-               <img src="../src/assets/logo.svg" alt="Logo da bauci em cores pretas" className="navbar__bauci-logo" />
+               <img src="/assets/logo.svg" alt="Logo da bauci em cores pretas" className="navbar__bauci-logo" />
 
                <nav className="navbar__links-area">
 
@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
                      onClick={() => setSelectedSection("categorias")}
                   >
 
-                     <img src={selectedSection === "produtos" || selectedSection === "categorias" ? CartIconWhite : CartIconGray} alt="ícone de carrinho" />
+                     <img src={selectedSection === "produtos" || selectedSection === "categorias" ? "/assets/IconCart.svg" : "/assets/IconCartGray.svg"} alt="ícone de carrinho" />
                      <span>Produtos</span>
 
                   </button>
@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
                      onClick={() => setSelectedSection("usuarios")}
                   >
 
-                     <img src={selectedSection === "usuarios" ? UsersIconWhite : UsersIconGray} alt="#" />
+                     <img src={selectedSection === "usuarios" ? "/assets/iconUsersWhite.svg" : "/assets/IconUsers.svg"} alt="#" />
                      <span>Usuários</span>
 
                   </button>
@@ -54,7 +54,7 @@ const Layout = ({ children }) => {
 
                <button className="navbar__logout-btn" onClick={toggleLogoutModal}>
                   <span>Logout</span>
-                  <img src="../assets/IconLogOut.svg" alt="logout icon" />
+                  <img src="/assets/IconLogOut.svg" alt="logout icon" />
                </button>
 
             </section>
@@ -80,7 +80,7 @@ const Layout = ({ children }) => {
                      onClick={() => setSelectedSection("categorias")}
                   >
 
-                     <img src={selectedSection === "produtos" || selectedSection === "categorias" ? CartIconWhite : CartIconGray} alt="ícone de carrinho" />
+                     <img src={selectedSection === "produtos" || selectedSection === "categorias" ? "/assets/IconCart.svg" : "/assets/IconCartGray.svg"} alt="ícone de carrinho" />
 
                   </button>
 
@@ -89,12 +89,12 @@ const Layout = ({ children }) => {
                      onClick={() => setSelectedSection("usuarios")}
                   >
 
-                     <img src={selectedSection === "usuarios" ? UsersIconWhite : UsersIconGray} alt="#" />
+                     <img src={selectedSection === "usuarios" ? "/assets/iconUsersWhite.svg" : "/assets/IconUsers.svg"} alt="#" />
 
                   </button>
 
                   <button className="navbar-mobile__logout-btn" onClick={toggleLogoutModal}>
-                     <img src="../assets/IconLogOut.svg" alt="logout icon" />
+                     <img src="/assets/IconLogOut.svg" alt="logout icon" />
                   </button>
 
                </nav>
