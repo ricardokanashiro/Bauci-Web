@@ -19,13 +19,12 @@
 
    padding: 2rem;
    flex: 1;
+   display: flex;
+   flex-flow: column nowrap;
 
    h2 {
       font-size: 3rem;
    }
-
-   display: flex;
-   flex-flow: column nowrap;
 
    .produto-card__prazo-label {
       background-color: $preto;
@@ -43,6 +42,7 @@
       margin-top: 2rem;
       font-size: 1.3rem;
       line-height: 1.8rem;
+      overflow-wrap: break-word;
    }
 }
 
