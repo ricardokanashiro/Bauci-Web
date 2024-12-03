@@ -150,7 +150,7 @@ const AddProductModal = () => {
             <h2>Adicionar Produto</h2>
 
             <button onClick={toggleAddProductModal}>
-               <img src="../src/assets/iconXGray.svg" alt="ícone de X" />
+               <img src="/assets/iconXGray.svg" alt="ícone de X" />
             </button>
 
          </header>
@@ -170,7 +170,7 @@ const AddProductModal = () => {
                >
 
                   <div className="add-product-modal__image-picker-content-wrapper">
-                     <img src="../src/assets/IconEditWhite.svg" alt="ícone de selecionar imagem" />
+                     <img src="/assets/IconEditWhite.svg" alt="ícone de selecionar imagem" />
                      <input type="file" accept="image/*" className="add-product-modal__file-input" onChange={(e) => loadImage(e)} />
                   </div>
 

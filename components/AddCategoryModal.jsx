@@ -66,7 +66,7 @@ const AddCategoryModal = () => {
             <h2>Adicionar Categoria</h2>
 
             <button onClick={toggleAddCategoryModal}>
-               <img src="../assets/iconXGray.svg" alt="ícone de x" />
+               <img src="/assets/iconXGray.svg" alt="ícone de x" />
             </button>
          </header>
 

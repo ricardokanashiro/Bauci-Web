@@ -107,7 +107,7 @@ const EditUserModal = () => {
                 <h2>Editar Usuário</h2>
 
                 <button onClick={toggleEditUserModal}>
-                    <img src="../src/assets/iconXGray.svg" alt="ícone de x" />
+                    <img src="/assets/iconXGray.svg" alt="ícone de x" />
                 </button>
             </header>
 
@@ -167,7 +167,7 @@ const EditUserModal = () => {
                     className="edit-user-modal__arrow-dropdown-menu"
                     onClick={() => setCategoriaMenuActive(prev => !prev)}
                 >
-                    <img src="../assets/IconArrowDownGray.svg" alt="Ícone de seta apontando para baixo" />
+                    <img src="/assets/IconArrowDownGray.svg" alt="Ícone de seta apontando para baixo" />
                 </button>
 
                 {

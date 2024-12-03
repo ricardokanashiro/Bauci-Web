@@ -150,7 +150,7 @@ const EditProductModal = () => {
             <h2>Editar Produto</h2>
 
             <button onClick={toggleEditProductModal}>
-               <img src="../assets/iconXGray.svg" alt="ícone de X" />
+               <img src="/assets/iconXGray.svg" alt="ícone de X" />
             </button>
 
          </header>

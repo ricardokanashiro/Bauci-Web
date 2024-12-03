@@ -72,7 +72,7 @@ const EditCategoryModal = () => {
             <h2>Editar Categoria</h2>
 
             <button onClick={toggleEditCategoryModal}>
-               <img src="../assets/iconXGray.svg" alt="ícone de x" />
+               <img src="/assets/iconXGray.svg" alt="ícone de x" />
             </button>
          </header>
 

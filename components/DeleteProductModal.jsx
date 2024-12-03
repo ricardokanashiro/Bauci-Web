@@ -8,7 +8,6 @@ import { ModalsContext } from "../contexts/ModalsContext"
 import { DataContext } from "../contexts/DataContext"
 
 import "../css/components/delete-product-modal.css"
-import { sassFalse } from "sass"
 
 const DeleteProductModal = () => {
 

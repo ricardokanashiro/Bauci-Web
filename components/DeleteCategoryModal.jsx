@@ -9,7 +9,6 @@ import { DataContext } from "../contexts/DataContext"
 import { NavigationContext } from "../contexts/NavigationContext"
 
 import "../css/components/delete-category-modal.css"
-import { FALSE } from "sass"
 
 const DeleteCategoryModal = () => {
 
