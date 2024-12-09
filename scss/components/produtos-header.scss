@@ -6,6 +6,7 @@
 
    h1 {
       font-size: clamp(2.9rem, 2.8vw, 4.5rem);
+      word-break: break-all;
    }
 }
 
