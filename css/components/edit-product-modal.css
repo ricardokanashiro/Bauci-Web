@@ -45,7 +45,6 @@
   font-size: 2rem;
   color: gray;
   font-weight: 500;
-  position: relative;
 }
 .edit-product-modal form .edit-product-modal__image-picker button {
   width: 4rem;

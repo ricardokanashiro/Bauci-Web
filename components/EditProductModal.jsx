@@ -158,7 +158,7 @@ const EditProductModal = () => {
 
          <form onSubmit={(e) => e.preventDefault()}>
 
-            <fieldset className="edit-product-modal__image-picker" >
+            <div className="edit-product-modal__image-picker" >
 
                <p>Imagem</p>
 
@@ -176,7 +176,7 @@ const EditProductModal = () => {
 
                </button>
 
-            </fieldset>
+            </div>
 
             <fieldset className="edit-product-modal__product-info-area">
 

@@ -19,6 +19,7 @@
 }
 .produto-card__content-wrapper h2 {
   font-size: 3rem;
+  word-break: break-all;
 }
 .produto-card__content-wrapper .produto-card__prazo-label {
   background-color: #333840;
