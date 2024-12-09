@@ -8,16 +8,6 @@
   justify-content: space-between;
   align-items: stretch;
 }
-@media (min-width: 481px) and (max-width: 768px) {
-  .produtos-list header {
-    gap: 1.5rem;
-  }
-}
-@media (max-width: 480px) {
-  .produtos-list header {
-    gap: 1.5rem;
-  }
-}
 
 .produtos-list__search-area {
   width: 100%;

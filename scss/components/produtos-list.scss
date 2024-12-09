@@ -6,13 +6,6 @@
 
    header {
       @include flex(space-between, stretch);
-      
-      @include respond-to (tablet){
-         gap: 1.5rem;
-      }
-      @include respond-to (mobile){
-         gap: 1.5rem;
-      }
    }
 }
 

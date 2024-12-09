@@ -104,6 +104,16 @@
   flex-direction: column;
   flex-shrink: 0;
 }
+@media (min-width: 481px) and (max-width: 768px) {
+  .Usuarios-list {
+    padding-bottom: 5rem;
+  }
+}
+@media (max-width: 480px) {
+  .Usuarios-list {
+    padding-bottom: 5rem;
+  }
+}
 
 .Usuarios-list header {
   display: flex;

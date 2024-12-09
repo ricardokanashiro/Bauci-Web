@@ -6,6 +6,14 @@
     min-height: 100%;
     flex-direction: column;
     flex-shrink: 0;
+
+    @include respond-to(tablet){
+        padding-bottom: 5rem;
+    }
+
+    @include respond-to(mobile){
+        padding-bottom: 5rem;
+    }
 }
 
 .Usuarios-list header {
