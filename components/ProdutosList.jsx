@@ -68,7 +68,7 @@ const ProdutosList = () => {
                   {
                      searchValue !== "" && (
                         <button onClick={() => setSearchValue("")}>
-                           <img src="../src/assets/iconX.svg" alt="ícone de X" />
+                           <img src="/assets/iconX.svg" alt="ícone de X" />
                         </button>
                      )
                   }
